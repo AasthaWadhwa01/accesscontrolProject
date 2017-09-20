@@ -17,7 +17,8 @@ reqstatus:any;
   	this.emp.getEmployee()
   	.subscribe(res=>{
   		this.empl = res;
-
+if(this.empl.length>=1)
+{
   		 	if(this.empl[this.empl.length-1].current=="Closed")
   	{
   		this.reqstatus = "Your request has been approved by CSO";
@@ -49,6 +50,7 @@ reqstatus:any;
     else {
       this.reqstatus = "You haven't made any request yet";
     }
+  }
   	})
   }
 }
