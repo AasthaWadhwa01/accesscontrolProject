@@ -7,9 +7,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LocationchangeComponent implements OnInit {
 
-  constructor() { }
+ public location:any;
 
-  ngOnInit() {
-  }
+	//constructor initialize's location change service & router
+	constructor(private locationChangeService:LocationChangeService, private router:Router) { }
+
+	ngOnInit() {
+	}
+
+	//method called on submit button for saving the details of location change form
+	locationChangeSubmit(locationchange){
+		console.log(locationchange.value);
+		return this.locationChangeService.locationChangeMethod(locationchange.value)
+		.subscribe((data)=>{
+			this.router.navigate(['/dashboard']);  
+		})
+	}
+
+	//method called on Go Back button and navigate to dashboard of employee 
+	back() {
+		this.router.navigate(['/dashboard']);
+	}
 
 }
