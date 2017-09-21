@@ -1,0 +1,131 @@
+<!-- html lost card -->
+
+
+<div class="container">
+    <div class="row color rounded bg-info text-white mt-2">
+      <h5>Lost Access Card Form</h5>
+    </div>
+
+
+<div class="row border bg-white mt-1">
+          <div class="col-sm-6 border py-3">
+            <h6><strong>Employee ID:</strong></h6>
+            <!-- <div class="col-sm-8"> -->
+            <input class="form-control" type="text" name="designation" [(ngModel)]="empId">
+          <!-- </div> -->
+          </div>
+          <div class="col-sm-6 border py-3">
+            <div class="row">
+              <div class="col-sm-6">
+             <h6><strong>Employee Type:</strong></h6>
+             </div>
+           <div class="col-sm-6">
+             <div class="row">
+              <div class="col-sm-12 py-3">
+                <label class="custom-control custom-radio">
+                  <input id="radio1" name="empType" value="Permanent" type="radio" class="custom-control-input" [(ngModel)]="empType" (change)="OnRadioButtonSelection()">
+                  <span class="custom-control-indicator"></span>
+                  <span class="custom-control-description">Permanent</span>
+                </label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-12">
+                <label class="custom-control custom-radio">
+                  <input id="radio1" name="empType" value="Temporary" type="radio" class="custom-control-input" [(ngModel)]="empType" (change)="OnRadioButtonSelection()">
+                  <span class="custom-control-indicator"></span>
+                  <span class="custom-control-description">Temporary</span>
+                </label>
+              </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
+    <!--First Row ends here-->
+    <!--Second Row starts here-->
+    <div class="row border bg-white mt-1">
+      <div class="col-sm-4 border py-3">
+        <div class="row">
+          <div class="col-sm-2 py-2">
+            <h6><strong>Name:</strong></h6>
+          </div>
+          <div class="col-sm-10">
+            <input class="form-control" type="text" name="name" [(ngModel)]="empName">
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4 border py-3">
+        <div class="row">
+          <div class="col-sm-5 py-2">
+            <h6><strong>Date of Joining:</strong></h6>
+          </div>
+          <div class="col-sm-7">
+            <input type="text" class="form-control bg-white" bsDatepicker name="doj" [(ngModel)]="doj" readonly="true"/>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4 border py-3">
+        <div class="row">
+          <div class="col-sm-4 py-2">
+            <h6><strong>Designation:</strong></h6>
+          </div>
+          <div class="col-sm-8">
+            <input class="form-control" type="text" name="designation" [(ngModel)]="designation">
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--Second Row ends here-->
+    <!--Third Row ends here-->
+    <div class="row border bg-white mt-1">
+      <div class="col-sm-12 border py-3">
+        <div class="row">
+          <div class="col-sm-2 py-2">
+            <h6><strong>Project / Function:</strong></h6>
+          </div>
+          <div class="col-sm-10">
+            <input class="form-control" type="text" name="project" [(ngModel)]="project">
+          </div>
+        </div>
+        <div class="row mt-2">
+          <div class="col-sm-2 py-2">
+            <h6><strong>OU / Department:</strong></h6>
+          </div>
+          <div class="col-sm-10">
+            <input class="form-control" type="text" name="ou" [(ngModel)]="department">
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--Third Row ends here-->
+
+
+
+<div class="row border mt-1">
+    <div class="col-sm-12 text-center mb-2">
+    <p class="mt-2"><strong>**Lost Your Access Card! Don't Worry Just Fill It And you Will Have A New Card In Two Days</strong>
+    </p>
+    
+    <div class="form-group">
+    <textarea class="form-control" id="exampleTextarea" rows="7" placeholder="Comment The Reason Of Loss Here"  [(ngModel)]="comment"></textarea>
+  </div>
+        <div class="row" >
+          <div class="col-sm-4 py-2">
+            <h6><strong>Date Of Card Loss:</strong></h6>
+          </div>
+          <div class="col-sm-8">
+            <input type="text" class="form-control bg-white" readonly="true" placement="top" bsDatepicker name="appdate" [(ngModel)]="date">
+          </div>
+        </div>
+      </div>
+      </div>
+    <div class="row justify-content-center">
+<div class="col-sm-3 mt-2 mb-3">
+    <button class="btn btn-success text-white form-control" (click)="save(comment,date)">Submit Your Request</button>
+  </div>
+   <div class="col-sm-3 mt-2 mb-3">
+    <button class="btn btn-danger text-white form-control" (click)="back()">Go Back</button>
+  </div>
+  </div>
+</div>

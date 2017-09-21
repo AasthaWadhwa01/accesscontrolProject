@@ -3,7 +3,10 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
+<<<<<<< HEAD
     "test": "jasmine",
+=======
+>>>>>>> 9905c514b4c1c27d3943afc5dcf240141d36e45d
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
@@ -38,7 +41,10 @@
     "@types/jasminewd2": "~2.0.2",
     "@types/node": "~6.0.60",
     "codelyzer": "~3.1.1",
+<<<<<<< HEAD
     "jasmine": "^2.8.0",
+=======
+>>>>>>> 9905c514b4c1c27d3943afc5dcf240141d36e45d
     "jasmine-core": "~2.6.2",
     "jasmine-spec-reporter": "~4.1.0",
     "karma": "~1.7.0",

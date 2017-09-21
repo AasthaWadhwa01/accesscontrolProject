@@ -1,0 +1,66 @@
+.pad {
+	padding-top: 1rem;
+}
+
+.align {
+text-align: center;
+}
+
+.logo {
+	height: 3rem;
+	width: 6rem;
+}
+
+.acolor {
+	color: blue;
+}
+
+.acolor:hover {
+	color: red;
+}
+
+.color {
+	padding-top: 0.5rem;
+	padding-bottom: 0.5rem;
+	padding-left: 1rem;
+	background-color: #7fffd4;
+}
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+
+.pad {
+	padding-top: 0.5rem;
+}
+
+/* h2 {
+font-size: 1.5rem;
+}
+
+h4 {
+font-size: 1.2rem;
+} */
+}
+
+@media only screen and (min-device-width : 575px) and (max-device-width : 1200px) {
+
+/* h6 {
+font-size: 0.9rem;
+} */
+
+.pad {
+	padding-top: 0.8rem;
+}
+
+/* h2 {
+	padding-left: 2rem;
+font-size: 1.5rem;
+}
+
+h4 {
+font-size: 1.3rem;
+} */
+}
+
+@media only screen  and (min-width : 1224px) {
+/* Styles */
+}
