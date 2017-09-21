@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 # Client
-=======
-# Cse
->>>>>>> 9905c514b4c1c27d3943afc5dcf240141d36e45d
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.3.2.
 
