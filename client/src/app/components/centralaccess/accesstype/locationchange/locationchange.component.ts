@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { LocationChangeService } from './location-change.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-locationchange',
