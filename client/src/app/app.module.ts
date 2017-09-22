@@ -15,6 +15,14 @@ import { LostCardComponent } from './components/accessforms/lost-card/lost-card.
 import { DamagedCardComponent } from './components/accessforms/damaged-card/damaged-card.component';
 import { LocationChangeComponent } from './components/accessforms/location-change/location-change.component';
 import { ThirdPartyComponent } from './components/accessforms/third-party/third-party.component';
+import { SupervisorFormComponent } from './components/supervisor/supervisor-form/supervisor-form.component';
+import { SupervisorDashboardComponent } from './components/supervisor/supervisor-dashboard/supervisor-dashboard.component';
+import { HrDashboardComponent } from './components/hr/hr-dashboard/hr-dashboard.component';
+import { HrFormComponent } from './components/hr/hr-form/hr-form.component';
+import { CsoFormComponent } from './components/cso/cso-form/cso-form.component';
+import { CsoDashboardComponent } from './components/cso/cso-dashboard/cso-dashboard.component';
+import { CisoFormComponent } from './components/ciso/ciso-form/ciso-form.component';
+import { CisoDashboardComponent } from './components/ciso/ciso-dashboard/ciso-dashboard.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +39,15 @@ import { ThirdPartyComponent } from './components/accessforms/third-party/third-
     LostCardComponent,
     DamagedCardComponent,
     LocationChangeComponent,
-    ThirdPartyComponent
+    ThirdPartyComponent,
+    SupervisorFormComponent,
+    SupervisorDashboardComponent,
+    HrDashboardComponent,
+    HrFormComponent,
+    CsoFormComponent,
+    CsoDashboardComponent,
+    CisoFormComponent,
+    CisoDashboardComponent
   ],
   imports: [
     BrowserModule
