@@ -75,7 +75,29 @@
     }
 
     newaccess: {
-
+			"IR": "IR 71 Form",
+      "EMPP_ID": "Employee ID",
+      "EMPP_TYPE": "Employee Type",
+      "TEMP": "Temporary",
+      "PERM": "Permanent",
+      "NAME": "NAME",
+      "DATE_JOINING": "Date Of Joining",
+      "DESG": "Designation",
+      "PROJ": "Project / Function",
+      "OU": "OU / Department",
+      "STATUS": "Status",
+      "DATE_EXP_CARD": "Date of Expiry of Temporary Card",
+      "PRO_TRANS": "Project Transfer (In Case of Transfer",
+      "EXIST_PROJ": "Existing Project Name",
+      "NEW_PROJ": "New Project Name",
+      "SIGN": "Signatures",
+      "APPLICANT_SIGN": "Applicants Signature",
+      "DATE": "Date",
+      "SUBMIT": "Submit Your Request",
+      "BACK": "Go Back",
+      "MSG": "Message",
+      "FORWARD_MSG": "Your request has been forwarded to Supervisor",
+      "BACK_MSG": "Do you really want to go back?"
     }
 
     employeedash: {
@@ -96,8 +118,7 @@
 
     supervisorform: {
       "IR_HEADING": "IR 71 Access Request Form",
-      "VERSION: "
-      Ver 1.0 ",
+      "VERSION": "Ver 1.0",
       "GENERAL": "General (All Fields Are Mandatory)",
       "CATEGORY": "Category",
       "ACCESS_TYPE": "Access type",
@@ -116,7 +137,7 @@
       "NEW_PROJ": "New Project Name",
       "SIGN": "Signatures",
       "APPLICANT_SIGN": "Applicants Signature",
-      "Date": "DATE",
+      "DATE": "Date",
       "PHYSICAL_ACCESS": "Physical Access Requirements (To be filled by DH/PH/PM)",
       "ZONES": "Zones",
       "PUBLIC": "Public",
@@ -131,7 +152,7 @@
       "DH/PH/PM": "DH/PH/PM",
       "CISO": "CISO",
       "ACCEPT": "Accept",
-      "SENDBACK": "Seng Back",
+      "SENDBACK": "Send Back",
       "MSG": "Message",
       "FORWARD_MSG": "Your request has been forwarded to Hr",
       "BACK_MSG": "Do you really want to send it back to Employee?"
