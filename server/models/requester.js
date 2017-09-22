@@ -1,87 +1,82 @@
+//requester information model class
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
+//requester details schema
 var employeeSchema = new Schema({
-           employeeID: {
-                type: String,
-                //required: true,
-                unique: true
-            },
+    employeeID: {
+        type: String,
+        unique: true
+    },
 
-            employeeName: {
-                type: String,
-                //required: true
-            },
+    employeeName: {
+        type: String,
+    },
 
-            empType: {
-                type: String
-            },
+    empType: {
+        type: String
+    },
 
-            accessType: {
-                type: String,
-                //required: true
-            },
-            designation: {
+    accessType: {
+        type: String,
+    },
 
-                type: String,
-                //required: true
-            },
-            dateOfJoining: {
+    designation: {
+        type: String,
+    },
 
-                type: String,
-                //required: true
-            },
+    dateOfJoining: {
+        type: String,
+    },
 
-            dateOfExpiry: {
+    dateOfExpiry: {
+        type: String,
+    },
 
-                type: String,
-                //required: true
-            },
-            project: {
+    project: {
+        type: String,
+    },
 
-                type: String,
-               // required: true
-            },
-            department: {
+    department: {
+        type: String,
+    },
 
-                type: String,
-                //required: true
-            },
-            existingProject: {
+    existingProject: {
+        type: String,
+    },
 
-                type: String,
-               // required: true
-            },
-            newProject: {
+    newProject: {
+        type: String,
+    },
 
-                type: String,
-               // required: true
-            },
+    requestDate: {
+        type: String,
+    },
 
-            requestDate: {
+    prev: {
+        type: String
+    },
 
-                type: String,
-               // required: true
-            }, 
-            prev: {
-                type: String
-            },
-            current: {
-                type: String
-            },
-            zone: {
-                type: Array
-            },
-            cardno: {
-                type: String
-            },
-            issuedBy: {
-                type: String
-            },
-            issueDate: {
-                type: String
-            }
-          });
+    current: {
+        type: String
+    },
 
-        var data = mongoose.model('employee', employeeSchema)
-        module.exports = data;
+    zone: {
+        type: Array
+    },
+
+    cardno: {
+        type: String
+    },
+
+    issuedBy: {
+        type: String
+    },
+
+    issueDate: {
+        type: String
+    }
+});
+
+var data = mongoose.model('employee', employeeSchema)
+module.exports = data;

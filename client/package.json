@@ -1,9 +1,8 @@
 {
-  "name": "cac",
+  "name": "client",
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "test": "jasmine",
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
@@ -22,11 +21,7 @@
     "@angular/platform-browser": "^4.2.4",
     "@angular/platform-browser-dynamic": "^4.2.4",
     "@angular/router": "^4.2.4",
-    "bootstrap": "^4.0.0-beta",
     "core-js": "^2.4.1",
-    "jquery": "^3.2.1",
-    "ngx-bootstrap": "^1.9.3",
-    "popper.js": "^1.12.5",
     "rxjs": "^5.4.2",
     "zone.js": "^0.8.14"
   },
@@ -38,7 +33,6 @@
     "@types/jasminewd2": "~2.0.2",
     "@types/node": "~6.0.60",
     "codelyzer": "~3.1.1",
-    "jasmine": "^2.8.0",
     "jasmine-core": "~2.6.2",
     "jasmine-spec-reporter": "~4.1.0",
     "karma": "~1.7.0",

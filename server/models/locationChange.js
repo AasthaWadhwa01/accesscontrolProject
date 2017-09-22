@@ -1,6 +1,9 @@
+//location change model class
 var express=require('express')
 var mongoose=require('mongoose')
 var Schema=mongoose.Schema
+
+//location change form schema
 var locationChangeSchema= new Schema({
     category: String,
     accessType: String,
@@ -19,6 +22,7 @@ var locationChangeSchema= new Schema({
     signature: String,
     date: String
 })
+
 var location=mongoose.model('locationChange',locationChangeSchema)
 module.exports=location
 
