@@ -2,12 +2,12 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router'
 
-import { DamagecardService } from '../../services/damagecard.service'
-import { LostCardService } from '../../services/lost-card.service'
-import { LocationChangeService } from '../../services/location-change.service'
-import { ThirdPartyService } from '../../services/third-party.service'
-import { ControlAccessService } from '../../services/control-access.service'
-import { config } from '../../../config.js'
+import { DamagedCardService } from '../../../services/damaged-card.service';
+import { LostCardService } from '../../../services/lost-card.service';
+import { LocationChangeService } from '../../../services/location-change.service';
+import { ThirdPartyService } from '../../../services/third-party.service';
+import { EmployeeService } from '../../../services/employee.service';
+import { config } from '../../../config';
 
 
 @Component({
