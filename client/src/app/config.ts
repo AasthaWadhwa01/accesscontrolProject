@@ -1,5 +1,22 @@
-export const config: any = {
-    {
+export const config: any = 
+{
+    
+      accessform: {
+        "ACCESS_REQUEST_FORM":"Access Request Form",
+        "CATEGORY":"Category",
+        "EMPLOYEE":"Employee",
+        "CLIENT":"Client",
+        "CONSULTANTS":"consultants",
+        "CONTRACTORS":"Contractors",
+        "OUTSOURCED":"Outsourced",
+        "THIRD_PARTY_VENDORS":"Third Party Vendors",
+        "ACCESSTYPE":"AccessType",
+        "NEW_ACCESS":"New access",
+        "LOST":"Lost",
+        "LOCATION_CHANGE":"LOCATION_CHANGE",
+        "DAMAGE":"Damage"
+      } ,
+
       damage: {
         "DAMAGE_FORM": "Damaged Card Form",
         "EMP_ID": "Employee Id",
@@ -12,10 +29,10 @@ export const config: any = {
         "PROJECT": "Project/Function",
         "OU": "OU/Designation",
         "COMMENTS_HEADING": "**First Submit Your damaged Access Card then  request for a new card And you Will Have A New Card In Two Days",
-        "SUBMIT_DATE": "Enter The Date Of Card submitted:";
+        "SUBMIT_DATE": "Enter The Date Of Card submitted:",
         "SUBMIT": "Submit Your Request",
         "BACK": "Go Back"
-      }
+      },
 
       locationchange: {
         "GENERAL": "General (All Fields Are Mandatory)",
@@ -41,7 +58,7 @@ export const config: any = {
         "DATE": "Date",
         "SUBMIT": "Submit Your Request",
         "BACK": "Go Back"
-      }
+      },
 
       lost: {
         "EMP_ID": "Employee Id",
@@ -55,7 +72,7 @@ export const config: any = {
         "OU": "OU / Department",
         "SUBMIT": "Submit Your Request",
         "BACK": "Go Back"
-      }
+      },
 
       thirdparty: {
         "GENERAL": "General (All Fields Are Mandatory)",
@@ -72,7 +89,7 @@ export const config: any = {
         "DATE": "Date",
         "SUBMIT": "Submit Your Request",
         "BACK": "Go Back"
-      }
+      },
 
       newaccess: {
         "IR": "IR 71 Form",
@@ -98,7 +115,7 @@ export const config: any = {
         "MSG": "Message",
         "FORWARD_MSG": "Your request has been forwarded to Supervisor",
         "BACK_MSG": "Do you really want to go back?"
-      }
+      },
 
       employeedash: {
         "PLUGIN_CSS": "Plugin Css",
@@ -114,7 +131,7 @@ export const config: any = {
         "OU": "OU",
         "UPDATES": "Updated yesterday at 11:59 PM",
         "COPYRIGHT": "Iniitiian.com 2017"
-      }
+      },
 
       supervisorform: {
         "IR_HEADING": "IR 71 Access Request Form",
@@ -124,7 +141,7 @@ export const config: any = {
         "ACCESS_TYPE": "Access type",
         "IR": "IR 71 Form",
         "EMPP_ID": "Employee ID",
-        "EMPP_TYPE": "Employee Type"
+        "EMPP_TYPE": "Employee Type",
         "NAME": "NAME",
         "DATE_JOINING": "Date Of Joining",
         "DESG": "Designation",
@@ -156,11 +173,11 @@ export const config: any = {
         "MSG": "Message",
         "FORWARD_MSG": "Your request has been forwarded to Hr",
         "BACK_MSG": "Do you really want to send it back to Employee?"
-      }
+      },
 
       supervisordash: {
 
-      }
+      },
 
       hrform: {
         "IRHEADING": "IR 71 Access Request Form",
@@ -205,7 +222,7 @@ export const config: any = {
         "BACK_MSG": "Do you really want to send it back to Supervisor",
         "YES": "Yes",
         "NO": "No"
-      }
+      },
 
       hrdashboard: {
         "PLUGIN_CSS": "Plugin Css",
@@ -230,7 +247,7 @@ export const config: any = {
         "EMPLOYEE_ID": "Employee Id",
         "EMPLOYEE_NAME": "Employee Name",
         "COPYRIGHT": "Iniitian.com 2017"
-      }
+      },
 
       csoform: {
         "IR_HEADING": "IR 71 Access Request Form",
@@ -278,7 +295,7 @@ export const config: any = {
         "MESSAGE": "Message",
         "YES": "Yes",
         "NO": "No"
-      }
+      },
 
       csodashboard: {
 

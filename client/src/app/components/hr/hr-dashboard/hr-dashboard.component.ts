@@ -1,6 +1,6 @@
 /*imports required for this Component*/
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router'
+import { Router } from '@angular/router';
 
 import { DamagedCardService } from '../../../services/damaged-card.service';
 import { LostCardService } from '../../../services/lost-card.service';
@@ -21,21 +21,32 @@ export class HrDashboardComponent implements OnInit {
   emp: any = [];
   super: any = [];
   show: any = false;
-  errors: any
+  errors: any;
+  config: any;
 
   /*constructor of hr dashboard Component*/
-  constructor(private damage: DamagecardService, private lost: LostCardService,
+  constructor(private damage: DamagedCardService, private lost: LostCardService,
     private location: LocationChangeService, private third: ThirdPartyService,
-    private newrequest: ControlAccessService, private router: Router) {}
+    private newrequest: EmployeeService, private router: Router) {}
 
   /*method to send employee id to hr component through navigate*/
   getID(value) {
-    console.log('from getID')
-    this.router.navigate(['/hr', value])
+    console.log('from getID');
+    this.router.navigate(['/hr', value]);
   }
 
   /*ngonit method for this class*/
-  ngOnInit() {}
+  ngOnInit() {
+    this.getConfig();
+  }
+
+  /*method to get config file elements*/
+  getConfig(): any {
+    return Promise.resolve(config)
+      .then(data => {
+        this.config = data;
+      })
+  }
 
   /*method to get details of employee having damage card*/
   showAccess() {
@@ -81,4 +92,3 @@ export class HrDashboardComponent implements OnInit {
   /*showAccess() ends here*/
 }
 /*class ends here*/
-
