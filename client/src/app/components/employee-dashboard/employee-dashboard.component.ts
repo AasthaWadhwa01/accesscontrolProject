@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { EmployeeService } from '../../services/employee.service';
 
+import { EmployeeService } from '../../services/employee.service';
+import { config } from '../../../config';
 //component
 @Component({
   selector: 'app-employee-dashboard',
@@ -12,16 +13,24 @@ import { EmployeeService } from '../../services/employee.service';
 export class EmployeeDashboardComponent implements OnInit {
 
 //variable declaration
-  empl:any = [];
-  reqstatus:any;
-  errors:any;
-  
+  empl: any = [];
+  reqstatus: any;
+  errors: any;
+  config: any;
 
   //construtor for employeeDashboard class
   constructor(private emp: EmployeeService) { }
 
+   getConfig(): any {
+   return Promise.resolve(config)
+   .then(data => {
+     this.config = data;
+   })
+ }
+
   ngOnInit() {
   	//method to get employee data
+    this.getConfig();
     this.emp.getEmployee()
     .subscribe(res=>{
       this.empl = res;
