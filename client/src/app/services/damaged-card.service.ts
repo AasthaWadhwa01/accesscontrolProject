@@ -20,7 +20,7 @@ export class DamagedCardService {
 getDamageCard()
 {
 	return this.http
-	            .get('http://localhost:4000/finddamage')
+	            .get('http://localhost:4000/'+'finddamage')
 	            .map(res=>res.json());
 }
 

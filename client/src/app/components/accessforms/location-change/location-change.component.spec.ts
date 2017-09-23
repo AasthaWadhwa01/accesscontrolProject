@@ -2,7 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { LocationChangeComponent } from './location-change.component';
 
-describe('LocationChangeComponent', () => {
+describe('LocationchangeComponent', () => {
   let component: LocationChangeComponent;
   let fixture: ComponentFixture<LocationChangeComponent>;
 

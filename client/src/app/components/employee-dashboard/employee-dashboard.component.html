@@ -1,3 +1,423 @@
-<p>
-  employee-dashboard works!
-</p>
+<html lang="en">
+
+<!--head tag-->
+<head>
+  {{config.employeedash.PLUGIN_CSS}}
+  <link href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap4.min.css" rel="stylesheet"> Custom fonts for this template
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+</head>
+<!--ending of head tag-->
+
+<!--starting of body tag-->
+<body class="fixed-nav bg-dark" id="page-top">
+
+  <!--nav bar-->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+    <a class="navbar-brand" href="#">{{config.employeedash.CENTRALIZED_ACCESS_CONTROL}}</a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
+        <li class="nav-item active" data-toggle="tooltip" data-placement="right" title="Employee Dashboard">
+          <a class="nav-link">
+              <i class="fa fa-fw fa-dashboard"></i>
+              <span class="nav-link-text">{{config.employeedash.DASHBOARD}}
+               </span>
+              }
+              }
+            </a>
+        </li>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="{{config.employeedash.NEW_REQUEST}}">
+          <a class="nav-link" [routerLink]="['/category']">
+              <i class="fa fa-fw fa-area-chart"></i>
+              <span class="nav-link-text">
+                {{config.empoyeedash.NEW_REQUEST}}</span>
+            </a>
+        </li>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="{{config.employeedash.HISTORY}}">
+          <a class="nav-link">
+              <i class="fa fa-fw fa-table"></i>
+              <span class="nav-link-text">
+                {{config.employeedash.HISTORY}}</span>
+            </a>
+        </li>
+      </ul>
+      <ul class="navbar-nav sidenav-toggler">
+        <li class="nav-item">
+          <a class="nav-link text-center" id="sidenavToggler">
+              <i class="fa fa-fw fa-angle-left"></i>
+            </a>
+        </li>
+      </ul>
+      <ul class="navbar-nav ml-5">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle mr-lg-2" href="#" id="messagesDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <i class="fa fa-fw fa-envelope"></i>
+              <span class="d-lg-none">Messages
+                <span class="badge badge-pill badge-primary">12</span>
+              </span>
+              <span class="new-indicator text-primary d-none d-lg-block">
+                <i class="fa fa-fw fa-circle"></i>
+                <span class="number">12</span>
+              </span>
+            </a>
+          <div class="dropdown-menu" aria-labelledby="messagesDropdown">
+            <h6 class="dropdown-header">New Messages:</h6>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">
+                <strong>Tanupreet</strong>
+                <span class="small float-right text-muted">11:21 AM</span>
+                <div class="dropdown-message small">Hey Prakhar</div>
+              </a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">
+                <strong>Shivam</strong>
+                <span class="small float-right text-muted">11:21 AM</span>
+                <div class="dropdown-message small">Hi!!!</div>
+              </a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">
+                <strong>Shubhang</strong>
+                <span class="small float-right text-muted">11:21 AM</span>
+                <div class="dropdown-message small">Thank You Prakhar for your hardwork in this Project</div>
+              </a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item small" href="#">
+                View all messages
+              </a>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle mr-lg-2" href="#" id="alertsDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <i class="fa fa-fw fa-bell"></i>
+              <span class="d-lg-none">Status Alerts
+                <span class="badge badge-pill badge-warning">6 New</span>
+              </span>
+              <span class="new-indicator text-warning d-none d-lg-block">
+                <i class="fa fa-fw fa-circle"></i>
+                <span class="number">6</span>
+              </span>
+            </a>
+          <div class="dropdown-menu" aria-labelledby="alertsDropdown">
+            <h6 class="dropdown-header">New Alerts:</h6>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">
+                <span class="text-success">
+                  <strong>
+                    <i class="fa fa-long-arrow-up"></i>
+                    Status Update</strong>
+                </span>
+                <span class="small float-right text-muted">11:21 AM</span>
+                <div class="dropdown-message small">This is an automated server response message. All systems are online.</div>
+              </a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">
+                <span class="text-danger">
+                  <strong>
+                    <i class="fa fa-long-arrow-down"></i>
+                    Status Update</strong>
+                </span>
+                <span class="small float-right text-muted">11:21 AM</span>
+                <div class="dropdown-message small">This is an automated server response message. All systems are online.</div>
+              </a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">
+                <span class="text-success">
+                  <strong>
+                    <i class="fa fa-long-arrow-up"></i>
+                    Status Update</strong>
+                </span>
+                <span class="small float-right text-muted">11:21 AM</span>
+                <div class="dropdown-message small">This is an automated server response message. All systems are online.</div>
+              </a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item small" href="#">
+                View all alerts
+              </a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link">
+              <i class="fa fa-fw fa-sign-out"></i>
+              Back To Iniitian Portal</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <!--nav bar end-->
+
+  <div class="content-wrapper">
+    <div class="container-fluid">
+      <ol class="breadcrumb">
+
+        <!-- dashboard of employee -->
+        <li class="breadcrumb-item">
+          <a href="#">{{config.employeedash.DASHBOARD}}</a>
+        </li>
+        <li class="breadcrumb-item active">{{config.employeedash.MY_DASHBOARD}}</li>
+        <!-- end of dashboard -->
+
+      </ol>
+
+      <!-- request status -->
+      <div class="card mb-3">
+        <div class="card-body acolor text-center">
+          <a>{{reqstatus}}</a>
+        </div>
+      </div>
+      <!-- end of status  -->
+
+      <!-- card details -->
+      <div class="row">
+        <div class="col-lg-8">
+          <div class="card mb-3">
+            <div class="card-header">
+              <i class="fa fa-user"></i>{{config.employeedash.YOUR_DETAILS}}
+            </div>
+            <div class="card-body">
+              <div class="row">
+                <div class="col-sm-12 text-center my-auto">
+                  <div class="h4 mb-0 text-primary">{{config.employeedash.SUPERVISOR_NAME}}</div>
+                  <div class="small text-muted">{{config.employeedash.SUP_NAME}}</div>
+                  <hr>
+                  <div class="h4 mb-0 text-warning">{{config.employeedash.LOCATION}}</div>
+                  <div class="small text-muted">{{config.employeedash.LOC}}</div>
+                  <hr>
+                  <div class="h4 mb-0 text-success">{{config.employeedash.DEPT}}</div>
+                  <div class="small text-muted">{{config.employeedash.OU}}</div>
+                </div>
+              </div>
+            </div>
+            <div class="card-footer small text-muted">{{config.employeedash.UPDATES}}
+            </div>
+          </div>
+          <div class="mb-0 mt-4">
+            <i class="fa fa-newspaper-o"></i> News Feed</div>
+          <hr class="mt-2">
+
+          <!-- information related to organisation -->
+          <div class="card-columns">
+            <div class="card mb-3">
+              <a href="#">
+                  <img class="card-img-top img-fluid w-100" src="https://unsplash.it/700/450?image=610" alt="">
+                </a>
+              <div class="card-body">
+                <h6 class="card-title mb-1">
+                    <a href="#">Some Other Guy</a>
+                  </h6>
+                <p class="card-text small">These waves are looking pretty good today!
+                  <a href="#">#surfsup</a>
+                </p>
+              </div>
+              <hr class="my-0">
+              <div class="card-body py-2 small">
+                <a class="mr-3 d-inline-block" href="#">
+                    <i class="fa fa-fw fa-thumbs-up"></i>
+                    Like
+                  </a>
+                <a class="mr-3 d-inline-block" href="#">
+                    <i class="fa fa-fw fa-comment"></i>
+                    Comment
+                  </a>
+                <a class="d-inline-block" href="#">
+                    <i class="fa fa-fw fa-share"></i>
+                    Share
+                  </a>
+              </div>
+              <div class="card-footer small text-muted">
+                Posted 32 mins ago
+              </div>
+            </div>
+            <div class="card mb-3">
+              <a href="#">
+                  <img class="card-img-top img-fluid w-100" src="https://unsplash.it/700/450?image=180" alt="">
+                </a>
+              <div class="card-body">
+                <h6 class="card-title mb-1">
+                    <a href="#">Prakhar</a>
+                  </h6>
+                <p class="card-text small">Another day at the office...
+                  <a href="#">#workinghardorhardlyworking</a>
+                </p>
+              </div>
+              <hr class="my-0">
+              <div class="card-body py-2 small">
+                <a class="mr-3 d-inline-block" href="#">
+                    <i class="fa fa-fw fa-thumbs-up"></i>
+                    Like
+                  </a>
+                <a class="mr-3 d-inline-block" href="#">
+                    <i class="fa fa-fw fa-comment"></i>
+                    Comment
+                  </a>
+                <a class="d-inline-block" href="#">
+                    <i class="fa fa-fw fa-share"></i>
+                    Share
+                  </a>
+              </div>
+              <div class="card-footer small text-muted">
+                Posted 46 mins ago
+              </div>
+            </div>
+            <div class="card mb-3">
+              <a href="#">
+                  <img class="card-img-top img-fluid w-100" src="https://unsplash.it/700/450?image=281" alt="">
+                </a>
+              <div class="card-body">
+                <h6 class="card-title mb-1">
+                    <a href="#">Shivam</a>
+                  </h6>
+                <p class="card-text small">Nice shot from the skate park!
+                  <a href="#">#kickflip</a>
+                  <a href="#">#holdmybeer</a>
+                  <a href="#">#igotthis</a>
+                </p>
+              </div>
+              <hr class="my-0">
+              <div class="card-body py-2 small">
+                <a class="mr-3 d-inline-block" href="#">
+                    <i class="fa fa-fw fa-thumbs-up"></i>
+                    Like
+                  </a>
+                <a class="mr-3 d-inline-block" href="#">
+                    <i class="fa fa-fw fa-comment"></i>
+                    Comment
+                  </a>
+                <a class="d-inline-block" href="#">
+                    <i class="fa fa-fw fa-share"></i>
+                    Share
+                  </a>
+              </div>
+              <div class="card-footer small text-muted">
+                Posted 1 hr ago
+              </div>
+            </div>
+            <div class="card mb-3">
+              <a href="#">
+                  <img class="card-img-top img-fluid w-100" src="https://unsplash.it/700/450?image=185" alt="">
+                </a>
+              <div class="card-body">
+                <h6 class="card-title mb-1">
+                    <a href="#">Shubhang</a>
+                  </h6>
+                <p class="card-text small">It's hot, and I might be lost...
+                  <a href="#">#desert</a>
+                  <a href="#">#water</a>
+                </p>
+              </div>
+              <hr class="my-0">
+              <div class="card-body py-2 small">
+                <a class="mr-3 d-inline-block" href="#">
+                    <i class="fa fa-fw fa-thumbs-up"></i>
+                    Like
+                  </a>
+                <a class="mr-3 d-inline-block" href="#">
+                    <i class="fa fa-fw fa-comment"></i>
+                    Comment
+                  </a>
+                <a class="d-inline-block" href="#">
+                    <i class="fa fa-fw fa-share"></i>
+                    Share
+                  </a>
+              </div>
+              <hr class="my-0">
+              <div class="card-footer small text-muted">
+                Posted yesterday
+              </div>
+            </div>
+          </div>
+          <!-- end of information related to organisation -->
+
+        </div>
+        <div class="col-lg-4">
+          <div class="card mb-3">
+            <div class="card-header">
+              <i class="fa fa-user-o"></i> Prakhar Pandey
+            </div>
+            <div class="card-body img-center">
+              <img class="img-size" src="https://www.youngliving.com/vo/content/app/design/images/default-profile-image.jpg" alt="https://www.youngliving.com/vo/content/app/design/images/default-profile-image.jpg">
+            </div>
+            <div class="card-footer small text-muted">
+              Updated yesterday at 11:59 PM
+            </div>
+          </div>
+          <div class="card mb-3">
+            <div class="card-header">
+              <i class="fa fa-bell-o"></i> Feed Example
+            </div>
+            <div class="list-group list-group-flush small">
+              <a href="#" class="list-group-item list-group-item-action">
+                <div class="media">
+                  <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/45x45" alt="">
+                  <div class="media-body">
+                    <strong>Aam Aadmi</strong> posted a new article to
+                    <strong>Google Website</strong>.
+                    <div class="text-muted smaller">Today at 5:43 PM - 5m ago</div>
+                  </div>
+                </div>
+              </a>
+              <a href="#" class="list-group-item list-group-item-action">
+                <div class="media">
+                  <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/45x45" alt="">
+                  <div class="media-body">
+                    <strong>Mango Man</strong> sent you a new message!
+                    <div class="text-muted smaller">Today at 4:37 PM - 1hr ago</div>
+                  </div>
+                </div>
+              </a>
+              <a href="#" class="list-group-item list-group-item-action">
+                <div class="media">
+                  <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/45x45" alt="">
+                  <div class="media-body">
+                    <strong>Tanupreet Again</strong> added a new photo to the album
+                    <strong>Beach</strong>.
+                    <div class="text-muted smaller">Today at 4:31 PM - 1hr ago</div>
+                  </div>
+                </div>
+              </a>
+              <a href="#" class="list-group-item list-group-item-action">
+                <div class="media">
+                  <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/45x45" alt="">
+                  <div class="media-body">
+                    <i class="fa fa-code-fork"></i>
+                    <strong>Yet Again</strong> forked the
+                    <strong>startbootstrap-sb-admin</strong> repository on
+                    <strong>GitHub</strong>.
+                    <div class="text-muted smaller">Today at 3:54 PM - 2hrs ago</div>
+                  </div>
+                </div>
+              </a>
+              <a href="#" class="list-group-item list-group-item-action">
+                  View all activity...
+                </a>
+            </div>
+            <div class="card-footer small text-muted">
+              Updated yesterday at 11:59 PM
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end of card details -->
+
+    </div>
+  </div>
+
+  <!-- footer -->
+  <footer class="sticky-footer">
+    <div class="container">
+      <div class="text-center">
+        <small>{{config.employeedash.COPYRIGHT}}</small>
+      </div>
+    </div>
+  </footer>
+  <!-- footer end -->
+  
+  <a class="scroll-to-top rounded" href="#page-top">
+      <i class="fa fa-angle-up"></i>
+    </a>
+</body>
+<!-- ending of body tag -->
+
+</html>
+
