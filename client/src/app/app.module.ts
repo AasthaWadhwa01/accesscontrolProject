@@ -1,6 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
+import { ModalModule, BsDatepickerModule } from 'ngx-bootstrap';
 
 import { ComponentsComponent } from './components/components.component';
 import { AccessformsComponent } from './components/accessforms/accessforms.component';
@@ -9,7 +12,7 @@ import { SupervisorComponent } from './components/supervisor/supervisor.componen
 import { HrComponent } from './components/hr/hr.component';
 import { CsoComponent } from './components/cso/cso.component';
 import { CisoComponent } from './components/ciso/ciso.component';
-import { LoginComponent } from './login/login.component';
+import { LoginComponent } from './components/login/login.component';
 import { NewAccessComponent } from './components/accessforms/new-access/new-access.component';
 import { LostCardComponent } from './components/accessforms/lost-card/lost-card.component';
 import { DamagedCardComponent } from './components/accessforms/damaged-card/damaged-card.component';
@@ -30,17 +33,37 @@ import { LostCardService } from './services/lost-card.service';
 import { ThirdPartyService } from './services/third-party.service';
 
 const routes: any = [
-	{
+/*	{
 		path: '', redirectTo: '/login', pathMatch: 'full'
-	},
+	},*/
   {
     path: 'login',
     component: LoginComponent
   },
+   {
+    path: 'newaccess/:value',
+    component: NewAccessComponent
+  },
+   {
+    path: 'hr/:value',
+    component: HrFormComponent
+  },
+   {
+    path: 'super/:value',
+    component: SupervisorFormComponent
+  },
+   {
+    path: 'cso/:value',
+    component: CsoFormComponent
+  },
 	{
-		path: 'accessforms',
+		path: 'accessforms/:value',
 		component: AccessformsComponent
 	},
+  {
+    path: 'accessforms',
+    component: AccessformsComponent
+  },
   {
     path: 'newaccess',
     component: NewAccessComponent
@@ -141,9 +164,13 @@ const routes: any = [
   ],
   imports: [
     BrowserModule,
+    FormsModule,
+    HttpModule,
+    BsDatepickerModule.forRoot(),
+    ModalModule.forRoot(),
     RouterModule.forRoot(routes)
   ],
   providers: [EmployeeService, DamagedCardService, LocationChangeService, LostCardService, ThirdPartyService],
-  bootstrap: [LoginComponent]
+  bootstrap: [ComponentsComponent]
 })
 export class AppModule { }

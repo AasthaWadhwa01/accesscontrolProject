@@ -13,7 +13,7 @@ export const config: any =
         "ACCESSTYPE":"AccessType",
         "NEW_ACCESS":"New access",
         "LOST":"Lost",
-        "LOCATION_CHANGE":"LOCATION_CHANGE",
+        "LOCATION_CHANGE":"Location Change",
         "DAMAGE":"Damage"
       } ,
 

@@ -84,7 +84,7 @@
   </div>
 </div>
 <!-- end of access type category section -->
-<div *ngIf="selectedcategory==='Employee'">
+<div *ngIf="selectedCategory==='Employee'">
   <div class="container">
     <div class="row color rounded bg-info text-white mt-2">
       <h5>{{config.accessform.ACCESSTYPE}}</h5>
@@ -133,17 +133,17 @@
 </div>
 <!-- start of thirdparty form section -->
 <div *ngIf="selectedCategory==='Third Party Vendors'">
-  <app-thirdparty></app-thirdparty>
+  <app-third-party></app-third-party>
 </div>
 <!-- end of thirdparty form section -->
 <!-- start of New acces form section -->
 <div *ngIf=" accessTypeCase==='New access' && selectedCategory==='Employee'">
-  <app-employee></app-employee>
+  <app-new-access></app-new-access>
 </div>
 <!-- end of new access form section -->
 <!-- start of lostcard form section -->
 <div *ngIf=" accessTypeCase==='Lost' && selectedCategory==='Employee'">
-  <app-lostcard></app-lostcard>
+  <app-lost-card></app-lost-card>
 </div>
 <!-- end of lostcard form section -->
 <!-- start of location change form section -->
@@ -153,7 +153,7 @@
 <!-- end of loaction change form section -->
 <!-- start of Damage card form section -->
 <div *ngIf=" accessTypeCase==='Damage' && selectedCategory==='Employee'">
-  <app-damagecard></app-damagecard>
+  <app-damaged-card></app-damaged-card>
 </div>
 <!-- end of damage card form section -->
 <!-- start of guideline template -->
