@@ -2,7 +2,7 @@ import { Component, OnInit, TemplateRef } from '@angular/core';
 import { BsModalService } from 'ngx-bootstrap/modal';
 import { BsModalRef } from 'ngx-bootstrap/modal/modal-options.class';
 
-import { config } from '../../../config';
+import { config } from '../../config';
 
 @Component({
   selector: 'app-accessforms',
@@ -14,10 +14,11 @@ export class AccessformsComponent implements OnInit {
   selectedCategory: string = "";
   accessTypeCase: string = "";
   accesstype: string = "";
+  config: any;
 
   public modalRef: BsModalRef;
 
-  public config = {
+  public configModal = {
     animated: true,
     keyboard: true,
     backdrop: true,
@@ -37,10 +38,19 @@ export class AccessformsComponent implements OnInit {
     this.accessTypeCase = this.accesstype;
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.getConfig();
+  }
+
+  getConfig() : any {
+    return Promise.resolve(config)
+    .then(data=>{
+      this.config = data;
+    })
+  }
 
   public openModalWithClass(template: TemplateRef < any > ) {
-    this.modalRef = this.modalService.show(template, Object.assign({}, this.config, { class: 'gray modal-lg' }));
+    this.modalRef = this.modalService.show(template, Object.assign({}, this.configModal, { class: 'gray modal-lg' }));
   }
 
 }
