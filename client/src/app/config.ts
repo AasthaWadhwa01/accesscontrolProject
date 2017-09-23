@@ -254,6 +254,7 @@ export const config: any =
       },
 
       csoform: {
+        "IMG_SRC": "http://www.niit-tech.com/niit_technologies_logo.jpg",
         "IR_HEADING": "IR 71 Access Request Form",
         "VERSION": "Ver 1.0",
         "GUIDELINE_MODAL": "Click Here To See Guidelines",
@@ -292,6 +293,7 @@ export const config: any =
         "CSO": "CSO",
         "DH_PH_PM": "DH/PH/PM",
         "CISO": "CISO",
+        "DATE_FORMAT": "Date: __/ __/____",
         "ACCEPT": "Accept",
         "SEND_BACK": "Send Back",
         "SUCCESSFUL_ALLOT": "Access Card alloted successfully",
