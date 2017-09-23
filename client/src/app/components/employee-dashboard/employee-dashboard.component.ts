@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { EmployeeService } from '../../services/employee.service';
-import { config } from '../../../config';
+import { config } from '../../config';
 //component
 @Component({
   selector: 'app-employee-dashboard',
