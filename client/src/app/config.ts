@@ -119,20 +119,22 @@ export const config: any =
       },
 
       employeedash: {
-        "PLUGIN_CSS": "Plugin Css",
-        "CENTRALIZED_ACCESS_CONTROL": "Centralized Access Control",
-        "DASHBOARD": "Dashboard",
-        "MY_DASHBOARD": "My Dashboard",
-        "YOUR_DETAILS": "Your Details",
-        "SUPERVISOR_NAME": "Chander Sehgal",
-        "SUP_NAME": "Supervisor Name",
-        "LOCATION": "LOCATION",
-        "LOC": "Location",
-        "DEPT": "SSB-CSDM-RP",
-        "OU": "OU",
-        "UPDATES": "Updated yesterday at 11:59 PM",
-        "COPYRIGHT": "Iniitiian.com 2017"
-      },
+      "PLUGIN_CSS": "Plugin Css",
+      "CENTRALIZED_ACCESS_CONTROL": "Centralized Access Control",
+      "DASHBOARD": "Dashboard",
+      "NEW_REQUEST":"New Request",
+      "HISTORY":"History",
+      "MY_DASHBOARD": "My Dashboard",
+      "YOUR_DETAILS": "Your Details",
+      "SUPERVISOR_NAME": "Chander Sehgal",
+      "SUP_NAME": "Supervisor Name",
+      "LOCATION": "LOCATION",
+      "LOC": "Location",
+      "DEPT": "SSB-CSDM-RP",
+      "OU": "OU",
+      "UPDATES": "Updated yesterday at 11:59 PM",
+      "COPYRIGHT": "Iniitiian.com 2017"
+    },
 
       supervisorform: {
         "IR_HEADING": "IR 71 Access Request Form",
