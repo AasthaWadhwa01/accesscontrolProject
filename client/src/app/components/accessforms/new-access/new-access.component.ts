@@ -69,11 +69,11 @@ export class NewAccessComponent implements OnInit {
     }
     this.employeeAccess.save(employee).subscribe(data => {})
     this.openModalWithClass(template)
-    this.router.navigate(['/dashboard']);
+    this.router.navigate(['/empdash']);
   }
 
   backit(): any {
-    this.router.navigate(['/dashboard']);
+    this.router.navigate(['/empdash']);
     this.modalRef.hide();
   }
 

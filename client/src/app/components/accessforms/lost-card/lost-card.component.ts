@@ -42,7 +42,7 @@ export class LostCardComponent implements OnInit {
         date: date
       };
       this.LostCardService.save(this.data).subscribe((data: any) => {
-        this.router.navigate(['/dashboard']);
+        this.router.navigate(['/empdash']);
       },
       error => {
          this.errors = error;
@@ -52,6 +52,6 @@ export class LostCardComponent implements OnInit {
 
     //method call on Go back button & navigate to dashboard of employee
     back() {
-      this.router.navigate(['/dashboard']);
+      this.router.navigate(['/empdash']);
     }
   }
