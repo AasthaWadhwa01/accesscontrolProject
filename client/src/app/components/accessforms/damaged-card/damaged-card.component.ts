@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { BsDatepickerConfig } from 'ngx-bootstrap/datepicker';
+
+import { DamagedCardService } from './../../../services/damaged-card.service';
+import { config } from '../../../config';
 
 @Component({
   selector: 'app-damaged-card',
@@ -7,9 +12,43 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DamagedCardComponent implements OnInit {
 
-  constructor() { }
+  date:any;
+  comments:string;
+  data:any =[];
+  config: any;
+  
+  //constructor initialises damage service and router 
+  constructor(private  damagecardService:DamagedCardService, private router:Router) { }
 
+  //datepickerModel: Date;
   ngOnInit() {
-  }
+    this.date = new Date();
+    let day=this.date.getDate();
+    let month=this.date.getMonth()+1;
+    let year=this.date.getFullYear();
+    this.date=day+'/'+month+'/'+year;
+    this.getConfig();
+    }
 
+  //method to take data of form to damageCardService
+  damage(damagecomment,damagedate):any {
+    this.data= { comments:damagecomment, date:damagedate }  
+    this.damagecardService.damage(this.data)
+    .subscribe((data)=> {
+      this.router.navigate(['/dashboard']);
+      })
+    }
+
+  //navigate data to dashboard on back button clicking
+  back() :void {
+    this.router.navigate(['/dashboard']);
+    }
+
+  //getting config file 
+  getConfig(): any {
+    return Promise.resolve(config)
+    .then(data => {
+      this.config = data;
+    })
+  }
 }

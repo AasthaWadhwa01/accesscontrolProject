@@ -180,7 +180,28 @@ export const config: any =
       },
 
       supervisordash: {
-
+          "PLUGIN_CSS": "Plugin Css",
+          "CUSTOM_FONTS_FOR_THIS_TEMPLATE": "Custom fonts for this template",
+          "CENTRALIZED_ACCESS_CONTROL": "Centralized Access Control",
+          "DASHBOARD": "Dashboard",
+          "NEW_REQUEST": "New Request",
+          "ACCESS_REQUESTS": "Access Requests",
+          "MESSAGES": "Messages",
+          "NEW_MESSAGES": "New Messages",
+          "VIEW_ALL_MESSAGES": "View all Messages",
+          "VIEW_ALL_ALERTS": "View all alerts",
+          "BACK_TO_INIITIAN_PORTAL": "Back to Iniitian portal",
+          "MY_DASHBOARD": "My Dashboard",
+          "YOUR_REQUEST_IS_APPROVED_PENDING": "Your request is Approved/Pending",
+          "YOUR_DETAILS": "Your Details",
+          "NEW_ACCESS_REQUESTS": "New Access Requests",
+          "LOCATION_CHANGE_REQUESTS": "Location Change Requests",
+          "LOST_CARD_REQUESTS": "Lost Card Requests",
+          "DAMAGE_REQUESTS": "Damage Requests",
+          "S_NO": "S.No.",
+          "EMPLOYEE_ID": "Employee Id",
+          "EMPLOYEE_NAME": "Employee Name",
+          "COPYRIGHT": "Copyright &copy; Iniitian.com 2017"
       },
 
       hrform: {
