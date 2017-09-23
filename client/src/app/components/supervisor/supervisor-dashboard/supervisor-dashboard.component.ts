@@ -27,7 +27,7 @@ export class SupervisorDashboardComponent implements OnInit {
 
   //method used to fetch requester's form by supervisor
   getID(value):any {
-    this.router.navigate(['/supervisor',value])
+    this.router.navigate(['/superform',value])
   }
   ngOnInit() {
     this.getConfig();

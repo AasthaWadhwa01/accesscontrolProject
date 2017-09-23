@@ -32,7 +32,7 @@ export class HrDashboardComponent implements OnInit {
   /*method to send employee id to hr component through navigate*/
   getID(value) {
     console.log('from getID');
-    this.router.navigate(['/hr', value]);
+    this.router.navigate(['/hrform', value]);
   }
 
   /*ngonit method for this class*/
