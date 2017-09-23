@@ -174,7 +174,9 @@ export const config: any =
         "SENDBACK": "Send Back",
         "MSG": "Message",
         "FORWARD_MSG": "Your request has been forwarded to Hr",
-        "BACK_MSG": "Do you really want to send it back to Employee?"
+        "BACK_MSG": "Do you really want to send it back to Employee?",
+        "YES":"Yes",
+        "NO":"No"
       },
 
       supervisordash: {
