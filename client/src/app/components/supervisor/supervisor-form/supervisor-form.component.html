@@ -336,7 +336,7 @@
             <!--Div Tag Form HRO Date Field Start here-->
             <div class="row">
               <div class="col-sm-12">
-                <input type="text" class="form-control bg-white" placement="top" placeholder={{config.supervisorform.DATE_FORMAT}} readonly="true" />
+                <input type="text" class="form-control bg-white" placement="top" placeholder="{{config.supervisorform.DATE_FORMAT}}" readonly="true" />
               </div>
             </div>
             <!--Div Tag Form HRO Date Field Ends here-->
@@ -384,34 +384,35 @@
       <!--Div Tag Form Reject Button Field Ends here-->
     </div>
   </div>
-</div>
-<!--Template For Acceept Starts-->
+  </div>
+
+ <!--Template For Accept Starts -->
 <template #template1>
-  <div class="modal-header">
-    <h4 class="modal-title">{{config.supervisorform.MSG}}</h4>
-    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
-      <span aria-hidden="true">&times;</span>
-    </button>
-  </div>
-  <div class="modal-body">
-    <strong>{{config.supervisorform.FORWORD_MSG}}</strong>
-  </div>
+ <div class="modal-header">
+   <h4 class="modal-title">{{config.supervisorform.MSG}}</h4>
+   <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+     <span aria-hidden="true">&times;</span>
+   </button>
+ </div>
+ <div class="modal-body">
+   <strong>{{config.supervisorform.FORWORD_MSG}}</strong>
+ </div>
 </template>
-<!--Template For Acceept Ends-->
-<!--Template For Reject Starts-->
+<!-- Template For Accept Ends -->
+<!-- Template For Reject Starts -->
 <template #template2>
-  <div class="modal-header">
-    <h4 class="modal-title">{{config.supervisorform.MSG}}</h4>
-    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
-      <span aria-hidden="true">&times;</span>
-    </button>
-  </div>
-  <div class="modal-body">
-    <strong>{{config.supervisorform.BACK_MSG}}</strong>
-  </div>
-  <div class="modal-footer">
-    <button class="btn btn-md btn-primary" (click)="backit()">Yes</button>
-    <button class="btn btn-md btn-danger" (click)="modalRef.hide()">No</button>
-  </div>
-</template>
-<!--Template For Reject Ends-->
+ <div class="modal-header">
+   <h4 class="modal-title">{{config.supervisorform.MSG}}</h4>
+   <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+     <span aria-hidden="true">&times;</span>
+   </button>
+ </div>
+ <div class="modal-body">
+   <strong>{{config.supervisorform.BACK_MSG}}</strong>
+ </div>
+ <div class="modal-footer">
+   <button class="btn btn-md btn-primary" (click)="backit()">{{config.supervisorform.YES}}</button>
+   <button class="btn btn-md btn-danger" (click)="modalRef.hide()">{{config.supervisorform.NO}}</button>
+ </div>
+</template> 
+<!-- Template For Reject Ends  -->
