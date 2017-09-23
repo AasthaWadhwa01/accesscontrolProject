@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router';
 
 import { ComponentsComponent } from './components/components.component';
 import { AccessformsComponent } from './components/accessforms/accessforms.component';
@@ -22,6 +23,16 @@ import { CsoFormComponent } from './components/cso/cso-form/cso-form.component';
 import { CsoDashboardComponent } from './components/cso/cso-dashboard/cso-dashboard.component';
 import { CisoFormComponent } from './components/ciso/ciso-form/ciso-form.component';
 import { CisoDashboardComponent } from './components/ciso/ciso-dashboard/ciso-dashboard.component';
+
+const routes: any = [
+	{
+		path: '', redirectTo: '/', pathMatch: 'full'
+	},
+	{
+		path: 'accessforms',
+		component: AccessformsComponent
+	},
+]
 
 @NgModule({
   declarations: [
@@ -48,7 +59,8 @@ import { CisoDashboardComponent } from './components/ciso/ciso-dashboard/ciso-da
     CisoDashboardComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    RouterModule.forRoot(routes)
   ],
   providers: [],
   bootstrap: [LoginComponent]

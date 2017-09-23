@@ -11,16 +11,13 @@ import { BsModalRef } from 'ngx-bootstrap/modal/modal-options.class';
 import { EmployeeService } from '../../../services/employee.service';
 import { config } from '../../../config';
 
-// component 
 @Component({
-  selector: 'app-hrform',
-  templateUrl: './hrform.component.html',
-  styleUrls: ['./hrform.component.css']
+  selector: 'app-hr-form',
+  templateUrl: './hr-form.component.html',
+  styleUrls: ['./hr-form.component.css']
 })
-
-export class HrformComponent implements OnInit {
-
-  // variable declaration 
+export class HrFormComponent implements OnInit {
+// variable declaration 
   empp: any = [];
   e: any;
   datepickerModel: any;
