@@ -8,7 +8,7 @@ import { BsDatepickerConfig } from 'ngx-bootstrap/datepicker';
 import { BsModalService } from 'ngx-bootstrap/modal';
 import { BsModalRef } from 'ngx-bootstrap/modal/modal-options.class';
 
-import { ControlAccessService } from '../../../../services/control-access.service';
+import { EmployeeService } from '../../../services/employee.service';
 import { config } from '../../../config';
 
 // component 
@@ -33,8 +33,8 @@ export class HrformComponent implements OnInit {
     ignoreBackdropClick: false
   };
 
-  constructor(private newrequest: ControlAccessService, private route: Router, private router: ActivatedRoute, private modalService: BsModalService) {}
-  
+  constructor(private newrequest: EmployeeService, private route: Router, private router: ActivatedRoute, private modalService: BsModalService) {}
+
   getConfig(): any {
     return Promise.resolve(config)
     .then(data => {
