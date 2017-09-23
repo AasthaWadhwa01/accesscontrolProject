@@ -14,7 +14,7 @@ import { config } from '../../../config';
   selector: 'app-cso-form',
   templateUrl: './cso-form.component.html',
   styleUrls: ['./cso-form.component.css']
-});
+})
 
 export class CsoFormComponent implements OnInit {
   //declaring the variables
