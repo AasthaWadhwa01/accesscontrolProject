@@ -13,18 +13,26 @@
 
 export class LostCardComponent implements OnInit {
 
-    date: any
-    comment: any
-    data: any = []
+    date: any;
+    comment: any;
+    data: any = [];
     datepickerModel: Date;
-    errors: any
-
+    errors: any;
+    config: any;
     //Constructor initialize LostcardService & Router 
     constructor(private LostCardService: LostCardService, private router: Router) {}
 
     ngOnInit() {
+    this.getConfig();
+  }
 
-    }
+    getConfig(): any {
+    return Promise.resolve(config)
+    .then(data => {
+      this.config = data;
+    })
+  }
+
 
     //method call on submit button for saving the reasion & date of lost card
     save(comment: string, date: any) {
