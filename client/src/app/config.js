@@ -104,6 +104,8 @@
       "PLUGIN_CSS": "Plugin Css",
       "CENTRALIZED_ACCESS_CONTROL": "Centralized Access Control",
       "DASHBOARD": "Dashboard",
+      "NEW_REQUEST"="New Request",
+      "HISTORY":"History",
       "MY_DASHBOARD": "My Dashboard",
       "YOUR_DETAILS": "Your Details",
       "SUPERVISOR_NAME": "Chander Sehgal",
