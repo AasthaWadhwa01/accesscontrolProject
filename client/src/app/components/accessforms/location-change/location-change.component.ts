@@ -28,7 +28,7 @@ export class LocationChangeComponent implements OnInit {
 	locationChangeSubmit(locationchange:any):any {
 		return this.locationChangeService.locationChangeMethod(locationchange.value)
 		.subscribe((data:any):void=> {
-			this.router.navigate(['/dashboard']);  
+			this.router.navigate(['/empdash']);  
 		},
     	error=>{
      	this.errors=error
@@ -37,7 +37,7 @@ export class LocationChangeComponent implements OnInit {
 
 	//method called on Go Back button and navigate to dashboard of employee 
 	back(): void {
-		this.router.navigate(['/dashboard']);
+		this.router.navigate(['/empdash']);
 	}
 
 	getConfig(): any {

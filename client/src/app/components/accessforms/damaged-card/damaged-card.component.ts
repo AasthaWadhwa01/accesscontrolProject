@@ -35,13 +35,13 @@ export class DamagedCardComponent implements OnInit {
     this.data= { comments:damagecomment, date:damagedate }  
     this.damagecardService.damage(this.data)
     .subscribe((data)=> {
-      this.router.navigate(['/dashboard']);
+      this.router.navigate(['/empdash']);
       })
     }
 
   //navigate data to dashboard on back button clicking
   back() :void {
-    this.router.navigate(['/dashboard']);
+    this.router.navigate(['/empdash']);
     }
 
   //getting config file 

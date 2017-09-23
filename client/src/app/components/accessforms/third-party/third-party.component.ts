@@ -37,7 +37,7 @@ export class ThirdPartyComponent implements OnInit {
 
   //method called on Go back button and navigate to dashboard of employee
   back() {
-    this.router.navigate(['/dashboard']);
+    this.router.navigate(['/empdash']);
   }
 
   //getting config elements on page load

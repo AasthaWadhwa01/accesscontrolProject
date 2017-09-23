@@ -1,15 +1,22 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
+
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+public data: any;
 
-  ngOnInit() {
-  }
+ constructor(private router: Router) { }
 
+ ngOnInit() {
+ }
+
+redir(empid:any) {
+ this.router.navigate(['/newaccess', empid])
+}
 }
