@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, TemplateRef } from '@angular/core';
+import { BsModalService } from 'ngx-bootstrap/modal';
+import { BsModalRef } from 'ngx-bootstrap/modal/modal-options.class';
+
+import { config } from '../../config';
 
 @Component({
   selector: 'app-accessforms',
@@ -6,10 +10,47 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./accessforms.component.css']
 })
 export class AccessformsComponent implements OnInit {
+  category: string = "";
+  selectedCategory: string = "";
+  accessTypeCase: string = "";
+  accesstype: string = "";
+  config: any;
 
-  constructor() { }
+  public modalRef: BsModalRef;
+
+  public configModal = {
+    animated: true,
+    keyboard: true,
+    backdrop: true,
+    ignoreBackdropClick: false
+  };
+
+  constructor(private modalService: BsModalService) {}
+
+  //this method will call on change of radio button and retain the value of changed radio button
+  OnRadioButtonSelection() {
+    this.selectedCategory = this.category; //storing the value of radio button to another variable
+    this.accessTypeCase = "";
+  }
+
+  //this method on change of accesstype radio button and retain the value of acesstype
+  onCaseChange() {
+    this.accessTypeCase = this.accesstype;
+  }
 
   ngOnInit() {
+    this.getConfig();
+  }
+
+  getConfig() : any {
+    return Promise.resolve(config)
+    .then(data=>{
+      this.config = data;
+    })
+  }
+
+  public openModalWithClass(template: TemplateRef < any > ) {
+    this.modalRef = this.modalService.show(template, Object.assign({}, this.configModal, { class: 'gray modal-lg' }));
   }
 
 }
