@@ -1,4 +1,4 @@
-module.exports = {
+export const config: any = {
     {
       damage: {
         "DAMAGE_FORM": "Damaged Card Form",
