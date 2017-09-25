@@ -1,6 +1,7 @@
 let express = require('express');
 let router = express.Router();
-let bodyParser = require('body-parser')
+let bodyParser = require('body-parser');
+let sql = require("mssql");
 
 //connection from mongo db database
 let mongoose = require('mongoose')
@@ -14,11 +15,29 @@ let location = require('../models/locationChange');
 let damage = require('../models/damage');
 let lost = require('../models/lostCard');
 let approver = require('../models/approverData');
+let con = require('../config/config');
 
 router.use(bodyParser.json())
 router.use(bodyParser.urlencoded({
     extended: true
 }))
+
+//configuartion file for connection
+sql.connect(con.config, function(err) {
+    if (err) console.log(err);
+    // create Request object
+    var request = new sql.Request();
+    // query to the database and get the records
+    router.get('/sql/:empId', (req, res) => {
+        request.query(con.query + req.params.empId + `'`, function(err, recordset) {
+            if (err) console.log(err);
+            else {
+                // send records as a response
+            }
+            res.json(recordset.recordsets)
+        });
+    });
+})
 
 //get new access data
 router.get('/findemployee', function(req, res, next) {
@@ -30,42 +49,6 @@ router.get('/findemployee', function(req, res, next) {
 //get employee by id
 router.get('/findemployeebyid/:id', function(req, res, next) {
     requester.findOne({ employeeID: req.params.id }, function(err, data) {
-        res.json(data);
-    });
-});
-
-//get third party data
-router.get('/findthird', function(req, res, next) {
-    thirdParty.find({}, function(err, data) {
-        res.json(data);
-    });
-});
-
-//get location change data
-router.get('/findlocation', function(req, res, next) {
-    location.find({}, function(err, data) {
-        res.json(data);
-    });
-});
-
-//get damage data
-router.get('/finddamage', function(req, res, next) {
-    damage.find({}, function(err, data) {
-        res.json(data);
-    });
-});
-
-//get lost data
-router.get('/findlost', function(req, res, next) {
-    lost.find({}, function(err, data) {
-        res.json(data);
-    });
-});
-
-
-//get Approver Data fom Database (Excel Wala)
-router.get('/find', function(req, res, next) {
-    approver.find({}, function(err, data) {
         res.json(data);
     });
 });
@@ -94,13 +77,6 @@ router.put('/update/:employeeID', (req, res) => {
         })
 })
 
-//post employee details
-router.post('/employee', function(req, res, next) {
-    approver.create(req.body).then(function(data) {
-        res.send(data)
-    })
-})
-
 //post employee details in the form
 router.post('/insert', function(req, res, next) {
     requester.create(req.body).then(function(data) {
@@ -115,12 +91,28 @@ router.get('/show', function(req, res, next) {
     });
 })
 
+//Test Cases for third party
+//get third party data
+router.get('/findthird', function(req, res, next) {
+    thirdParty.find({}, function(err, data) {
+        res.json(data);
+    });
+});
+
 //api for third party
 router.post('/thirdInsert', function(req, res, next) {
     thirdParty.create(req.body).then(function(data) {
         res.send(data)
     })
 })
+
+//Test Cases for location change
+//get location change data
+router.get('/findlocation', function(req, res, next) {
+    location.find({}, function(err, data) {
+        res.json(data);
+    });
+});
 
 //api for Location change
 router.post('/locationInsert', function(req, res, next) {
@@ -129,6 +121,29 @@ router.post('/locationInsert', function(req, res, next) {
     })
 })
 
+//Test Cases for damaged card
+//get damage data
+router.get('/finddamage', function(req, res, next) {
+    damage.find({}, function(err, data) {
+        res.json(data);
+    });
+});
+
+//api for damged card
+router.post('/damageInsert', function(req, res, next) {
+    damage.create(req.body).then(function(data) {
+        res.send(data);
+    })
+})
+
+//Test Cases for lost card
+//get lost data
+router.get('/findlost', function(req, res, next) {
+    lost.find({}, function(err, data) {
+        res.json(data);
+    });
+});
+
 //api for lost card
 router.post('/lostInsert', function(req, res, next) {
     lost.create(req.body).then(function(data) {
@@ -136,10 +151,18 @@ router.post('/lostInsert', function(req, res, next) {
     })
 })
 
-//api for damged card
-router.post('/damageInsert', function(req, res, next) {
-    damage.create(req.body).then(function(data) {
-        res.send(data);
+//Test Cases for approver
+//get Approver Data fom Database (Excel Wala)
+router.get('/find', function(req, res, next) {
+    approver.find({}, function(err, data) {
+        res.json(data);
+    });
+});
+
+//post employee details
+router.post('/employee', function(req, res, next) {
+    approver.create(req.body).then(function(data) {
+        res.send(data)
     })
 })
 

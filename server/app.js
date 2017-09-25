@@ -5,6 +5,9 @@ var bodyParser = require('body-parser');
 var router = require('./routes/show');
 var mongoose = require('mongoose');
 let cors = require('cors');
+
+let con = require('./config/config');
+
 app.use(cors());
 
 app.use(bodyParser.json());
@@ -23,5 +26,5 @@ app.use(function(err, req, res, next) {
     res.render('Internal server Error');
 });
 
-app.listen(4000);
+app.listen(con.port);
 module.exports = app;
