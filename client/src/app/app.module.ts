@@ -33,9 +33,9 @@ import { LostCardService } from './services/lost-card.service';
 import { ThirdPartyService } from './services/third-party.service';
 
 const routes: any = [
-/*	{
+	{
 		path: '', redirectTo: '/login', pathMatch: 'full'
-	},*/
+	},
   {
     path: 'login',
     component: LoginComponent
@@ -93,7 +93,7 @@ const routes: any = [
     component: HrComponent
   },
   {
-    path: 'hrform',
+    path: 'hrform/:value',
     component: HrFormComponent
   },
   {
@@ -105,7 +105,7 @@ const routes: any = [
     component: SupervisorComponent
   },
   {
-    path: 'superform',
+    path: 'superform/:value',
     component: SupervisorFormComponent
   },
   {
@@ -117,7 +117,7 @@ const routes: any = [
     component: CsoComponent
   },
   {
-    path: 'csoform',
+    path: 'csoform/:value',
     component: CsoFormComponent
   },
   {
@@ -129,7 +129,7 @@ const routes: any = [
     component: CisoComponent
   },
   {
-    path: 'cisoform',
+    path: 'cisoform/:value',
     component: CisoFormComponent
   },
   {
