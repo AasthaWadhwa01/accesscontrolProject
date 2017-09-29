@@ -28,7 +28,7 @@ sql.connect(con.config, function(err) {
     // create Request object
     var request = new sql.Request();
     // query to the database and get the records
-    router.get('/sql/:empId', (req, res) => {
+    router.get('/getData/:empId', (req, res) => {
         request.query(con.query + req.params.empId + `'`, function(err, recordset) {
             if (err) console.log(err);
             else {

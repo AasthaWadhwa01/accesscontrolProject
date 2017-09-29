@@ -15,13 +15,12 @@ import { config } from '../../../config';
 export class LocationChangeComponent implements OnInit {
 	public location:any;
 	errors:any;
-	config: any;
+	config = config;
 
 	//constructor initialize's location change service & router
 	constructor(private locationChangeService:LocationChangeService, private router:Router) {}
 
 	ngOnInit() {
-    this.getConfig();
  	}
 
 	//method called on submit button for saving the details of location change form
@@ -38,13 +37,6 @@ export class LocationChangeComponent implements OnInit {
 	//method called on Go Back button and navigate to dashboard of employee 
 	back(): void {
 		this.router.navigate(['/empdash']);
-	}
-
-	getConfig(): any {
-    return Promise.resolve(config)
-    .then(data => {
-     this.config = data;
-   		})
 	}
 }
 

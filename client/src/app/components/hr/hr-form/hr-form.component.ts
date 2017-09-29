@@ -22,8 +22,9 @@ export class HrFormComponent implements OnInit {
   e: any;
   datepickerModel: any;
   errors: any;
+  config = config;
   public modalRef: BsModalRef;
-  public config = {
+  public configg = {
     animated: true,
     keyboard: true,
     backdrop: true,
@@ -32,14 +33,7 @@ export class HrFormComponent implements OnInit {
 
   constructor(private newrequest: EmployeeService, private route: Router, private router: ActivatedRoute, private modalService: BsModalService) {}
 
-  getConfig(): any {
-    return Promise.resolve(config)
-    .then(data => {
-      this.config = data;
-    })
-  }  
   ngOnInit() {
-    this.getConfig();
     this.router.paramMap
     .switchMap((params: ParamMap) => this.newrequest.getEmployeeByID(this.router.snapshot.params['value']))
     .subscribe(res => {
@@ -92,6 +86,6 @@ export class HrFormComponent implements OnInit {
 
   // model class 
   public openModalWithClass(template: TemplateRef < any > ): any {
-    this.modalRef = this.modalService.show(template, Object.assign({}, this.config, { class: 'gray modal-lg' }));
+    this.modalRef = this.modalService.show(template, Object.assign({}, this.configg, { class: 'gray modal-lg' }));
   }
 }

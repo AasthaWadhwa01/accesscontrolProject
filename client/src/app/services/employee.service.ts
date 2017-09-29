@@ -1,11 +1,14 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
+import { config } from '../config';
 
 @Injectable()
 
 //class of employee service
 export class EmployeeService {
+
+config = config;
 
   //constructor of employee service
   constructor(private http: Http) {}
@@ -14,21 +17,21 @@ export class EmployeeService {
   save(employee) {
     console.log(employee)
     return this.http
-    .post('http://localhost:4000/insert', employee)
+    .post(this.config.connect.url+this.config.connect.port+'/'+'insert', employee)
     .map(res => res.json());
   }
 
   //Get data from mssql database using employee id
   getEmpSql(employeeID) {
     return this.http
-    .get('http://localhost:4002/getData/' + employeeID)
+    .get(this.config.connect.url+this.config.connect.port+'/'+'getData/' + employeeID)
     .map(res => res.json());
   }
 
   //Angular Service of get method of employee
   getEmployee() {
     return this.http
-    .get('http://localhost:4000/findemployee')
+    .get(this.config.connect.url+this.config.connect.port+'/'+'findemployee')
     .map(res => res.json());
   }
 
@@ -36,7 +39,7 @@ export class EmployeeService {
   update(id, employee) {
     console.log(employee)
     return this.http
-    .put('http://localhost:4000/update/' + id, employee)
+    .put(this.config.connect.url+this.config.connect.port+'/'+'update/' + id, employee)
     .map(res => res.json());
 
   }
@@ -44,7 +47,7 @@ export class EmployeeService {
   /*getEmployeeByID method to fetch details by id used in supervisor component*/
   getEmployeeByID(employeeID) {
     return this.http
-    .get('http://localhost:4000/findemployeebyid/' + employeeID)
+    .get(this.config.connect.url+this.config.connect.port+'/'+'findemployeebyid/' + employeeID)
     .map(res => res.json());
   }
 

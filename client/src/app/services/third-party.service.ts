@@ -1,13 +1,17 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
-
 import 'rxjs/add/operator/map';
+import { config } from '../config';
 
 @Injectable()
 export class ThirdPartyService {
 
+config = config;
   
 constructor(private http: Http) { }
+
+  ngOnInit() {
+}
 
 //to insert the values from database
 
@@ -15,7 +19,7 @@ thirdPartyInsert(thirdparty){
 
      return this.http
 
-             .post('http://localhost:4000/thirdInsert',thirdparty)
+             .post(this.config.connect.url+this.config.connect.port+'/'+'thirdInsert',thirdparty)
 
              .map(res=>res.json());
 
@@ -24,7 +28,7 @@ thirdPartyInsert(thirdparty){
 getThird()
 {
 	return this.http
-	            .get('http://localhost:4000/findthird')
+	            .get(this.config.connect.url+this.config.connect.port+'/'+'findthird')
 	            .map(res=>res.json());
 }
 

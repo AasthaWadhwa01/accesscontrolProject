@@ -22,8 +22,8 @@ body.fixed-nav {
 }
 
 .img-size {
-  height: 50%;
-  width: 50%;
+ height: auto;
+  width: auto;
 }
 
 .content-wrapper {

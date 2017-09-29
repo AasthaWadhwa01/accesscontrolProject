@@ -16,21 +16,13 @@ export class EmployeeDashboardComponent implements OnInit {
   empl: any = [];
   reqstatus: any;
   errors: any;
-  config: any;
+  config = config;
 
   //construtor for employeeDashboard class
   constructor(private emp: EmployeeService) { }
 
-   getConfig(): any {
-   return Promise.resolve(config)
-   .then(data => {
-     this.config = data;
-   })
- }
-
   ngOnInit() {
   	//method to get employee data
-    this.getConfig();
     this.emp.getEmployee()
     .subscribe(res=>{
       this.empl = res;

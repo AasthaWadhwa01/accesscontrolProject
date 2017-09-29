@@ -35,7 +35,7 @@ export class NewAccessComponent implements OnInit {
   newPro: any;
   appSign: any;
   dateCurr: any;
-  config: any;
+  config = config;
 
   constructor(private employeeAccess: EmployeeService, private router: Router, private route: ActivatedRoute, private modalService: BsModalService) {}
 
@@ -87,16 +87,7 @@ export class NewAccessComponent implements OnInit {
     this.a = "";
   }
 
-  /*Get fields from Config File*/
-  getConfig(): any {
-    return Promise.resolve(config)
-      .then(data => {
-        this.config = data;
-      })
-  }
-
   ngOnInit() {
-    this.getConfig();
     this.route.paramMap
       .switchMap((params: ParamMap) => this.employeeAccess.getEmpSql(this.route.snapshot.params['value']))
       .subscribe(

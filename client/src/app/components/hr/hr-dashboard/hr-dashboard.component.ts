@@ -22,7 +22,7 @@ export class HrDashboardComponent implements OnInit {
   super: any = [];
   show: any = false;
   errors: any;
-  config: any;
+  config = config;
 
   /*constructor of hr dashboard Component*/
   constructor(private damage: DamagedCardService, private lost: LostCardService,
@@ -37,7 +37,6 @@ export class HrDashboardComponent implements OnInit {
 
   /*ngonit method for this class*/
   ngOnInit() {
-    this.getConfig();
   }
 
   /*method to get config file elements*/

@@ -2,16 +2,22 @@ import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
+import { config } from '../config';
 
 @Injectable()
 export class LocationChangeService {
 	
+	config = config;
+
 	constructor(private http:Http) { }
+
+ngOnInit() {
+}
 
 	//method is used to hit api on express server and post the data of form in database
 	locationChangeMethod(change:any){
 		return this.http
-		.post('http://localhost:4000/locationInsert',change)
+		.post(this.config.connect.url+this.config.connect.port+'/'+'locationInsert',change)
 		.map(res=>res.json());
 	}
 
@@ -19,7 +25,7 @@ export class LocationChangeService {
 	getLocationChange()
 	{
 		return this.http
-		.get('http://localhost:4000/findlocation')
+		.get(this.config.connect.url+this.config.connect.port+'/'+'findlocation')
 		.map(res=>res.json());
 	}
 }

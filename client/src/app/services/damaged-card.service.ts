@@ -1,16 +1,22 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
+import { config } from '../config';
 
 @Injectable()
 export class DamagedCardService {
+
+config = config;
+
  constructor(public http:Http) { }
 
+ngOnInit() {
+}
 
 //method for inserting data of form to database in server side
  damage(request){
  return this.http
-              .post('http://localhost:4000/damageInsert',request)
+              .post(this.config.connect.url+this.config.connect.port+'/'+'damageInsert',request)
   .map(res => res.json(),(err:any)=>{
       err.json();
   });
@@ -20,8 +26,7 @@ export class DamagedCardService {
 getDamageCard()
 {
 	return this.http
-	            .get('http://localhost:4000/'+'finddamage')
+	            .get(this.config.connect.url+this.config.connect.port+'/'+'finddamage')
 	            .map(res=>res.json());
 }
-
 }

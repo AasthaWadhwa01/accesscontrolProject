@@ -15,7 +15,7 @@ export class DamagedCardComponent implements OnInit {
   date:any;
   comments:string;
   data:any =[];
-  config: any;
+  config = config;
   
   //constructor initialises damage service and router 
   constructor(private  damagecardService:DamagedCardService, private router:Router) { }
@@ -27,7 +27,6 @@ export class DamagedCardComponent implements OnInit {
     let month=this.date.getMonth()+1;
     let year=this.date.getFullYear();
     this.date=day+'/'+month+'/'+year;
-    this.getConfig();
     }
 
   //method to take data of form to damageCardService
@@ -43,12 +42,4 @@ export class DamagedCardComponent implements OnInit {
   back() :void {
     this.router.navigate(['/empdash']);
     }
-
-  //getting config file 
-  getConfig(): any {
-    return Promise.resolve(config)
-    .then(data => {
-      this.config = data;
-    })
-  }
 }

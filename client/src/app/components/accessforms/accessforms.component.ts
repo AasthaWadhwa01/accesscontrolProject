@@ -14,7 +14,7 @@ export class AccessformsComponent implements OnInit {
   selectedCategory: string = "";
   accessTypeCase: string = "";
   accesstype: string = "";
-  config: any;
+  config = config;
 
   public modalRef: BsModalRef;
 
@@ -39,14 +39,6 @@ export class AccessformsComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.getConfig();
-  }
-
-  getConfig() : any {
-    return Promise.resolve(config)
-    .then(data=>{
-      this.config = data;
-    })
   }
 
   public openModalWithClass(template: TemplateRef < any > ) {

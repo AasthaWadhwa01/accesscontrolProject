@@ -18,7 +18,7 @@ export class SupervisorDashboardComponent implements OnInit {
   emp:any = [];
   super:any=[];
   show:boolean = false;
-  config: any;
+  config = config;
 
   //constructor initializing required services and router
   constructor(private damage:DamagedCardService,private lost:LostCardService,
@@ -30,7 +30,6 @@ export class SupervisorDashboardComponent implements OnInit {
     this.router.navigate(['/superform',value])
   }
   ngOnInit() {
-    this.getConfig();
   }
 
   //method used to show the requests of various user's on supervisor dashboard
@@ -59,13 +58,5 @@ export class SupervisorDashboardComponent implements OnInit {
       }
     });
     this.show = !this.show;
-  }
-
-   //getting config file 
-  getConfig(): any {
-    return Promise.resolve(config)
-    .then(data => {
-      this.config = data;
-    })
   }
 }

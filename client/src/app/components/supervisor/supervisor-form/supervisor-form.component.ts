@@ -25,7 +25,7 @@ export class SupervisorFormComponent implements OnInit {
 	accessType: any;
 	datepickerModel: any;
 	errors:any;
-	config: any;
+	config = config;
 
 	public modalRef: BsModalRef;
 	public configModal = {
@@ -37,16 +37,7 @@ export class SupervisorFormComponent implements OnInit {
 
 	constructor(private newrequest: EmployeeService, private router: ActivatedRoute, private route: Router, private modalService: BsModalService) {}
 
-  /*Get fields from Config File*/
-	getConfig(): any {
-		return Promise.resolve(config)
-		.then(data => {
-			this.config = data;
-		})
-	}
-
 	ngOnInit() {
-		this.getConfig();
 		this.router.paramMap
 		.switchMap((params: ParamMap) => this.newrequest.getEmployeeByID(this.router.snapshot.params['value']))
 		.subscribe(res => {

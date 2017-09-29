@@ -24,7 +24,7 @@ export class CsoFormComponent implements OnInit {
   empp: any = [];
   obj: any;
   errors: any;
-  config: any;
+  config = config;
 
   public modalRef: BsModalRef;
 
@@ -38,16 +38,8 @@ export class CsoFormComponent implements OnInit {
   //constructor to initialize the ControlAccessService
   constructor(private newrequest: EmployeeService, private route: Router, private router: ActivatedRoute, private modalService: BsModalService) {}
 
-  getConfig(): any {
-    return Promise.resolve(config)
-    .then(data => {
-      this.config = data;
-    });
-  }
-
   //ngoninit method to calling the getEmployeeByID from control access service automatically
   ngOnInit(): void {
-    this.getConfig();
     this.router.paramMap
     .switchMap((params: ParamMap) => this.newrequest.getEmployeeByID(this.router.snapshot.params['value']))
     .subscribe(res => {

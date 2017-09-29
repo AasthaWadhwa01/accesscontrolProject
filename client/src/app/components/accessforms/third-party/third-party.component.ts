@@ -12,7 +12,7 @@ import { config } from '../../../config';
 
 export class ThirdPartyComponent implements OnInit {
   errors: any;
-  config: any;
+  config = config;
 
   //constructor initializes third party service and router
   constructor(private thirdparty: ThirdPartyService, private router: Router) {}
@@ -27,14 +27,6 @@ export class ThirdPartyComponent implements OnInit {
     }
   }
 
-  //method to get config elements
-  getConfig(): any {
-    return Promise.resolve(config)
-      .then(data => {
-        this.config = data;
-      })
-  }
-
   //method called on Go back button and navigate to dashboard of employee
   back() {
     this.router.navigate(['/empdash']);
@@ -42,6 +34,5 @@ export class ThirdPartyComponent implements OnInit {
 
   //getting config elements on page load
   ngOnInit() {
-    this.getConfig();
   }
 }

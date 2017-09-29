@@ -1,5 +1,10 @@
 export const config: any = {
 
+    connect: {
+        "url": "http://localhost:",
+        "port": "4000"
+    },
+
   accessform: {
     "ACCESS_REQUEST_FORM": "Access Request Form",
     "CATEGORY": "Category",
