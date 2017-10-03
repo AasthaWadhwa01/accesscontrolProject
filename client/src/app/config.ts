@@ -172,7 +172,7 @@ export const config: any = {
     "Auth_SIGN": "Authorization Signatures (As Applicable)",
     "HRO": "HRO",
     "CSO": "CSO",
-    "DH/PH/PM": "DH/PH/PM",
+    "DH": "DH/PH/PM",
     "CISO": "CISO",
     "DATE_FORMAT": "DATE: __/__/____",
     "ACCEPT": "Accept",
