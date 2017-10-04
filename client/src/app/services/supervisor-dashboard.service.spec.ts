@@ -7,40 +7,16 @@ describe('EmployeeService', () => {
 beforeEach(() => {
    TestBed.configureTestingModule({
      imports: [HttpModule],
-     providers: [
-       EmployeeService,
-       { provide: XHRBackend, useClass: MockBackend },
-     ]
+     providers: [EmployeeService, { provide: XHRBackend, useClass: MockBackend }]
    });
  });
 
+//test suit for service class
 describe('checking employee service', () => {
-  it('can instantiate service when inject service',
-   inject([EmployeeService], (service: EmployeeService) => {
-     expect(service instanceof EmployeeService).toBe(true);
- }));
-
-
-it('can instantiate service with "new"', inject([Http], (http: Http) => {
-   expect(http).not.toBeNull('http should be provided');
-   let service = new EmployeeService(http);
-   expect(service instanceof EmployeeService).toBe(true, 'new service should be ok');
- }));
-
-
-it('can provide the mockBackend as XHRBackend',
-   inject([XHRBackend], (backend: MockBackend) => {
-     expect(backend).not.toBeNull('backend should be provided');
- }));
-});
-});
-
- /*  it('Local login should return login credentials',
+  //test case for mocking service class 
+   it('Local login should return login credentials',
      inject([EmployeeService, XHRBackend], (EmployeeService, mockBackend) => {
-       const mockResponse = { email: "abc@gmail.com", pwd: "12345" };
-
-
-
+       const mockResponse = { employeeID: "50042987", project: "SSB-ADM" };
 
        mockBackend.connections.subscribe((connection) => {
          connection.mockRespond(new Response(new ResponseOptions({
@@ -48,12 +24,35 @@ it('can provide the mockBackend as XHRBackend',
          })));
        });
 
-       loginService.findUser().subscribe((user) => {
-         expect(user.email).toEqual('abc@gmail.com');
-         expect(user.pwd).toEqual('12345');
-
+       EmployeeService.save().subscribe((empObject) => {
+         expect(empObject.employeeID).toEqual('50042987');
+         expect(empObject.project).toEqual('SSB-ADM');
        });
+     }));
 
-     }));*/
+//testcase for making instance of service class
+  it('can instantiate service when inject service',
+   inject([EmployeeService], (service: EmployeeService) => {
+     expect(service instanceof EmployeeService).toBe(true);
+ }));
+
+// testcase for making instance with new keyword
+it('can instantiate service with "new"', inject([Http], (http: Http) => {
+   expect(http).not.toBeNull('http should be provided');
+   let service = new EmployeeService(http);
+   expect(service instanceof EmployeeService).toBe(true, 'new service should be ok');
+ }));
+
+//testcase for verifying that actual backend and mockclass are same
+it('can provide the mockBackend as XHRBackend',
+   inject([XHRBackend], (backend: MockBackend) => {
+     expect(backend).not.toBeNull('backend should be provided');
+ }));
+});
+});
+
+
+
+
 
    
