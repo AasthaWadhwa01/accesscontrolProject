@@ -19,7 +19,7 @@
           <div class="row">
             <div class="col-sm-12 py-3">
               <label class="custom-control custom-radio">
-                <input id="radio1" name="empType" type="radio" value="Permanent" class="custom-control-input" [(ngModel)]="empType" (change)="OnRadioButtonSelection()">
+                <input id="radio1" name="empType" type="radio" value="Permanent" class="custom-control-input radio" [(ngModel)]="empType" (change)="OnRadioButtonSelection()">
                 <span class="custom-control-indicator"></span>
                 <span class="custom-control-description">{{config.newaccess.PERM}}</span>
               </label>
@@ -195,10 +195,10 @@
   <!-- save and send back buttons start here -->
   <div class="row justify-content-center">
     <div class="col-sm-3 mt-2 mb-3">
-      <button class="btn btn-success text-white form-control" (click)="save(template1)">{{config.newaccess.SUBMIT}}</button>
+      <button class="btn btn-success text-white form-control save" (click)="save(template1)">{{config.newaccess.SUBMIT}}</button>
     </div>
     <div class="col-sm-3 mt-2 mb-3">
-      <button class="btn btn-danger text-white form-control" (click)="back(template2)">{{config.newaccess.BACK}}</button>
+      <button class="btn btn-danger text-white form-control back" (click)="back(template2)">{{config.newaccess.BACK}}</button>
     </div>
   </div>
 </div>
@@ -226,7 +226,7 @@
     <strong>{{config.newaccess.BACK_MSG}}</strong>
   </div>
   <div class="modal-footer">
-    <button class="btn btn-md btn-primary" (click)="backit()">Yes</button>
+    <button class="btn btn-md btn-primary backit" (click)="backit()">Yes</button>
     <button class="btn btn-md btn-danger" (click)="modalRef.hide()">No</button>
   </div>
 </template>

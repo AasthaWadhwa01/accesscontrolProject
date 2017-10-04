@@ -21,7 +21,7 @@ thirdPartyInsert(thirdparty){
 
              .post(this.config.connect.url+this.config.connect.port+'/'+'thirdInsert',thirdparty)
 
-             .map(res=>res.json());
+            // .map(res=>res.json());
 
 }
 //Method is use to hit api of express server and to retrieve detail of third partuy

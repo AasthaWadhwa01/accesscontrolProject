@@ -8,7 +8,8 @@
 @Component({
   selector: 'app-lost-card',
   templateUrl: './lost-card.component.html',
-  styleUrls: ['./lost-card.component.css']
+  styleUrls: ['./lost-card.component.css'],
+  providers: [LostCardService]
 })
 
 export class LostCardComponent implements OnInit {
@@ -33,11 +34,9 @@ export class LostCardComponent implements OnInit {
         date: date
       };
       this.LostCardService.save(this.data).subscribe((data: any) => {
+        this.data=data;
         this.router.navigate(['/empdash']);
-      },
-      error => {
-         this.errors = error;
-       })
+      })
 
     }
 

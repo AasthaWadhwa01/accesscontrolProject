@@ -18,7 +18,7 @@ config = config;
     console.log(employee)
     return this.http
     .post(this.config.connect.url+this.config.connect.port+'/'+'insert', employee)
-    .map(res => res.json());
+    //.map(res => res.json());
   }
 
   //Get data from mssql database using employee id

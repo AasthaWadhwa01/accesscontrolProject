@@ -18,7 +18,6 @@ save(comment) {
 	console.log(comment)
  return this.http
              .post(this.config.connect.url+this.config.connect.port+'/'+'lostInsert',comment)
-             .map(res=>res.json());
 	}
 
 //Lost Card Service to hit API of db to get details of lost card

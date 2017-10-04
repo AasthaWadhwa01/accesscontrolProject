@@ -11,7 +11,8 @@ import { config } from '../../../config';
 @Component({
   selector: 'app-new-access',
   templateUrl: './new-access.component.html',
-  styleUrls: ['./new-access.component.css']
+  styleUrls: ['./new-access.component.css'],
+   providers: [EmployeeService]
 })
 
 export class NewAccessComponent implements OnInit {
@@ -42,6 +43,7 @@ export class NewAccessComponent implements OnInit {
   datepickerModel: Date;
   public modalRef: BsModalRef;
   employee: any;
+  data:any;
 
   public configModal = {
     animated: true,
@@ -67,8 +69,10 @@ export class NewAccessComponent implements OnInit {
       prev: "Employee",
       current: "Supervisor"
     }
-    this.employeeAccess.save(employee).subscribe(data => {})
-    this.openModalWithClass(template)
+    this.employeeAccess.save(employee).subscribe(data => {
+      this.data=data;
+    })
+    //this.openModalWithClass(template)
     this.router.navigate(['/empdash']);
   }
 
@@ -111,7 +115,7 @@ export class NewAccessComponent implements OnInit {
   }
 
   //method to open modal window
-  public openModalWithClass(template: TemplateRef < any > ): any {
+  public openModalWithClass(template: TemplateRef <any> ): any {
     this.modalRef = this.modalService.show(template, Object.assign({}, this.configModal, { class: 'gray modal-lg' }));
   }
 }

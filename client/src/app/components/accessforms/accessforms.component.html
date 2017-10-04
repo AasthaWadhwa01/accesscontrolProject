@@ -60,7 +60,7 @@
         <div class="col-sm-3"></div>
         <div class="col-sm-3">
           <label class="custom-control custom-radio">
-            <input id="radio1" name="category" type="radio" class="custom-control-input" value="Contractors" [(ngModel)]="category" (change)="OnRadioButtonSelection()">
+            <input id="radio1" name="category" type="radio" class="custom-control-input contractor" value="Contractors" [(ngModel)]="category" (change)="OnRadioButtonSelection()">
             <span class="custom-control-indicator"></span>
             <span class="custom-control-description">{{config.accessform.CONTRACTORS}}</span>
           </label>
@@ -121,7 +121,7 @@
           <div class="col-sm-3"></div>
           <div class="col-sm-3">
             <label class="custom-control custom-radio">
-              <input id="radio1" name="acesstype" type="radio" value="Damage" class="custom-control-input" [(ngModel)]="accesstype" (change)="onCaseChange()">
+              <input id="radio1" name="acesstype" type="radio" value="Damage" class="custom-control-input damage" [(ngModel)]="accesstype" (change)="onCaseChange()">
               <span class="custom-control-indicator"></span>
               <span class="custom-control-description">{{config.accessform.DAMAGE}}</span>
             </label>
