@@ -28,16 +28,16 @@
             </a>
           </li>
           <li class="nav-item" data-toggle="tooltip" data-placement="right" title="{{config.supervisordash.NEW_REQUEST}}">
-            <a class="nav-link" [routerLink]="['/category']">
+            <a class="nav-link"> [routerLink]="['/category']"
               <i class="fa fa-fw fa-area-chart"></i>
-              <span class="nav-link-text">
+              <span class="nav-link-text new_req">
                 {{config.supervisordash.NEW_REQUEST}}</span>
             </a>
           </li>
           <li class="nav-item" data-toggle="tooltip" data-placement="right" title="{{config.supervisordash.ACCESS_REQUESTS}}">
             <a class="nav-link" (click)="showAccess()">
               <i class="fa fa-fw fa-table"></i>
-              <span class="nav-link-text">
+              <span class="nav-link-text access_req">
                 {{config.supervisordash.ACCESS_REQUESTS}}</span>
             </a>
           </li>
@@ -212,7 +212,7 @@
                     <tbody>
                       <tr *ngFor="let data of super">
                         <th scope="row">{{super.indexOf(data)+1}}</th>
-                        <td><a class="btn" (click)="getID(data.employeeID)">{{data.employeeID}}</a></td>
+                        <td><a class="btn empid" (click)="getID(data.employeeID)">{{data.employeeID}}</a></td>
                         <td>{{data.employeeName}}</td>
                       </tr>
                     </tbody>

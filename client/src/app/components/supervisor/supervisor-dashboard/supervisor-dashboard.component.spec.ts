@@ -1,14 +1,26 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { SupervisorDashboardComponent } from './supervisor-dashboard.component';
+import { By }              from '@angular/platform-browser';
+import { DebugElement }    from '@angular/core';
+import { EmployeeService } from '../../../services/employee.service';
+import { DamagedCardService } from '../../../services/damaged-card.service';
+import { LocationChangeService } from '../../../services/location-change.service';
+import { LostCardService } from '../../../services/lost-card.service';
+import { ThirdPartyService } from '../../../services/third-party.service';
+import {  Router } from '@angular/router';
+
 
 describe('SupervisorDashboardComponent', () => {
   let component: SupervisorDashboardComponent;
   let fixture: ComponentFixture<SupervisorDashboardComponent>;
+  let access_req, new_req:      DebugElement;
+  let elAccess_req, elNew_req:      HTMLElement;
+
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SupervisorDashboardComponent ]
+      declarations: [ SupervisorDashboardComponent ],
+      providers:[{provide: EmployeeService}, {provide: DamagedCardService}, {provide: Router},{provide: LostCardService},{provide: LocationChangeService}, {provide: ThirdPartyService}]
     })
     .compileComponents();
   }));
@@ -16,10 +28,28 @@ describe('SupervisorDashboardComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(SupervisorDashboardComponent);
     component = fixture.componentInstance;
-    fixture.detectChanges();
+
+   access_req = fixture.debugElement.query(By.css('.access_req'));
+   elAccess_req= access_req.nativeElement;
+
+   new_req = fixture.debugElement.query(By.css('.new_req'));
+   elNew_req= new_req.nativeElement;
+
+   fixture.detectChanges();
   });
 
+// test scenario for component created or not
   it('should be created', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should display Access request', () => {
+    fixture.detectChanges();
+    expect(elAccess_req.textContent).toContain(component.config.supervisordash.ACCESS_REQUESTS);
+  });
+
+  it('should display New request', () => {
+    fixture.detectChanges();
+    expect(elNew_req.textContent).toContain(component.config.supervisordash.NEW_REQUEST);
   });
 });
