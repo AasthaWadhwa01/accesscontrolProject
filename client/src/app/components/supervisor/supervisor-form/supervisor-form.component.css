@@ -29,7 +29,7 @@ text-align: center;
 	background-color: #7fffd4;
 }
 
-/* Media Query for width min is 320 and max is 480 */
+/* Media Query for screen size min width is 320 and max width is 480 */
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
 
 .pad {
@@ -37,14 +37,13 @@ text-align: center;
 }
 }
 
-/* Media Query for width min is 575 and max is 1200 */
+/* Media Query for screen size of min width is 575 and max width is 1200*/
 @media only screen and (min-device-width : 575px) and (max-device-width : 1200px) {
 .pad {
 	padding-top: 0.8rem;
 }
 }
 
-/* Media Query for width min is 1224*/
+/* Media Query for screen size of min width is 1224*/
 @media only screen  and (min-width : 1224px) {
-/* Styles */
 }
