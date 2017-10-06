@@ -4,10 +4,10 @@ import { DebugElement } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
-import { Observable } from 'rxjs/Observable';
 import { BsModalService } from 'ngx-bootstrap/modal';
 import { BrowserModule } from '@angular/platform-browser';
-import 'rxjs/add/observable/of'
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/observable/of';
 
 import { EmployeeService } from '../../../services/employee.service';
 import { SupervisorFormComponent } from './supervisor-form.component';
@@ -91,6 +91,19 @@ describe(' SupervisorFormComponent', () => {
     fixture.detectChanges();    
     expect(elNAME.textContent).not.toContain('Shubhang Gupta');
   }); 
+  //test case for add category method
+  it("testing the save method", () => {
+    service = fixture.debugElement.injector.get(EmployeeService);
+    spy = spyOn(service, 'update').and.returnValue(Observable.of(data));
+    fixture.detectChanges();
+    component.acceptRequest(test.prev.prev);
+    expect(component.data.n).toEqual(1);
+    expect(component.data.nModified).toEqual(1);
+    expect(component.data.ok).toEqual(1);
+  });
+
+   
+
 
 
 });
