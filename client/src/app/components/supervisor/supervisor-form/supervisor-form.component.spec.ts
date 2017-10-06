@@ -29,9 +29,9 @@ describe(' SupervisorFormComponent', () => {
     "categoryResponse": { "Response": "category Name alerady exist" }
   };
   
-  //initializing the test suite
+  //Initializing The Test Suite
   beforeEach(async(() => {
-    //initializing the router stub for routing
+    //Initializing The Router Stub For Routing
     class RouterStub {
       navigate(url: string) { return url; }
     }
@@ -39,18 +39,18 @@ describe(' SupervisorFormComponent', () => {
     data = test.response;
 
     TestBed.configureTestingModule({
-      declarations: [SupervisorFormComponent], //declarations for test component
+      declarations: [SupervisorFormComponent], //Declarations For Test Component
       imports:[BrowserModule,HttpModule,FormsModule], //All Predefined Modules
       providers:[{provide:EmployeeService},{ provide: Router, useClass: RouterStub},{provide:ActivatedRoute},{provide:BsModalService}]
     })
 
     
-    .compileComponents() // compile template and css
+    .compileComponents() // Compile Template And Css
     .then(() => {
-      fixture = TestBed.createComponent(SupervisorFormComponent); //create 
+      fixture = TestBed.createComponent(SupervisorFormComponent);
       component = fixture.componentInstance;
 
-      // query for the title <h1> by CSS element selector
+      //Query For The Title <h1> By CSS Element Selector
       id = fixture.debugElement.query(By.css('.id'));
       elID =id.nativeElement;
 
