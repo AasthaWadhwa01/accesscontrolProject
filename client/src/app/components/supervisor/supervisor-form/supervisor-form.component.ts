@@ -25,6 +25,7 @@ export class SupervisorFormComponent implements OnInit {
 	accessType: any;
 	datepickerModel: any;
 	errors:any;
+	data:any
 	config = config;
 
 	public modalRef: BsModalRef;
@@ -38,7 +39,7 @@ export class SupervisorFormComponent implements OnInit {
 	constructor(private newrequest: EmployeeService, private router: ActivatedRoute, private route: Router, private modalService: BsModalService) {}
 
 	ngOnInit() {
-		this.router.paramMap
+	/*	this.router.paramMap
 		.switchMap((params: ParamMap) => this.newrequest.getEmployeeByID(this.router.snapshot.params['value']))
 		.subscribe(res => {
 			this.empp = res;
@@ -47,7 +48,7 @@ export class SupervisorFormComponent implements OnInit {
 		error => {
 			this.errors = error;
 		};
-
+*/
 		/*For DatePicker for picking the date*/
 		this.datepickerModel = new Date();
 		let date = this.datepickerModel.getDate();
@@ -65,12 +66,14 @@ export class SupervisorFormComponent implements OnInit {
 			accessType: this.accessType
 		}
     this.newrequest.update(this.empp.employeeID, this.obj)
-		.subscribe(res => {},
+		.subscribe(res => {
+			this.data=res;
+		},
 		error => {
 			this.errors = error;
 		});
-		this.openModalWithClass(temp)
-		this.route.navigate(['/superdash']);
+	//	this.openModalWithClass(temp)
+		//this.route.navigate(['/superdash']);
 	}
 
 	/*For Reject The Request*/
