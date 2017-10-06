@@ -10,16 +10,11 @@ config = config;
 
  constructor(public http:Http) { }
 
-ngOnInit() {
-}
-
 //method for inserting data of form to database in server side
  damage(request){
  return this.http
               .post(this.config.connect.url+this.config.connect.port+'/'+'damageInsert',request)
-  .map(res => res.json(),(err:any)=>{
-      err.json();
-  });
+              .map(res=>res.json());
 }
 
 // method for getting damage data from api in server side
