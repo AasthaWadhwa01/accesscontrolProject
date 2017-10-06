@@ -19,12 +19,13 @@ import { config } from '../../../config';
 export class SupervisorFormComponent implements OnInit {
 	empp: any = [];
 	public: any;
-	obj: any;
-	internal: any;
-	restricted: any;
-	accessType: any;
+	obj: {};
+	internal: string;
+	restricted: string;
+	accessType: string;
 	datepickerModel: any;
 	errors:any;
+	data:any;
 	config = config;
 
 	public modalRef: BsModalRef;
@@ -38,7 +39,7 @@ export class SupervisorFormComponent implements OnInit {
 	constructor(private newrequest: EmployeeService, private router: ActivatedRoute, private route: Router, private modalService: BsModalService) {}
 
 	ngOnInit() {
-		this.router.paramMap
+	/*this.router.paramMap
 		.switchMap((params: ParamMap) => this.newrequest.getEmployeeByID(this.router.snapshot.params['value']))
 		.subscribe(res => {
 			this.empp = res;
@@ -46,7 +47,7 @@ export class SupervisorFormComponent implements OnInit {
 
 		error => {
 			this.errors = error;
-		};
+		};*/
 
 		/*For DatePicker for picking the date*/
 		this.datepickerModel = new Date();
@@ -56,16 +57,18 @@ export class SupervisorFormComponent implements OnInit {
 		this.datepickerModel = date + '/' + month + '/' + year;
 	}
 
-	/*For Accepts The Request*/
-	accept(temp: any):void {
-      this.obj = {
+	/*For Accepts The Request Send By Employee*/
+	acceptRequest(temp: any):void {
+		this.obj = {
 			prev: "Supervisor",
 			current: "Hr",
 			zone: [this.public, this.internal, this.restricted],
 			accessType: this.accessType
 		}
-    this.newrequest.update(this.empp.employeeID, this.obj)
-		.subscribe(res => {},
+		this.newrequest.update(this.empp.employeeID, this.obj)
+		.subscribe(res => {
+			this.data=res;
+		},
 		error => {
 			this.errors = error;
 		});
@@ -73,13 +76,13 @@ export class SupervisorFormComponent implements OnInit {
 		this.route.navigate(['/superdash']);
 	}
 
-	/*For Reject The Request*/
-	reject(temp: any):any {
+	/*For Reject The Request Of Access-Card By Supervisor*/
+	rejectRequest(temp: any):any {
 		this.openModalWithClass(temp)
 	}
 
 	/*For Status Supervisor,Employee*/
-	backit():void {
+	backIt():void {
 		this.obj = 
 		{
 			prev: "Supervisor",
@@ -91,6 +94,7 @@ export class SupervisorFormComponent implements OnInit {
 		error => {
 			this.errors = error;
 		}
+
 		alert("Form Rejected Successfully")
 		this.route.navigate(['/superdash']);
 		this.modalRef.hide();

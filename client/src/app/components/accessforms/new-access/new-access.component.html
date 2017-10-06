@@ -7,19 +7,19 @@
   <!-- start of header of employee details -->
   <div class="row border bg-white mt-1">
     <div class="col-sm-6 border py-3">
-      <h6><strong>{{config.newaccess.EMPP_ID}}:</strong></h6>
+      <h6><strong>{{config.newaccess.EMPP_ID}}</strong></h6>
       <input class="form-control bg-white" type="text" name="designation" value={{empId}} readonly="true">
     </div>
     <div class="col-sm-6 border py-3">
       <div class="row">
         <div class="col-sm-6">
-          <h6><strong>{{config.newaccess.EMPP_TYPE}}:</strong></h6>
+          <h6><strong>{{config.newaccess.EMPP_TYPE}}</strong></h6>
         </div>
         <div class="col-sm-6">
           <div class="row">
             <div class="col-sm-12 py-3">
               <label class="custom-control custom-radio">
-                <input id="radio1" name="empType" type="radio" value="Permanent" class="custom-control-input" [(ngModel)]="empType" (change)="OnRadioButtonSelection()">
+                <input id="radio1" name="empType" type="radio" value="Permanent" class="custom-control-input radio" [(ngModel)]="empType" (change)="OnRadioButtonSelection()">
                 <span class="custom-control-indicator"></span>
                 <span class="custom-control-description">{{config.newaccess.PERM}}</span>
               </label>
@@ -44,7 +44,7 @@
     <div class="col-sm-4 border py-3">
       <div class="row">
         <div class="col-sm-2 py-2">
-          <h6><strong>{{config.newaccess.NAME}}:</strong></h6>
+          <h6><strong>{{config.newaccess.NAME}}</strong></h6>
         </div>
         <div class="col-sm-10">
           <input class="form-control bg-white" type="text" name="name" value={{empName}} readonly="true">
@@ -54,7 +54,7 @@
     <div class="col-sm-4 border py-3">
       <div class="row">
         <div class="col-sm-5 py-2">
-          <h6><strong>{{config.newaccess.DATE_JOINING}}:</strong></h6>
+          <h6><strong>{{config.newaccess.DATE_JOINING}}</strong></h6>
         </div>
         <div class="col-sm-7">
           <input type="text" class="form-control bg-white" name="doj" value={{doj}} readonly="true" />
@@ -64,7 +64,7 @@
     <div class="col-sm-4 border py-3">
       <div class="row">
         <div class="col-sm-4 py-2">
-          <h6><strong>{{config.newaccess.DESG}}:</strong></h6>
+          <h6><strong>{{config.newaccess.DESG}}</strong></h6>
         </div>
         <div class="col-sm-8">
           <input class="form-control" type="text" name="designation" [(ngModel)]="designation" readonly="true">
@@ -78,7 +78,7 @@
     <div class="col-sm-12 border py-3">
       <div class="row">
         <div class="col-sm-2 py-2">
-          <h6><strong>{{config.newaccess.PROJ}}:</strong></h6>
+          <h6><strong>{{config.newaccess.PROJ}}</strong></h6>
         </div>
         <div class="col-sm-10">
           <input class="form-control bg-white" type="text" name="project" value={{project}} readonly="true">
@@ -86,7 +86,7 @@
       </div>
       <div class="row mt-2">
         <div class="col-sm-2 py-2">
-          <h6><strong>{{config.newaccess.OU}}:</strong></h6>
+          <h6><strong>{{config.newaccess.OU}}</strong></h6>
         </div>
         <div class="col-sm-10">
           <input class="form-control bg-white" type="text" name="ou" value={{department}} readonly="true">
@@ -100,7 +100,7 @@
     <div class="col-sm-6 border py-3">
       <div class="row">
         <div class="col-sm-4 py-2">
-          <h6><strong>{{config.newaccess.STATUS}}:</strong></h6>
+          <h6><strong>{{config.newaccess.STATUS}}</strong></h6>
         </div>
         <div class="col-sm-4 py-2">
           <label class="custom-control custom-radio">
@@ -121,7 +121,7 @@
     <div class="col-sm-6 border py-3" *ngIf="status==='Temporary'">
       <div class="row">
         <div class="col-sm-7 py-2">
-          <h6><strong>{{config.newaccess.DATE_EXP_CARD}}:</strong></h6>
+          <h6><strong>{{config.newaccess.DATE_EXP_CARD}}</strong></h6>
         </div>
         <div class="col-sm-5">
           <input type="text" class="form-control bg-white" bsDatepicker name="doe" [(ngModel)]="doe" readonly="true">
@@ -146,7 +146,7 @@
     <div class="col-sm-6 border py-3">
       <div class="row">
         <div class="col-sm-5 py-2">
-          <h6><strong>{{config.newaccess.EXIST_PROJ}}:</strong></h6>
+          <h6><strong>{{config.newaccess.EXIST_PROJ}}</strong></h6>
         </div>
         <div class="col-sm-7">
           <input class="form-control" type="text" name="existname" [(ngModel)]="existPro">
@@ -156,7 +156,7 @@
     <div class="col-sm-6 border py-3">
       <div class="row">
         <div class="col-sm-5 py-2">
-          <h6><strong>{{config.newaccess.NEW_PROJ}}:</strong></h6>
+          <h6><strong>{{config.newaccess.NEW_PROJ}}</strong></h6>
         </div>
         <div class="col-sm-7">
           <input class="form-control" type="text" name="newname" [(ngModel)]="newPro">
@@ -165,7 +165,7 @@
     </div>
   </div>
   <!-- project details ends here -->
-  <div class="row color rounded bg-info mt-2 text-white">
+  <div class="row color rounded bg-info mt-2 text-white py-2 px-2">
     <h5>{{config.newaccess.SIGN}}</h5>
   </div>
   <!-- sign row starts here -->
@@ -173,7 +173,7 @@
     <div class="col-sm-6 border py-3">
       <div class="row">
         <div class="col-sm-5 py-2">
-          <h6><strong>{{config.newaccess.APPLICANT_SIGN}}:</strong></h6>
+          <h6><strong>{{config.newaccess.APPLICANT_SIGN}}</strong></h6>
         </div>
         <div class="col-sm-7">
           <input class="form-control" type="text" placeholder={{config.newaccess.ENTER_CREDENTIALS}} name="existname" [(ngModel)]="appSign">
@@ -183,7 +183,7 @@
     <div class="col-sm-6 border py-3">
       <div class="row">
         <div class="col-sm-5 py-2">
-          <h6><strong>{{config.newaccess.DATE}}:</strong></h6>
+          <h6><strong>{{config.newaccess.DATE}}</strong></h6>
         </div>
         <div class="col-sm-7">
           <input type="text" class="form-control bg-white" placement="top" bsDatepicker name="dateCurr" [(ngModel)]="dateCurr" readonly="true">
@@ -195,10 +195,10 @@
   <!-- save and send back buttons start here -->
   <div class="row justify-content-center">
     <div class="col-sm-3 mt-2 mb-3">
-      <button class="btn btn-success text-white form-control" (click)="save(template1)">{{config.newaccess.SUBMIT}}</button>
+      <button class="btn btn-success text-white form-control save" (click)="save(template1)">{{config.newaccess.SUBMIT}}</button>
     </div>
     <div class="col-sm-3 mt-2 mb-3">
-      <button class="btn btn-danger text-white form-control" (click)="back(template2)">{{config.newaccess.BACK}}</button>
+      <button class="btn btn-danger text-white form-control back" (click)="back(template2)">{{config.newaccess.BACK}}</button>
     </div>
   </div>
 </div>
@@ -226,7 +226,7 @@
     <strong>{{config.newaccess.BACK_MSG}}</strong>
   </div>
   <div class="modal-footer">
-    <button class="btn btn-md btn-primary" (click)="backit()">Yes</button>
+    <button class="btn btn-md btn-primary backit" (click)="backit()">Yes</button>
     <button class="btn btn-md btn-danger" (click)="modalRef.hide()">No</button>
   </div>
 </template>

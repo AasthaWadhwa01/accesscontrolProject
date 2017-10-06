@@ -33,7 +33,7 @@ export const config: any = {
     "PROJECT": "Project/Function",
     "OU": "OU/Designation",
     "COMMENTS_HEADING": "**First Submit Your damaged Access Card then  request for a new card And you Will Have A New Card In Two Days",
-    "SUBMIT_DATE": "Enter The Date Of Card submitted:",
+    "SUBMIT_DATE": "Enter The Date Of Card submitted",
     "SUBMIT": "Submit Your Request",
     "BACK": "Go Back"
   },
@@ -97,7 +97,7 @@ export const config: any = {
 
   newaccess: {
     "IR": "IR 71 Form",
-    "EMPP_ID": "Employee ID",
+    "EMPP_ID": "Employee Id",
     "EMPP_TYPE": "Employee Type",
     "TEMP": "Temporary",
     "PERM": "Permanent",
@@ -108,7 +108,7 @@ export const config: any = {
     "OU": "OU/Department",
     "STATUS": "Status",
     "DATE_EXP_CARD": "Date of Expiry of Temporary Card",
-    "PRO_TRANS": "Project Transfer (In Case of Transfer",
+    "PRO_TRANS": "Project Transfer (In Case of Transfer)",
     "EXIST_PROJ": "Existing Project Name",
     "NEW_PROJ": "New Project Name",
     "SIGN": "Signatures",
