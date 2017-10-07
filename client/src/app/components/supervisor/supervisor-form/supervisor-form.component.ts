@@ -7,7 +7,7 @@ import { BsModalService } from 'ngx-bootstrap/modal';
 import { BsModalRef } from 'ngx-bootstrap/modal/modal-options.class';
 import 'rxjs/add/operator/switchMap';
 
-import { EmployeeService } from '../../../services/employee.service'; 
+import { EmployeeService } from '../../../services/employee.service';
 import { config } from '../../../config';
 
 @Component({

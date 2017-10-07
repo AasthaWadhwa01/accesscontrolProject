@@ -17,14 +17,14 @@ export class LostCardService {
 save(comment) {	
 	console.log(comment)
  return this.http
-             .post(this.config.connect.url+this.config.connect.port+'/'+'lostInsert',comment)
+             .post(this.config.connect.url+this.config.connect.port+'/'+'lostcard'+'/'+'newlostcard',comment)
 	}
 
 //Lost Card Service to hit API of db to get details of lost card
 getLostCard()
 {
 	return this.http
-	            .get(this.config.connect.url+this.config.connect.port+'/'+'findlost')
+	            .get(this.config.connect.url+this.config.connect.port+'/'+'lostcard'+'/'+'lostcarddetails')
 	            .map(res=>res.json());
 }
 

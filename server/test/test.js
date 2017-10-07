@@ -1,4 +1,4 @@
-let assert = require('chai').assert;
+et assert = require('chai').assert;
 let expect = require('chai').expect;
 let supertest = require('supertest');
 let express = require('express');

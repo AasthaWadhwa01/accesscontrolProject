@@ -17,7 +17,7 @@ ngOnInit() {
 	//method is used to hit api on express server and post the data of form in database
 	locationChangeMethod(change:any){
 		return this.http
-		.post(this.config.connect.url+this.config.connect.port+'/'+'locationInsert',change)
+		.post(this.config.connect.url+this.config.connect.port+'/'+'locationchange'+'/'+'newlocation',change)
 		.map(res=>res.json());
 	}
 
@@ -25,7 +25,7 @@ ngOnInit() {
 	getLocationChange()
 	{
 		return this.http
-		.get(this.config.connect.url+this.config.connect.port+'/'+'findlocation')
+		.get(this.config.connect.url+this.config.connect.port+'/'+'locationchange'+'/'+'locationchangedetails')
 		.map(res=>res.json());
 	}
 }

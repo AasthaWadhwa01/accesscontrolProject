@@ -15,7 +15,7 @@ config = config;
 //method for inserting data of form to database in server side
  damage(request){
  return this.http
-              .post(this.config.connect.url+this.config.connect.port+'/'+'damageInsert',request)
+              .post(this.config.connect.url+this.config.connect.port+'/'+'damagecard'+'/'+'newdamagecard',request)
   .map(res => res.json());
 }
 
@@ -23,7 +23,7 @@ config = config;
 getDamageCard()
 {
 	return this.http
-	            .get(this.config.connect.url+this.config.connect.port+'/'+'finddamage')
+	            .get(this.config.connect.url+this.config.connect.port+'/'+'damagecard'+'/'+'damagecarddetails')
 	            .map(res=>res.json());
 }
 }

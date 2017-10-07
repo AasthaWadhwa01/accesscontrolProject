@@ -1,10 +1,11 @@
-import { async, inject,ComponentFixture,fakeAsync, TestBed,tick } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed, tick, fakeAsync } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
-import { DebugElement } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
-import { HttpModule } from '@angular/http';
+import { DebugElement }    from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { Router, ActivatedRoute, Params, Data} from '@angular/router';
 import { BsModalService } from 'ngx-bootstrap/modal';
+import { Http,XHRBackend,ResponseOptions,HttpModule } from '@angular/http';
+import { inject } from '@angular/core/testing';
 import { BrowserModule } from '@angular/platform-browser';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/of';
@@ -19,7 +20,7 @@ describe(' SupervisorFormComponent', () => {
   let id,name,de:DebugElement;
   let elID,elNAME,el:HTMLElement;
   let service;
-  let spy;
+  let spy:any;
   let test = {
     "response": { "n": 1, "ok": 1, "nModified": 1 },
     "data": { "response": "category already exixts" },
@@ -43,7 +44,6 @@ describe(' SupervisorFormComponent', () => {
       imports:[BrowserModule,HttpModule,FormsModule], //All Predefined Modules
       providers:[{provide:EmployeeService},{ provide: Router, useClass: RouterStub},{provide:ActivatedRoute},{provide:BsModalService}]
     })
-
     
     .compileComponents() // Compile Template And Css
     .then(() => {
@@ -53,7 +53,6 @@ describe(' SupervisorFormComponent', () => {
       //Query For The Title <h1> By CSS Element Selector
       id = fixture.debugElement.query(By.css('.id'));
       elID =id.nativeElement;
-
       name = fixture.debugElement.query(By.css('.name'));
       elNAME =name.nativeElement;
       fixture.detectChanges();
@@ -91,19 +90,48 @@ describe(' SupervisorFormComponent', () => {
     fixture.detectChanges();    
     expect(elNAME.textContent).not.toContain('Shubhang Gupta');
   }); 
-  //test case for add category method
-  it("testing the save method", () => {
+  
+  //Test case for update method of service through accept method of component  
+  it("testing the update method" , ()=>{
     service = fixture.debugElement.injector.get(EmployeeService);
+     console.log('My service '+service); 
     spy = spyOn(service, 'update').and.returnValue(Observable.of(data));
+
+    console.log(component.data);
     fixture.detectChanges();
     component.acceptRequest(test.prev.prev);
-    expect(component.data.n).toEqual(1);
-    expect(component.data.nModified).toEqual(1);
-    expect(component.data.ok).toEqual(1);
+    expect(data.n).toEqual(1);
+    expect(data.nModified).toEqual(1);
+    expect(data.ok).toEqual(1);
   });
 
-   
+  //negative test case for add category method
+
+ /* it("negative test for save method", () => {
+    service = fixture.debugElement.injector.get(EmployeeService);
+    spy = spyOn(service, 'update').and.returnValue(Observable.of(data));
+    let negativeData = test.negativeResponse;
+
+    component.acceptRequest(test.prev.prev);
+    fixture.detectChanges();
+    expect(component.data.n).not.toEqual(negativeData.nModified);
+    expect(component.data.nModified).not.toEqual(negativeData.n);
+    expect(component.data.ok).not.toEqual(negativeData.ok);
+
+  })*/
+
+    /*it('Navigate when user click on save',
+    inject([Router], (router: Router) => {
+      const spy1 = spyOn(router, 'navigate');
+      de = fixture.debugElement.query(By.css('.accept'));
+      el = de.nativeElement;
+      el.click();
+      fixture.detectChanges();
+      const navArgs = spy1.calls.first().args[0];
+      expect(navArgs).toContain("/csodash");
+    }));
+    */
 
 
 
-});
+  });
