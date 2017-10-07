@@ -7,13 +7,20 @@ let sql = require("mssql");
 let approver = require('../models/approverdata');
 let config = require('../config/config');
 
-router.get('/getdata/:empId', (req, res) => {
+//configuartion file for connection
+sql.connect(config.config, function(err) {
+    if (err) console.log(err);
+    // create Request object
     var request = new sql.Request();
-    request.query(config.query + req.params.empId + `'`, function(err, recordset) {
-        res.json(recordset.recordsets)
+    // query to the database and get the records
+    router.get('/getdata/:empId', (req, res) => {
+        var request = new sql.Request();
+        request.query(config.query + req.params.empId + `'`, function(err, recordset) {
+
+            res.json(recordset.recordsets)
+        });
     });
 });
-
 //get Approver Data fom Database 
 router.get('/approverdetails', function(req, res, next) {
     approver.find({}, function(err, data) {

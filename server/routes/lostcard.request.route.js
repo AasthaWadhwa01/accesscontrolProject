@@ -7,14 +7,20 @@ let sql = require("mssql");
 let lostCard = require('../models/lostcard.request');
 let config = require('../config/config');
 
-// query to the database and get the records
-router.get('/getdata/:empId', (req, res) => {
+//configuartion file for connection
+sql.connect(config.config, function(err) {
+    if (err) console.log(err);
+    // create Request object
     var request = new sql.Request();
-    request.query(config.query + req.params.empId + `'`, function(err, recordset) {
-        res.json(recordset.recordsets)
+    // query to the database and get the records
+    router.get('/getdata/:empId', (req, res) => {
+        var request = new sql.Request();
+        request.query(config.query + req.params.empId + `'`, function(err, recordset) {
+
+            res.json(recordset.recordsets)
+        });
     });
 });
-
 //find lost data card information
 router.get('/lostcarddetails', function(req, res, next) {
     lostCard.find({}, function(err, data) {
