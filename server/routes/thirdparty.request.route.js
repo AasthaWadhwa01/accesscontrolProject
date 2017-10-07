@@ -10,7 +10,7 @@ let config = require('../config/config');
 router.get('/getdata/:empId', (req, res) => {
     var request = new sql.Request();
     request.query(config.query + req.params.empId + `'`, function(err, recordset) {
-    res.json(recordset.recordsets)
+        res.json(recordset.recordsets)
     });
 });
 
