@@ -3,6 +3,7 @@ let app = express();
 let path = require('path');
 let bodyParser = require('body-parser');
 let routes = require('./routes/access.route');
+let sqlAccess= require('./routes/sqlconnection');
 
 let mongoose = require('mongoose');
 let cors = require('cors');
@@ -13,7 +14,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use('/', routes);
-
+sqlAccess.connectToSQL();
 // error handler
 app.use(function(err, req, res, next) {
 

@@ -1,26 +1,20 @@
 let express = require('express');
 let router = express.Router();
 let bodyParser = require('body-parser');
-let sql = require("mssql");
 
 //requiring the model classes
 let damageCard = require('../models/damagecard.request');
 let config = require('../config/config');
+let sqlCon = require('./sqlconnection');
 
-//configuartion file for connection
-sql.connect(config.config, function(err) {
-    if (err) console.log(err);
-    // create Request object
-    var request = new sql.Request();
-    // query to the database and get the records
-    router.get('/getdata/:empId', (req, res) => {
-        var request = new sql.Request();
-        request.query(config.query + req.params.empId + `'`, function(err, recordset) {
-
-            res.json(recordset.recordsets)
-        });
+// query to the sql database and get the records
+router.get('/getdata/:empId', (req, res) => {
+    var request = sqlCon.getSqlDb();
+    request.query(config.query + req.params.empId + `'`, function(err, recordset) {
+        res.json(recordset.recordsets)
     });
 });
+
 
 //get details of damage card 
 router.get('/damagecarddetails', function(req, res, next) {

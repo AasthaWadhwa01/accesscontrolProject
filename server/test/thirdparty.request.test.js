@@ -15,18 +15,18 @@ let requesterInsertStub = sinon.stub(requester.prototype, 'save');
 //Test Cases for requester
 describe("Testing Requester", function() {
 
-    requesterStub.yields(null, { "name": "Prakhar" })
+    requesterStub.yields(null, { "name": "Shubhang" })
     it("find requesters", function(done) {
 
         url
-            .get("/findemployee")
+            .get("/thirdPartDetails")
             .expect(200)
             .expect('Content-Type', /json/)
             .end(function(err, res) {
                 if (err) {
                     throw err
                 }
-                expect(res.body.name).to.be.equal('Prakhar')
+                expect(res.body.name).to.be.equal('Shubhang')
                 done()
 
             })
