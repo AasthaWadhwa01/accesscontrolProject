@@ -8,7 +8,8 @@ import { config } from '../../../config';
 @Component({
   selector: 'app-damaged-card',
   templateUrl: './damaged-card.component.html',
-  styleUrls: ['./damaged-card.component.css']
+  styleUrls: ['./damaged-card.component.css'],
+  providers:[DamagedCardService]
 })
 export class DamagedCardComponent implements OnInit {
 
@@ -17,11 +18,14 @@ export class DamagedCardComponent implements OnInit {
   data:any =[];
   config = config;
   
-  //constructor initialises damage service and router 
-  constructor(private  damagecardService:DamagedCardService, private router:Router) { }
+  //constructor initialises DamagedCardService and Router 
+  constructor(private  damagecardService:DamagedCardService, private router:Router) {
 
-  //datepickerModel: Date;
-  ngOnInit() {
+   }
+
+    ngOnInit() {
+
+    //datepickerModel: Date;
     this.date = new Date();
     let day=this.date.getDate();
     let month=this.date.getMonth()+1;
@@ -29,16 +33,16 @@ export class DamagedCardComponent implements OnInit {
     this.date=day+'/'+month+'/'+year;
     }
 
-  //method to take data of form to damageCardService
-  damage(damagecomment,damagedate):any {
-    this.data= { comments:damagecomment, date:damagedate }  
+  //method to take data of form to DamagedCardService to hit api
+  getDamage(damageReason:string, damageDate:string):any {
+    this.data= { comments:damageReason, date:damageDate }  
     this.damagecardService.damage(this.data)
     .subscribe((data)=> {
       this.router.navigate(['/empdash']);
       })
     }
 
-  //navigate data to dashboard on back button clicking
+  //navigate data to EmployeeDashboardComponent on back button clicking
   back() :void {
     this.router.navigate(['/empdash']);
     }

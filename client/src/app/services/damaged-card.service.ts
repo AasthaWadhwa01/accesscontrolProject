@@ -6,9 +6,9 @@ import { config } from '../config';
 @Injectable()
 export class DamagedCardService {
 
-config = config;
+	config = config;
 
- constructor(public http:Http) { }
+	constructor(public http:Http) { }
 
 
 
@@ -26,4 +26,5 @@ getDamageCard()
 	            .get(this.config.connect.url+this.config.connect.port+'/'+'damagecard'+'/'+'damagecarddetails')
 	            .map(res=>res.json());
 }
+
 }
