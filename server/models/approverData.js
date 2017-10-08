@@ -3,7 +3,7 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 //employee schema
-var employeeSchema = new Schema({
+var approverSchema = new Schema({
     serial: {
         type: String,
     },
@@ -27,5 +27,5 @@ var employeeSchema = new Schema({
     }
 });
 
-var data = mongoose.model('approver', employeeSchema)
+var data = mongoose.model('approver', approverSchema)
 module.exports = data;

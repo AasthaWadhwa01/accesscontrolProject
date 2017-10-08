@@ -17,7 +17,7 @@ ngOnInit() {
 	//method is used to hit api on express server and post the data of form in database
 	locationChangeMethod(change:any){
 		return this.http
-		.post(this.config.connect.url+this.config.connect.port+'/'+'locationInsert',change)
+		.post(this.config.connect.url+this.config.connect.port+'/locationchange/'+'locationInsert',change)
 		.map(res=>res.json());
 	}
 
@@ -25,14 +25,14 @@ ngOnInit() {
 	getLocationChange()
 	{
 		return this.http
-		.get(this.config.connect.url+this.config.connect.port+'/'+'findlocation')
+		.get(this.config.connect.url+this.config.connect.port+'/locationchange/'+'findlocation')
 		.map(res=>res.json());
 	}
 
 			//Get data from mssql database using employee id
   getEmpSql(employeeID) {
     return this.http
-    .get(this.config.connect.url+this.config.connect.port+'/'+'getData/' + employeeID)
+    .get(this.config.connect.url+this.config.connect.port+'/locationchange/'+'getData/' + employeeID)
     .map(res => res.json());
   }
 
@@ -40,7 +40,7 @@ ngOnInit() {
   update(id, employee) {
     console.log(employee)
     return this.http
-    .put(this.config.connect.url+this.config.connect.port+'/'+'update/' + id, employee)
+    .put(this.config.connect.url+this.config.connect.port+'/locationchange/'+'update/' + id, employee)
     .map(res => res.json());
 
  }
@@ -48,14 +48,14 @@ ngOnInit() {
  /*getEmployeeByID method to fetch details by id used in supervisor component*/
   getEmployeeByID(employeeID) {
     return this.http
-    .get(this.config.connect.url+this.config.connect.port+'/'+'findemployeebyid/' + employeeID)
+    .get(this.config.connect.url+this.config.connect.port+'/requester/'+'findemployeebyid/' + employeeID)
     .map(res => res.json());
   }
 
   //Angular Service of get method of employee
   getEmployee() {
     return this.http
-    .get(this.config.connect.url+this.config.connect.port+'/'+'findemployee')
+    .get(this.config.connect.url+this.config.connect.port+'/requester/'+'findemployee')
     .map(res => res.json());
   }
 }

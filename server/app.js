@@ -2,7 +2,14 @@ var express = require('express');
 var app = express();
 var path = require('path');
 var bodyParser = require('body-parser');
-var router = require('./routes/show');
+var approver = require('./routes/approver');
+var damage = require('./routes/damage');
+var employee = require('./routes/employee');
+var locationchange = require('./routes/locationchange');
+var lostcard = require('./routes/lostcard');
+var requester = require('./routes/requester');
+var thirdparty = require('./routes/thirdparty');
+
 var mongoose = require('mongoose');
 let cors = require('cors');
 
@@ -11,9 +18,15 @@ let con = require('./config/config');
 app.use(cors());
 
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: true }));
 
-app.use('/', router);
+app.use('/employee', employee);
+app.use('/approver', approver);
+app.use('/damage', damage);
+app.use('/locationchange', locationchange);
+app.use('/thirdparty', thirdparty);
+app.use('/lostcard', lostcard);
+app.use('/requester', requester);
 
 // error handler
 app.use(function(err, req, res, next) {

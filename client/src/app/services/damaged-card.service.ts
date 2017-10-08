@@ -13,7 +13,7 @@ export class DamagedCardService {
 	//method for inserting data of form to database in server side
 	damage(request){
 		return this.http
-		.post(this.config.connect.url+this.config.connect.port+'/'+'damageInsert',request)
+		.post(this.config.connect.url+this.config.connect.port+'/damage/'+'damageInsert',request)
 		.map(res => res.json());
 	}
 
@@ -21,7 +21,7 @@ export class DamagedCardService {
 	getDamageCard()
 	{
 		return this.http
-		.get(this.config.connect.url+this.config.connect.port+'/'+'finddamage')
+		.get(this.config.connect.url+this.config.connect.port+'/damage/'+'finddamage')
 		.map(res=>res.json());
 	}
 }

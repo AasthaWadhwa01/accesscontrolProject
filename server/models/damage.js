@@ -3,7 +3,7 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 //damage card form schema
-var employeeSchema = new Schema({
+var damageSchema = new Schema({
     empId: Number,
     empType: String,
     name: String,
@@ -22,5 +22,5 @@ var employeeSchema = new Schema({
     current: String
 });
 
-var data = mongoose.model('damage', employeeSchema)
+var data = mongoose.model('damage', damageSchema)
 module.exports = data;

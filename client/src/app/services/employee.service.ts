@@ -17,21 +17,33 @@ config = config;
   save(employee) {
     console.log(employee)
     return this.http
-    .post(this.config.connect.url+this.config.connect.port+'/'+'insert', employee)
+    .post(this.config.connect.url+this.config.connect.port+'/requester/'+'insert', employee)
     //.map(res => res.json());
   }
 
  //Get data from mssql database using employee id
   getEmpSql(employeeID) {
     return this.http
-    .get(this.config.connect.url+this.config.connect.port+'/'+'getData/' + employeeID)
+    .get(this.config.connect.url+this.config.connect.port+'/employee/'+'getData/' + employeeID)
+    .map(res => res.json());
+  }
+
+    getHrIdSql(employeeID) {
+    return this.http
+    .get(this.config.connect.url+this.config.connect.port+'/employee/'+'getHrData/' + employeeID)
+    .map(res => res.json());
+  }
+
+    getCsoIdSql(employeeID) {
+    return this.http
+    .get(this.config.connect.url+this.config.connect.port+'/employee/'+'getCsoData/' + employeeID)
     .map(res => res.json());
   }
 
  //Angular Service of get method of employee
   getEmployee() {
     return this.http
-    .get(this.config.connect.url+this.config.connect.port+'/'+'findemployee')
+    .get(this.config.connect.url+this.config.connect.port+'/requester/'+'findemployee')
     .map(res => res.json());
   }
 
@@ -39,7 +51,7 @@ config = config;
   update(id, employee) {
     console.log(employee)
     return this.http
-    .put(this.config.connect.url+this.config.connect.port+'/'+'update/' + id, employee)
+    .put(this.config.connect.url+this.config.connect.port+'/requester/'+'update/' + id, employee)
     .map(res => res.json());
 
  }
@@ -47,7 +59,7 @@ config = config;
  /*getEmployeeByID method to fetch details by id used in supervisor component*/
   getEmployeeByID(employeeID) {
     return this.http
-    .get(this.config.connect.url+this.config.connect.port+'/'+'findemployeebyid/' + employeeID)
+    .get(this.config.connect.url+this.config.connect.port+'/requester/'+'findemployeebyid/' + employeeID)
     .map(res => res.json());
   }
 

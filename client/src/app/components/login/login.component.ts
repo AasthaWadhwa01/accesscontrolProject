@@ -17,6 +17,7 @@ public data: any;
  }
 
 redir(empid:any) {
+	
  this.router.navigate(['/accessforms', empid])
 }
 }

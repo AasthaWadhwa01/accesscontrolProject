@@ -3,7 +3,7 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 //lost card form schema   
-var employeeSchema = new Schema({
+var lostCardSchema = new Schema({
     empId: Number,
     empType: String,
     name: String,
@@ -21,5 +21,5 @@ var employeeSchema = new Schema({
     current: String
 });
 
-var data = mongoose.model('lost', employeeSchema)
+var data = mongoose.model('lost', lostCardSchema)
 module.exports = data;

@@ -3,7 +3,7 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 //requester details schema
-var employeeSchema = new Schema({
+var requesterSchema = new Schema({
     employeeID: {
         type: String,
         unique: true
@@ -78,5 +78,5 @@ var employeeSchema = new Schema({
     }
 });
 
-var data = mongoose.model('employee', employeeSchema)
+var data = mongoose.model('requester', requesterSchema)
 module.exports = data;

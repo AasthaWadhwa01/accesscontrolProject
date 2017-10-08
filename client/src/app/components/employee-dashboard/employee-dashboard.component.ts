@@ -29,7 +29,7 @@ export class EmployeeDashboardComponent implements OnInit {
     this.emp.getEmployee()
     .subscribe(res=>{
       this.empl = res;
-
+if(this.empl.length>0){
       //condition to check the status on the basis of particular approver
       if(this.empl[this.empl.length-1].current=="Closed")
       {
@@ -59,16 +59,17 @@ export class EmployeeDashboardComponent implements OnInit {
       {
         this.reqstatus = "Your request is pending with CSO";
       }
+    }
       else {
         this.reqstatus = "You haven't made any request yet";
       }
     },
     error=>{
     	this.errors=error;
-    }
-    )
+    })
+    
 
-    //method to get employee data
+    /*//method to get employee data
     this.emplye.getEmployee()
     .subscribe(res=>{
       this.emply = res;
@@ -109,7 +110,7 @@ export class EmployeeDashboardComponent implements OnInit {
     error=>{
       this.errors=error;
     }
-    )
+    )*/
 
 
   }

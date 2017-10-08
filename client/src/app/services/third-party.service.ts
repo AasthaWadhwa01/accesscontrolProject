@@ -19,7 +19,7 @@ thirdPartyInsert(thirdparty){
 
      return this.http
 
-             .post(this.config.connect.url+this.config.connect.port+'/'+'thirdInsert',thirdparty)
+             .post(this.config.connect.url+this.config.connect.port+'/thirdparty/'+'thirdInsert',thirdparty)
 
             // .map(res=>res.json());
 
@@ -28,7 +28,7 @@ thirdPartyInsert(thirdparty){
 getThird()
 {
 	return this.http
-	            .get(this.config.connect.url+this.config.connect.port+'/'+'findthird')
+	            .get(this.config.connect.url+this.config.connect.port+'/thirdparty/'+'findthird')
 	            .map(res=>res.json());
 }
 
