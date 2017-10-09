@@ -19,7 +19,7 @@ export class NewAccessComponent implements OnInit {
   //declaring all required variables
   errors: any;
   employeeDetail: any = [];
-  empId: String;
+  empId: string;
   date: any;
   status: string = "";
   change: string = "";

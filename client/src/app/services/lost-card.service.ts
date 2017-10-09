@@ -28,4 +28,11 @@ getLostCard()
 	            .map(res=>res.json());
 }
 
+ //Get data from mssql database using employee id
+  getEmpSql(employeeID) {
+    return this.http
+    .get(this.config.connect.url+this.config.connect.port+'/employee/'+'getData/' + employeeID)
+    .map(res => res.json());
+  }
+
 	}

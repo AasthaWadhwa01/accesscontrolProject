@@ -16,7 +16,11 @@ export class SupervisorDashboardComponent implements OnInit {
 
   //variables declarations
   emp:any = [];
-  super:any=[];
+  newaccess:any=[];
+  thirdparty:any=[];
+  lostrequest:any=[];
+  damagerequest:any=[];
+  locationrequest:any=[];
   show:boolean = false;
   config = config;
 
@@ -44,6 +48,14 @@ export class SupervisorDashboardComponent implements OnInit {
     });
     this.lost.getLostCard()
     .subscribe(res=>{
+            this.emp=res;
+      for(let a=0;a<this.emp.length;a++)
+      {
+        if(this.emp[a].current=="Supervisor")
+        {
+          this.lostrequest.push(this.emp[a])
+        }
+      }
     });
     this.third.getThird()
     .subscribe(res=>{
@@ -56,7 +68,7 @@ export class SupervisorDashboardComponent implements OnInit {
       {
         if(this.emp[a].current=="Supervisor")
         {
-          this.super.push(this.emp[a])
+          this.locationrequest.push(this.emp[a])
         }
       }
     });
@@ -67,7 +79,7 @@ export class SupervisorDashboardComponent implements OnInit {
       {
         if(this.emp[a].current=="Supervisor")
         {
-          this.super.push(this.emp[a])
+          this.newaccess.push(this.emp[a])
         }
       }
     });

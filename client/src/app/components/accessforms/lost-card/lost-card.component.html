@@ -9,7 +9,7 @@
     <!--div starts for Employee ID here-->
     <div class="col-sm-6 border py-3">
       <h6><strong>{{config.lost.EMP_ID}}</strong></h6>
-      <input class="form-control" type="text" name="designation" [(ngModel)]="empId">
+      <input class="form-control bg-white" type="text" name="designation" value={{empId}} readonly="true">
     </div>
     <!--div endss for Employee ID here-->
     <div class="col-sm-6 border py-3">
@@ -50,7 +50,7 @@
           <h6><strong>{{config.lost.NAME}}</strong></h6>
         </div>
         <div class="col-sm-10">
-          <input class="form-control" type="text" name="name" [(ngModel)]="empName">
+          <input class="form-control bg-white" type="text" name="name" value={{empName}} readonly="true">
         </div>
       </div>
       <!--div of Employee Name  ends  here-->
@@ -62,7 +62,7 @@
           <h6><strong>{{config.lost.DOJ}}</strong></h6>
         </div>
         <div class="col-sm-7">
-          <input type="text" class="form-control bg-white" bsDatepicker name="doj" [(ngModel)]="doj" readonly="true" />
+          <input type="text" class="form-control bg-white" name="doj" value={{doj}} readonly="true" />
         </div>
       </div>
     </div>
@@ -74,7 +74,7 @@
           <h6><strong>{{config.lost.DESIGNATION}}</strong></h6>
         </div>
         <div class="col-sm-8">
-          <input class="form-control" type="text" name="designation" [(ngModel)]="designation">
+          <input class="form-control" type="text" name="designation" [(ngModel)]="designation" readonly="true">
         </div>
       </div>
     </div>
@@ -88,7 +88,7 @@
           <h6><strong>{{config.lost.PROJECT}}</strong></h6>
         </div>
         <div class="col-sm-10">
-          <input class="form-control" type="text" name="project" [(ngModel)]="project">
+          <input class="form-control bg-white" type="text" name="project" value={{project}} readonly="true">
         </div>
       </div>
       <div class="row mt-2">
@@ -96,7 +96,7 @@
           <h6><strong>{{config.lost.OU}}</strong></h6>
         </div>
         <div class="col-sm-10">
-          <input class="form-control" type="text" name="ou" [(ngModel)]="department">
+          <input class="form-control bg-white" type="text" name="ou" value={{department}} readonly="true">
         </div>
       </div>
     </div>
@@ -115,7 +115,7 @@
           <h6><strong>{{config.lost.DATEOFLOSS}}</strong></h6>
         </div>
         <div class="col-sm-8">
-          <input type="text" class="form-control bg-white" readonly="true" placement="top" bsDatepicker name="appdate" [(ngModel)]="date">
+          <input type="text" class="form-control bg-white" bsDatepicker name="doe" [(ngModel)]="doe" readonly="true">
         </div>
       </div>
     </div>

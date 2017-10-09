@@ -5,16 +5,14 @@ var Schema = mongoose.Schema;
 //lost card form schema   
 var lostCardSchema = new Schema({
     empId: Number,
-    empType: String,
     name: String,
     doj: String,
-    designation: String,
     project: String,
     ou: String,
     date: {
         type: String,
     },
-    comments: {
+    comment: {
         type: String
     },
     prev: String,
