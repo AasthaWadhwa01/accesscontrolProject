@@ -37,7 +37,7 @@ import { CsolocationFormComponent } from './components/cso/csolocation-form/csol
 
 const routes: any = [
 	{
-		path: '', redirectTo: '/login', pathMatch: 'full'
+		path: '', redirectTo: '/login/b7ea6377-9450-44e7-a995-372bf5445302', pathMatch: 'full'
 	},
   {
     path: 'login',

@@ -9,6 +9,7 @@ var locationchange = require('./routes/locationchange');
 var lostcard = require('./routes/lostcard');
 var requester = require('./routes/requester');
 var thirdparty = require('./routes/thirdparty');
+var login = require('./routes/login');
 
 var mongoose = require('mongoose');
 let cors = require('cors');
@@ -27,6 +28,7 @@ app.use('/locationchange', locationchange);
 app.use('/thirdparty', thirdparty);
 app.use('/lostcard', lostcard);
 app.use('/requester', requester);
+app.use('/login', login);
 
 // error handler
 app.use(function(err, req, res, next) {

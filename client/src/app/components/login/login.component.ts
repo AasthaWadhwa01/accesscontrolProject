@@ -12,6 +12,7 @@ import { LoginService } from '../../services/login.service';
 export class LoginComponent implements OnInit {
 
 public data: any;
+role: any;
 errors:string;
 
  constructor(private router: Router, private login:LoginService, private route: ActivatedRoute) { }
@@ -20,16 +21,19 @@ errors:string;
  		this.route.paramMap
       .switchMap((params: ParamMap) => this.login.getToken(this.route.snapshot.params['value']))
       .subscribe((res):any => {
-        console.log(res);
+        if(res!=null)
+        {
+        	this.role = this.login.getRole(res.UserID);
+        }
         },
         error => {
           this.errors = error;
         })
 
-     this.login.setToken().subscribe(data=>{
+/*     this.login.setToken().subscribe(data=>{
      this.data=data;
      let use = JSON.parse(localStorage.getItem(data.role));
-    })
+    })*/
  }
 
 redir(empid:any) {

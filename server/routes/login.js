@@ -9,12 +9,13 @@ let db = mongoose.connection;
 let data: string=[];
 
 //validate token
-router.get('/login/:token',function(req,res,next) {
+router.get('/:token',function(req,res,next) {
    request.get('https://iniitiandev2.niit-tech.com/mobile/Cmn/CmnService/Authenticate?Token='+req.params.token,function(response,error, body){
-	 
-	 console.log(body);
-   res.json({data:body});
-   
+   this.data = response;
+if(this.data.isvalid == 'true')
+   res.json({data: body});
+   else
+   	res.send(null);
  });
  })
 

@@ -31,6 +31,8 @@ role = null;
 
      if(this.role == null)
        this.role = "employee"
+     
+     return this.role;
   }
 
   //Get data from mssql database using employee id
@@ -56,6 +58,18 @@ role = null;
     .map(res => console.log(res.json()));
 
   }
+
+  getToken(token)
+{
+    /*let headers = new Headers({ 'Authorization': token });
+  let options= new RequestOptions({ headers: headers });*/
+    return this.http
+           .get(this.config.connect.url+this.config.connect.port+'/login/', token)
+           .map(res=>res.json(),
+               (err:any)=>{
+            err.json();
+               });
+        }
 
 
 }
