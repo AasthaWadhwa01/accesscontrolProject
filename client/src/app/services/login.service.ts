@@ -11,7 +11,7 @@ config = config;
   //Get data from mssql database using employee id
   getCsoRole(employeeID) :any {
      return this.http
-    .get(this.config.connect.url+this.config.connect.port+'/employee/verifyCso/'+'getData/' + employeeID)
+    .get(this.config.connect.url+this.config.connect.port+'/employee/verifyCso/' + employeeID)
     .map(res => console.log(res.json()));
 
   }
@@ -19,7 +19,7 @@ config = config;
   //Get data from mssql database using employee id
   getSupervisorRole(employeeID) :any {
      return this.http
-    .get(this.config.connect.url+this.config.connect.port+'/employee/verifySupervisor/'+'getData/' + employeeID)
+    .get(this.config.connect.url+this.config.connect.port+'/employee/verifySupervisor/' + employeeID)
     .map(res => console.log(res.json()));
 
   }
@@ -27,7 +27,7 @@ config = config;
 //Get data from mssql database using employee id
   getHrRole(employeeID) :any {
      return this.http
-    .get(this.config.connect.url+this.config.connect.port+'/employee/verifyHr/'+'getData/' + employeeID)
+    .get(this.config.connect.url+this.config.connect.port+'/employee/verifyHr/' + employeeID)
     .map(res => console.log(res.json()));
 
   }
