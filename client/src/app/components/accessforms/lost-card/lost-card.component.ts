@@ -6,6 +6,7 @@ import { BsModalService } from 'ngx-bootstrap/modal';
 import { BsModalRef } from 'ngx-bootstrap/modal/modal-options.class';
 
 import { LostCardService } from '../../../services/lost-card.service';
+import { EmployeeService } from '../../../services/employee.service';
 import { config } from '../../../config';
 
 @Component({
@@ -17,13 +18,10 @@ import { config } from '../../../config';
 
 export class LostCardComponent implements OnInit {
   //declaring all required variables
-  date: any;
-  comment: any;
-  data: any = [];
   errors: any;
-  config = config;
   employeeDetail: any = [];
   empId: string;
+  date: any;
   status: string = "";
   change: string = "";
   a: any;
@@ -39,14 +37,16 @@ export class LostCardComponent implements OnInit {
   newPro: any;
   appSign: any;
   dateCurr: any;
+  config = config;
 
   //Constructor initialize LostcardService & Router 
-  constructor(private LostCardService: LostCardService, private router: Router, private route: ActivatedRoute, private modalService: BsModalService) {}
+  constructor(private employeeService: EmployeeService, private lostCardService: LostCardService, private router: Router, private route: ActivatedRoute, private modalService: BsModalService) {}
 
 
   datepickerModel: Date;
   public modalRef: BsModalRef;
   employee: any;
+  data:any;
 
   public configModal = {
     animated: true,
@@ -57,7 +57,7 @@ export class LostCardComponent implements OnInit {
 
  ngOnInit() {
     this.route.paramMap
-      .switchMap((params: ParamMap) => this.LostCardService.getEmpSql(this.route.snapshot.params['value']))
+      .switchMap((params: ParamMap) => this.employeeService.getEmpSql(this.route.snapshot.params['value']))
       .subscribe(
         res => {
           this.employee = res;
@@ -84,28 +84,39 @@ export class LostCardComponent implements OnInit {
   }
 
   //method call on submit button for saving the reasion & date of lost card
-  save(comment: string, date: any) {
-
-    this.data = {
-      empId: this.empId,
-      name: this.empName,
+  save(comment: string, date: any, template: any) {
+    const employee = {
+      employeeID: this.empId,
+      empType: this.empType,
+      employeeName: this.empName,
+      designation: this.designation,
+      dateOfJoining: this.doj,
+      dateOfExpiry: this.doe,
       project: this.project,
-      ou: this.department,
-      comment: comment,
-      date: date,
+      department: this.department,
+      existingProject: this.existPro,
+      newProject: this.newPro,
+      requestDate: this.dateCurr,
       prev: "Employee",
-      current: "Supervisor"
+      current: "Supervisor",
+      comment: comment,
+      date: date
+    }
+    this.lostCardService.save(employee).subscribe(data => {
+      this.data=data;
+    })
+    this.openModalWithClass(template)
+    this.router.navigate(['/empdash']);
     };
 
-    this.LostCardService.save(this.data).subscribe((data: any) => {
-      this.data=data;
-      this.router.navigate(['/empdash']);
-    })
-
-  }
-
-  //method call on Go back button & navigate to dashboard of employee
-  back() {
+  backit(): any {
     this.router.navigate(['/empdash']);
+    this.modalRef.hide();
   }
+
+  //method to go back to employee dashboard
+  back(temp: any): any {
+    this.openModalWithClass(temp)
+  }
+
 }

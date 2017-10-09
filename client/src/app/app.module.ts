@@ -120,6 +120,14 @@ const routes: any = [
     component: SupervisorLocationchangeComponent
   },
   {
+    path: 'supervisorlostchange/:value',
+    component: SupervisorLocationchangeComponent
+  },
+  {
+    path: 'supervisordamagechange/:value',
+    component: SupervisorLocationchangeComponent
+  },
+  {
     path: 'superdash',
     component: SupervisorDashboardComponent
   },

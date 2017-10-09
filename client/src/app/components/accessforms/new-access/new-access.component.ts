@@ -72,7 +72,7 @@ export class NewAccessComponent implements OnInit {
     this.employeeAccess.save(employee).subscribe(data => {
       this.data=data;
     })
-    //this.openModalWithClass(template)
+    this.openModalWithClass(template)
     this.router.navigate(['/empdash']);
   }
 

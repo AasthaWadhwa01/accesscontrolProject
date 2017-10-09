@@ -38,14 +38,32 @@ export class SupervisorDashboardComponent implements OnInit {
   getEmpIdLocationRequest(value):any {
     this.router.navigate(['/supervisorlocationchange',value])
   }
+
+  getEmpIdLostRequest(value):any {
+    this.router.navigate(['/supervisorlostchange',value])
+  }
+
+  getEmpIdDamageRequest(value):any {
+    this.router.navigate(['/supervisordamagechange',value])
+  }
+
   ngOnInit() {
   }
 
   //method used to show the requests of various user's on supervisor dashboard
   showAccess():any {
     this.damage.getDamageCard()
-    .subscribe(res=> {
+     .subscribe(res=>{
+            this.emp=res;
+      for(let a=0;a<this.emp.length;a++)
+      {
+        if(this.emp[a].current=="Supervisor")
+        {
+          this.damagerequest.push(this.emp[a])
+        }
+      }
     });
+
     this.lost.getLostCard()
     .subscribe(res=>{
             this.emp=res;
@@ -57,13 +75,16 @@ export class SupervisorDashboardComponent implements OnInit {
         }
       }
     });
+
+          console.log(this.lostrequest)
+
     this.third.getThird()
     .subscribe(res=>{
     });
+
     this.location.getLocationChange()
     .subscribe(res=>{
         this.emp=res;
-        console.log(res);
       for(let a=0;a<this.emp.length;a++)
       {
         if(this.emp[a].current=="Supervisor")
@@ -72,6 +93,7 @@ export class SupervisorDashboardComponent implements OnInit {
         }
       }
     });
+
     this.newrequest.getEmployee()
     .subscribe(res=>{
       this.emp=res;

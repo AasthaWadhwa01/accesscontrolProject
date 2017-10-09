@@ -210,10 +210,10 @@
                       </tr>
                     </thead>
                     <tbody>
-                      <tr *ngFor="let data of newaccess">
-                        <th scope="row">{{newaccess.indexOf(data)+1}}</th>
-                        <td><a class="btn empid" (click)="getID(data.employeeID)">{{data.employeeID}}</a></td>
-                        <td>{{data.employeeName}}</td>
+                      <tr *ngFor="let new of newaccess">
+                        <th scope="row">{{newaccess.indexOf(new)+1}}</th>
+                        <td><a class="empid" (click)="getID(new.employeeID)">{{new.employeeID}}</a></td>
+                        <td>{{new.employeeName}}</td>
                       </tr>
                     </tbody>
                   </table>
@@ -228,10 +228,10 @@
                       </tr>
                     </thead>
                      <tbody>
-                      <tr *ngFor="let data of locationrequest">
-                        <th scope="row">{{locationrequest.indexOf(data)+1}}</th>
-                        <td><a class="btn empid" (click)="getEmpIdLocationRequest(data.empID)">{{data.empID}}</a></td>
-                        <td>{{data.empName}}</td>
+                      <tr *ngFor="let loc of locationrequest">
+                        <th scope="row">{{locationrequest.indexOf(loc)+1}}</th>
+                        <td><a class="empid" (click)="getEmpIdLocationRequest(loc.employeeID)">{{loc.employeeID}}</a></td>
+                        <td>{{loc.employeeName}}</td>
                       </tr>
                    
                     </tbody>
@@ -247,6 +247,11 @@
                       </tr>
                     </thead>
                     <tbody>
+                     <tr *ngFor="let lost of lostrequest">
+                        <th scope="row">{{lostrequest.indexOf(lost)+1}}</th>
+                        <td><a class="empid" (click)="getEmpIdLostRequest(lost.employeeID)">{{lost.employeeID}}</a></td>
+                        <td>{{lost.employeeName}}</td>
+                      </tr>
                     </tbody>
                   </table>
                 </div>
@@ -260,10 +265,10 @@
                       </tr>
                     </thead>
                     <tbody>
-                    <tr *ngFor="let data of lostrequest">
-                        <th scope="row">{{lostrequest.indexOf(data)+1}}</th>
-                        <td><a class="btn empid" (click)="getEmpIdLocationRequest(data.empID)">{{data.empID}}</a></td>
-                        <td>{{data.name}}</td>
+                    <tr *ngFor="let dam of damagerequest">
+                        <th scope="row">{{damagerequest.indexOf(dam)+1}}</th>
+                        <td><a class="empid" (click)="getEmpIdDamageRequest(dam.empID)">{{dam.employeeID}}</a></td>
+                        <td>{{dam.employeeName}}</td>
                       </tr>
                     </tbody>
                   </table>
