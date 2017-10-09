@@ -6,7 +6,32 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class LoginService {
 config = config;
+role = null;
   constructor(private http: Http) { }
+
+  getRole(id) {
+     this.getCsoRole(id)
+     .subscribe(res=>{
+       console.log(res)
+       if(res!=null)
+         this.role = "cso";
+     })
+
+     this.getHrRole(id)
+     .subscribe(res=>{
+       if(res!=null)
+         this.role = "hr";
+     })
+
+     this.getSupervisorRole(id)
+     .subscribe(res=>{
+       if(res!=null)
+         this.role = "supervisor";
+     })
+
+     if(this.role == null)
+       this.role = "employee"
+  }
 
   //Get data from mssql database using employee id
   getCsoRole(employeeID) :any {
