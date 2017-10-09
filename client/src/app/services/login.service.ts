@@ -64,7 +64,7 @@ role = null;
     /*let headers = new Headers({ 'Authorization': token });
   let options= new RequestOptions({ headers: headers });*/
     return this.http
-           .get(this.config.connect.url+this.config.connect.port+'/login/', token)
+           .get(this.config.connect.url+this.config.connect.port+'/login/'+token)
            .map(res=>res.json(),
                (err:any)=>{
             err.json();

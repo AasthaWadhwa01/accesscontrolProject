@@ -29,6 +29,7 @@ import { CisoDashboardComponent } from './components/ciso/ciso-dashboard/ciso-da
 import { EmployeeService } from './services/employee.service';
 import { DamagedCardService } from './services/damaged-card.service';
 import { LocationChangeService } from './services/location-change.service';
+import { LoginService } from './services/login.service'
 import { LostCardService } from './services/lost-card.service';
 import { ThirdPartyService } from './services/third-party.service';
 import { SupervisorLocationchangeComponent } from './components/supervisor/supervisor-locationchange/supervisor-locationchange.component';
@@ -36,11 +37,12 @@ import { HrlocationchangeFormComponent } from './components/hr/hrlocationchange-
 import { CsolocationFormComponent } from './components/cso/csolocation-form/csolocation-form.component';
 
 const routes: any = [
-	{
-		path: '', redirectTo: '/login/b7ea6377-9450-44e7-a995-372bf5445302', pathMatch: 'full'
-	},
+	/*{
+		path: '', redirectTo: 'login', pathMatch: 'full',
+    //component: LoginComponent
+	},*/
   {
-    path: 'login',
+    path: 'login/:value',
     component: LoginComponent
   },
    {
@@ -196,7 +198,7 @@ const routes: any = [
     ModalModule.forRoot(),
     RouterModule.forRoot(routes)
   ],
-  providers: [EmployeeService, DamagedCardService, LocationChangeService, LostCardService, ThirdPartyService],
+  providers: [LoginService, EmployeeService, DamagedCardService, LocationChangeService, LostCardService, ThirdPartyService],
   bootstrap: [ComponentsComponent]
 })
 export class AppModule { }

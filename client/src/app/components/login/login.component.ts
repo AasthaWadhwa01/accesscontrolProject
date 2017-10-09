@@ -18,13 +18,15 @@ errors:string;
  constructor(private router: Router, private login:LoginService, private route: ActivatedRoute) { }
 
  ngOnInit() {
+   console.log(this.route.snapshot.params['value'])
  		this.route.paramMap
       .switchMap((params: ParamMap) => this.login.getToken(this.route.snapshot.params['value']))
       .subscribe((res):any => {
-        if(res!=null)
+  
+     /*   if(res!=null)
         {
         	this.role = this.login.getRole(res.UserID);
-        }
+        }*/
         },
         error => {
           this.errors = error;
