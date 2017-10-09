@@ -25,6 +25,11 @@ errors:string;
         error => {
           this.errors = error;
         })
+
+     this.login.setToken().subscribe(data=>{
+     this.data=data;
+     let use = JSON.parse(localStorage.getItem(data.role));
+    })
  }
 
 redir(empid:any) {
