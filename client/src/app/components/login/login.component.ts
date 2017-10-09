@@ -32,12 +32,9 @@ errors:string;
           this.errors = error;
         })
 
-/*     this.login.setToken().subscribe(data=>{
-     this.data=data;
-     let use = JSON.parse(localStorage.getItem(data.role));
-    })*/
+     this.login.setValue(this.role)
  }
-
+ use = JSON.parse(localStorage.getItem('role'));
 redir(empid:any) {
 	
  this.router.navigate(['/accessforms', empid])
