@@ -24,19 +24,7 @@ config = config;
  //Get data from mssql database using employee id
   getEmpSql(employeeID) {
     return this.http
-    .get(this.config.connect.url+this.config.connect.port+'/employee/'+'getData/' + employeeID)
-    .map(res => res.json());
-  }
-
-    getHrIdSql(employeeID) {
-    return this.http
-    .get(this.config.connect.url+this.config.connect.port+'/employee/'+'getHrData/' + employeeID)
-    .map(res => res.json());
-  }
-
-    getCsoIdSql(employeeID) {
-    return this.http
-    .get(this.config.connect.url+this.config.connect.port+'/employee/'+'getCsoData/' + employeeID)
+    .get(this.config.connect.url+this.config.connect.port+'/login/'+'getData/' + employeeID)
     .map(res => res.json());
   }
 

@@ -38,6 +38,7 @@ export class LostCardComponent implements OnInit {
   appSign: any;
   dateCurr: any;
   config = config;
+  value: any;
 
   //Constructor initialize LostcardService & Router 
   constructor(private employeeService: EmployeeService, private lostCardService: LostCardService, private router: Router, private route: ActivatedRoute, private modalService: BsModalService) {}
@@ -56,8 +57,11 @@ export class LostCardComponent implements OnInit {
   };
 
  ngOnInit() {
+   this.value= localStorage.getItem("userDetails")
+         let userRole=JSON.parse(this.value).data.role;
+         let empid=JSON.parse(this.value).data.UserID;
     this.route.paramMap
-      .switchMap((params: ParamMap) => this.employeeService.getEmpSql(this.route.snapshot.params['value']))
+      .switchMap((params: ParamMap) => this.employeeService.getEmpSql(empid))
       .subscribe(
         res => {
           this.employee = res;

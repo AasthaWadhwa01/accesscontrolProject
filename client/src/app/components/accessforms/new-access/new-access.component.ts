@@ -37,6 +37,7 @@ export class NewAccessComponent implements OnInit {
   appSign: any;
   dateCurr: any;
   config = config;
+  value: any;
 
   constructor(private employeeAccess: EmployeeService, private router: Router, private route: ActivatedRoute, private modalService: BsModalService) {}
 
@@ -92,8 +93,12 @@ export class NewAccessComponent implements OnInit {
   }
 
   ngOnInit() {
+this.value= localStorage.getItem("userDetails")
+         let userRole=JSON.parse(this.value).data.role;
+         let empid=JSON.parse(this.value).data.UserID;
+
     this.route.paramMap
-      .switchMap((params: ParamMap) => this.employeeAccess.getEmpSql(this.route.snapshot.params['value']))
+      .switchMap((params: ParamMap) => this.employeeAccess.getEmpSql(empid))
       .subscribe(
         res => {
           this.employee = res;

@@ -19,8 +19,6 @@ import { config } from '../../../config';
 export class CsoDashboardComponent implements OnInit {
  emp: any = [];
   super: any = [];
-  lostrequest: any =[];
-  locrequest: any=[];
   show: any = false;
   errors: any;
   config = config;
@@ -39,12 +37,6 @@ export class CsoDashboardComponent implements OnInit {
    getEmpIdLocationRequest(value) {
     console.log('from getID');
     this.router.navigate(['/csolocationform', value]);
-  }
-
-     /*method to send employee id to hr component through navigate*/
-    getEmpIdLostRequest(value) {
-    console.log('from getID');
-    this.router.navigate(['/csolostform', value]);
   }
 
   /*ngonit method for this class*/
@@ -68,16 +60,8 @@ export class CsoDashboardComponent implements OnInit {
 
     /* method of lost card service is called to get details of employee who lost the card*/
     this.lost.getLostCard()
-        .subscribe(res => {
-
-        this.emp = res;
-
-        /*for loop to set the pending status*/
-        for (let a = 0; a < this.emp.length; a++) {
-          if (this.emp[a].current == "Cso") {
-            this.lostrequest.push(this.emp[a])
-          }
-        }
+     .subscribe(res => console.log(res), error => {
+        this.errors = error
       });
 
     /* method of third party service is called to get details of third party employee*/
@@ -93,7 +77,7 @@ export class CsoDashboardComponent implements OnInit {
         /*for loop to set the pending status*/
         for (let a = 0; a < this.emp.length; a++) {
           if (this.emp[a].current == "Cso") {
-            this.locrequest.push(this.emp[a])
+            this.super.push(this.emp[a])
           }
         }
       });

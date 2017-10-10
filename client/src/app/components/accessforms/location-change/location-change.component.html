@@ -77,7 +77,7 @@
             <h6><strong>{{config.locationchange.NAME}}</strong></h6>
           </div>
           <div class="col-sm-10">
-            <input class="form-control" type="text" value={{empName}}  name="empName" [(ngModel)]="empName">
+            <input class="form-control" type="text" value={{empName}}  name="empName" readonly="true">
           </div>
         </div>
       </div>
@@ -87,7 +87,7 @@
             <h6><strong>{{config.locationchange.DOJ}}</strong></h6>
           </div>
           <div class="col-sm-7">
-            <input type="text" class="form-control bg-white" bsDatepicker name="dateOfJoining" value={{doj}}  [(ngModel)]="dateOfJoining" />
+            <input type="text" class="form-control bg-white" bsDatepicker name="dateOfJoining" value={{doj}} readonly="true" />
           </div>
         </div>
       </div>
@@ -97,7 +97,7 @@
             <h6><strong>{{config.locationchange.DESIGNATION}}</strong></h6>
           </div>
           <div class="col-sm-8">
-            <input class="form-control" type="text" name="designation" [(ngModel)]="designation">
+            <input class="form-control" type="text" name="designation" readonly="true">
           </div>
         </div>
       </div>
@@ -109,7 +109,7 @@
             <h6><strong>{{config.locationchange.PROJECT}}</strong></h6>
           </div>
           <div class="col-sm-10">
-            <input class="form-control" type="text" name="project" value="{{project}}" [(ngModel)]="project">
+            <input class="form-control" type="text" name="project" value="{{project}}" readonly="true">
           </div>
         </div>
         <div class="row mt-2">
@@ -117,7 +117,7 @@
             <h6><strong>{{config.locationchange.OU}}</strong></h6>
           </div>
           <div class="col-sm-10">
-            <input class="form-control" type="text" value={{department}} name="ou" [(ngModel)]="ou">
+            <input class="form-control" type="text" value={{department}} name="ou" readonly="true">
           </div>
         </div>
       </div>

@@ -5,6 +5,7 @@ import { BsModalService } from 'ngx-bootstrap/modal';
 import { BsModalRef } from 'ngx-bootstrap/modal/modal-options.class';
 
 import { LocationChangeService } from '../../../services/location-change.service';
+import { EmployeeService } from '../../../services/employee.service';
 import { config } from '../../../config';
 
 @Component({
@@ -38,6 +39,7 @@ export class LocationChangeComponent implements OnInit {
   dateCurr: any;
   employee:any;
 	config = config;
+  value: any;
 
 	public modalRef: BsModalRef;
 
@@ -49,7 +51,7 @@ export class LocationChangeComponent implements OnInit {
   };
 
 	//constructor initialize's location change service & router
-	constructor(private locationChangeService:LocationChangeService, private router:Router, private route: ActivatedRoute, private modalService: BsModalService) {
+	constructor(private locationChangeService:LocationChangeService, private employeeService: EmployeeService, private router:Router, private route: ActivatedRoute, private modalService: BsModalService) {
 
 	}
 
@@ -71,8 +73,12 @@ export class LocationChangeComponent implements OnInit {
 	}
 
 		ngOnInit() {
+      this.value= localStorage.getItem("userDetails")
+         let userRole=JSON.parse(this.value).data.role;
+         let empid=JSON.parse(this.value).data.UserID;
+         
 		 this.route.paramMap
-      .switchMap((params: ParamMap) => this.locationChangeService.getEmpSql(this.route.snapshot.params['value']))
+      .switchMap((params: ParamMap) => this.employeeService.getEmpSql(empid))
       .subscribe(
         res => {
           this.employee = res;

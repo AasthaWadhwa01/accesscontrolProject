@@ -22,35 +22,4 @@ router.post('/lostInsert', function(req, res, next) {
     })
 })
 
-//get employee by id
-router.get('/findemployeebyid/:id', function(req, res, next) {
-    lost.findOne({ employeeID: req.params.id }, function(err, data) {
-        res.json(data);
-    });
-});
-
-//update form by employee id
-router.put('/update/:employeeID', (req, res) => {
-    lost.update({
-            employeeID: req.params.employeeID
-        }, {
-            $set: {
-                zone: req.body.zone,
-                accessType: req.body.accessType,
-                prev: req.body.prev,
-                current: req.body.current,
-                issuedBy: req.body.issued,
-                issueDate: req.body.datepickerModel,
-                cardno: req.body.accessCard
-            }
-        }, { upsert: true },
-        (err, empp) => {
-            if (err)
-                throw err
-            else {
-                res.json(empp)
-            }
-        })
-})
-
 module.exports = router;
