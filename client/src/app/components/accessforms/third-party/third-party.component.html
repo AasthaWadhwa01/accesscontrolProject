@@ -43,11 +43,11 @@
     <div class="row border bg-white mt-1">
       <div class="col-sm-6 border py-3">
         <h6><strong>{{config.thirdparty.EMP_ID}}</strong></h6>
-        <input class="form-control" type="text" name="employeeId" [(ngModel)]="employeeId">
+      <input class="form-control bg-white" type="text" name="designation" value={{empId}} readonly="true">
       </div>
       <div class="col-sm-6 border py-3">
         <h6><strong>{{config.thirdparty.NAME}}</strong></h6>
-        <input class="form-control" type="text" name="employeeName" [(ngModel)]="employeeName">
+          <input class="form-control bg-white" type="text" name="name" value={{empName}} readonly="true">
       </div>
     </div>
     <!--div tag for Third Party Form ends here-->

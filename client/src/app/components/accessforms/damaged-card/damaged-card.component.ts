@@ -1,9 +1,15 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+//importing all required dependencies
+import { Component, OnInit, TemplateRef } from '@angular/core';
+import { Router, ParamMap, Params, ActivatedRoute } from '@angular/router';
 import { BsDatepickerConfig } from 'ngx-bootstrap/datepicker';
+import { BsModalService } from 'ngx-bootstrap/modal';
+import { BsModalRef } from 'ngx-bootstrap/modal/modal-options.class';
 
-import { DamagedCardService } from './../../../services/damaged-card.service';
+import { LostCardService } from '../../../services/lost-card.service';
+import { EmployeeService } from '../../../services/employee.service';
 import { config } from '../../../config';
+import { DamagedCardService } from './../../../services/damaged-card.service';
+
 
 @Component({
   selector: 'app-damaged-card',
@@ -13,25 +19,69 @@ import { config } from '../../../config';
 })
 export class DamagedCardComponent implements OnInit {
 
-  date:any;
-  comments:string;
-  data:any =[];
+  //declaring all required variables
+  errors: any;
+  employeeDetail: any = [];
+  empId: string;
+  date: any;
+  status: string = "";
+  change: string = "";
+  a: any;
+  empType: any;
+  selectedcategory: any;
+  empName: any;
+  doj: any;
+  designation: any;
+  project: any;
+  department: any;
+  doe: any;
+  existPro: any;
+  newPro: any;
+  appSign: any;
+  dateCurr: any;
   config = config;
+  value: any;
   
   //constructor initialises DamagedCardService and Router 
-  constructor(private  damagecardService:DamagedCardService, private router:Router) {
+  constructor(private damagecardService: DamagedCardService,private employeeService: EmployeeService, private lostCardService: LostCardService, private router: Router, private route: ActivatedRoute, private modalService: BsModalService) {}
 
-   }
+  datepickerModel: Date;
+  public modalRef: BsModalRef;
+  employee: any;
+  data:any;
 
-    ngOnInit() {
+  public configModal = {
+    animated: true,
+    keyboard: true,
+    backdrop: true,
+    ignoreBackdropClick: false
+  };
 
-    //datepickerModel: Date;
+     ngOnInit() {
+   this.value= localStorage.getItem("userDetails")
+         let userRole=JSON.parse(this.value).data.role;
+         let empid=JSON.parse(this.value).data.UserID;
+    this.route.paramMap
+      .switchMap((params: ParamMap) => this.employeeService.getEmpSql(empid))
+      .subscribe(
+        res => {
+          this.employee = res;
+          this.empId = this.employee[0][0].EMPNO;
+          this.empName = this.employee[0][0].NAME;
+          this.doj = this.employee[0][0].DOJ;
+          this.project = this.employee[0][0].PRACTICE;
+          this.department = this.employee[0][0].OUTXT;
+        },
+        error => {
+          this.errors = error;
+        })
+
     this.date = new Date();
-    let day=this.date.getDate();
-    let month=this.date.getMonth()+1;
-    let year=this.date.getFullYear();
-    this.date=day+'/'+month+'/'+year;
-    }
+    let day = this.date.getDate();
+    let month = this.date.getMonth() + 1;
+    let year = this.date.getFullYear();
+    this.date = day + '/' + month + '/' + year;
+  }
 
   //method to take data of form to DamagedCardService to hit api
   getDamage(damageReason:string, damageDate:string):any {
