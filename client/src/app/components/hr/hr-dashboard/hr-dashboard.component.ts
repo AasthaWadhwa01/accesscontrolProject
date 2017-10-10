@@ -20,6 +20,8 @@ import { config } from '../../../config';
 export class HrDashboardComponent implements OnInit {
   emp: any = [];
   super: any = [];
+  lostrequest: any =[];
+  locrequest: any =[];
   show: any = false;
   errors: any;
   config = config;
@@ -39,6 +41,14 @@ export class HrDashboardComponent implements OnInit {
     console.log('from getID');
     this.router.navigate(['/hrlocationform', value]);
   }
+
+    /*method to send employee id to hr component through navigate*/
+    getEmpIdLostRequest(value) {
+    console.log('from getID');
+    this.router.navigate(['/hrlostform', value]);
+  }
+
+
 
   /*ngonit method for this class*/
   ngOnInit() {
@@ -61,8 +71,16 @@ export class HrDashboardComponent implements OnInit {
 
     /* method of lost card service is called to get details of employee who lost the card*/
     this.lost.getLostCard()
-      .subscribe(res => console.log(res), error => {
-        this.errors = error
+         .subscribe(res => {
+       // this.errors = error
+           this.emp = res;
+
+        /*for loop to set the pending status*/
+        for (let a = 0; a < this.emp.length; a++) {
+          if (this.emp[a].current == "Hr") {
+            this.lostrequest.push(this.emp[a])
+          }
+        }
       });
 
     /* method of third party service is called to get details of third party employee*/
@@ -80,7 +98,7 @@ export class HrDashboardComponent implements OnInit {
         /*for loop to set the pending status*/
         for (let a = 0; a < this.emp.length; a++) {
           if (this.emp[a].current == "Hr") {
-            this.super.push(this.emp[a])
+            this.locrequest.push(this.emp[a])
           }
         }
       });

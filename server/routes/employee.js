@@ -1,4 +1,4 @@
-/*let express = require('express');
+let express = require('express');
 let router = express.Router();
 
 let sql = require("mssql");
@@ -41,7 +41,7 @@ AND EXISTS
        else{
 
        // send records as a response
-       console.log(recordset);
+       /*console.log(recordset);*/
 }
 res.json(recordset.recordsets[0][0].EmpCode)
    });
@@ -68,54 +68,12 @@ AND EXISTS
        else{
 
        // send records as a response
-       console.log(recordset);
+       /*console.log(recordset);*/
 }
 res.json(recordset.recordsets[0][0].EmpCode)
    });
 
 });
-
-      router.get('/verifySupervisor/:empId',(req, res)=>{
-   request.query( `SELECT * FROM ecc_authorization WHERE in_rolecode IN(15) AND  bit_active = 1 AND ch_empcode ='`+req.params.empId+`'` , function (err, recordset) {
-
-       if (err) console.log(err);
-       else{
-
-       // send records as a response
-       res.json(recordset.recordsets[0][0])
-}
-
-   });
-
-});
-
-            router.get('/verifyHr/:empId',(req, res)=>{
-   request.query( `SELECT * FROM ecc_authorization WHERE in_rolecode IN(3) AND  bit_active = 1 AND ch_empcode ='`+req.params.empId+`'` , function (err, recordset) {
-
-       if (err) console.log(err);
-       else{
-
-       // send records as a response
-       res.json(recordset.recordsets[0][0])
-}
-
-   });
-
-});
-
-                  router.get('/verifyCso/:empId',(req, res)=>{
-   request.query( `SELECT * FROM ecc_authorization WHERE in_rolecode IN(9) AND  bit_active = 1 AND ch_empcode ='`+req.params.empId+`'` , function (err, recordset) {
-
-       if (err) console.log(err);
-       else{
-
-       // send records as a response
-       res.json(recordset.recordsets[0][0])
-}
-
-   });
-
-});
 })
 
-module.exports = router;*/
+module.exports = router;

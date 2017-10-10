@@ -35,4 +35,19 @@ getLostCard()
     .map(res => res.json());
   }
 
+   /*getEmployeeByID method to fetch details by id used in supervisor component*/
+  getEmployeeByID(employeeID) {
+    return this.http
+    .get(this.config.connect.url+this.config.connect.port+'/lostcard/'+'findemployeebyid/' + employeeID)
+    .map(res => res.json());
+  }
+   /*update method used in supervisor component*/
+  update(id, employee) {
+    console.log(employee)
+    return this.http
+    .put(this.config.connect.url+this.config.connect.port+'/lostcard/'+'update/' + id, employee)
+    .map(res => res.json());
+
+ }
+
 	}

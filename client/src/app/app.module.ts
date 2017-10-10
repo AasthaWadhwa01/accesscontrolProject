@@ -29,20 +29,21 @@ import { CisoDashboardComponent } from './components/ciso/ciso-dashboard/ciso-da
 import { EmployeeService } from './services/employee.service';
 import { DamagedCardService } from './services/damaged-card.service';
 import { LocationChangeService } from './services/location-change.service';
-import { LoginService } from './services/login.service'
 import { LostCardService } from './services/lost-card.service';
 import { ThirdPartyService } from './services/third-party.service';
 import { SupervisorLocationchangeComponent } from './components/supervisor/supervisor-locationchange/supervisor-locationchange.component';
 import { HrlocationchangeFormComponent } from './components/hr/hrlocationchange-form/hrlocationchange-form.component';
 import { CsolocationFormComponent } from './components/cso/csolocation-form/csolocation-form.component';
+import { SupervisorLostCardFormComponent } from './components/supervisor/supervisor-lost-card-form/supervisor-lost-card-form.component';
+import { HrLostCardFormComponent } from './components/hr/hr-lost-card-form/hr-lost-card-form.component';
+import { CsoLostCardFormComponent } from './components/cso/cso-lost-card-form/cso-lost-card-form.component';
 
 const routes: any = [
-	/*{
-		path: '', redirectTo: 'login', pathMatch: 'full',
-    //component: LoginComponent
-	},*/
+	{
+		path: '', redirectTo: '/login', pathMatch: 'full'
+	},
   {
-    path: 'login/:value',
+    path: 'login',
     component: LoginComponent
   },
    {
@@ -105,6 +106,10 @@ const routes: any = [
     path: 'hrlocationform/:value',
     component: HrlocationchangeFormComponent
   },
+    {
+    path: 'hrlostform/:value',
+    component: HrLostCardFormComponent
+  },
   {
     path: 'hrdash',
     component: HrDashboardComponent
@@ -122,11 +127,11 @@ const routes: any = [
     component: SupervisorLocationchangeComponent
   },
   {
-    path: 'supervisorlostchange/:value',
-    component: SupervisorLocationchangeComponent
+    path: 'supervisorlost/:value',
+    component: SupervisorLostCardFormComponent
   },
   {
-    path: 'supervisordamagechange/:value',
+    path: 'supervisordamage/:value',
     component: SupervisorLocationchangeComponent
   },
   {
@@ -140,6 +145,10 @@ const routes: any = [
   {
     path: 'csoform/:value',
     component: CsoFormComponent
+  },
+    {
+    path: 'csolostform/:value',
+    component: CsoLostCardFormComponent
   },
     {
     path: 'csolocationform/:value',
@@ -188,7 +197,10 @@ const routes: any = [
     CisoDashboardComponent,
     SupervisorLocationchangeComponent,
     HrlocationchangeFormComponent,
-    CsolocationFormComponent
+    CsolocationFormComponent,
+    SupervisorLostCardFormComponent,
+    HrLostCardFormComponent,
+    CsoLostCardFormComponent
   ],
   imports: [
     BrowserModule,
@@ -198,7 +210,7 @@ const routes: any = [
     ModalModule.forRoot(),
     RouterModule.forRoot(routes)
   ],
-  providers: [LoginService, EmployeeService, DamagedCardService, LocationChangeService, LostCardService, ThirdPartyService],
+  providers: [EmployeeService, DamagedCardService, LocationChangeService, LostCardService, ThirdPartyService],
   bootstrap: [ComponentsComponent]
 })
 export class AppModule { }

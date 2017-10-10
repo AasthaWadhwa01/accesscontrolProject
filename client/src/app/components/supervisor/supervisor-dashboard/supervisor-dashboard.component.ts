@@ -40,7 +40,7 @@ export class SupervisorDashboardComponent implements OnInit {
   }
 
   getEmpIdLostRequest(value):any {
-    this.router.navigate(['/supervisorlostchange',value])
+    this.router.navigate(['/supervisorlost',value])
   }
 
   getEmpIdDamageRequest(value):any {
@@ -73,9 +73,11 @@ export class SupervisorDashboardComponent implements OnInit {
         {
           this.lostrequest.push(this.emp[a])
         }
+        console.log(this.lostrequest)
       }
     });
 
+          console.log(this.lostrequest)
 
     this.third.getThird()
     .subscribe(res=>{
