@@ -71,5 +71,9 @@ role = null;
                });
         }
 
+setValue(value){
+  localStorage.setItem('role',value)
+}   
+
 
 }
