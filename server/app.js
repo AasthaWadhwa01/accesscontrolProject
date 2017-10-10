@@ -10,8 +10,13 @@ var lostcard = require('./routes/lostcard');
 var requester = require('./routes/requester');
 var thirdparty = require('./routes/thirdparty');
 var login = require('./routes/login');
+var employee = require('./routes/employee');
 
 var mongoose = require('mongoose');
+//connection from mongo db database
+// let mongoose = require('mongoose')
+mongoose.connect('mongodb://localhost:27017/centralAccess');
+let db = mongoose.connection;
 let cors = require('cors');
 
 let con = require('./config/config');
@@ -21,7 +26,7 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.use('/employee', employee);
+// app.use('/employee', employee);
 app.use('/approver', approver);
 app.use('/damage', damage);
 app.use('/locationchange', locationchange);

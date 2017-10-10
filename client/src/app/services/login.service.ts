@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { config } from '../config';
-import { Http } from '@angular/http';
+import { Http ,RequestOptions ,Headers} from '@angular/http';
 import 'rxjs/add/operator/map';
 
 @Injectable()
@@ -61,10 +61,10 @@ role = null;
 
   getToken(token)
 {
-    /*let headers = new Headers({ 'Authorization': token });
-  let options= new RequestOptions({ headers: headers });*/
+  let headers = new Headers({ 'Authorization': token });
+  let options= new RequestOptions({ headers: headers });
     return this.http
-           .get(this.config.connect.url+this.config.connect.port+'/login/'+token)
+           .get(this.config.connect.url+this.config.connect.port+'/login/',options)
            .map(res=>res.json(),
                (err:any)=>{
             err.json();

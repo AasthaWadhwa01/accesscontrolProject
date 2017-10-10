@@ -2,21 +2,65 @@ let express = require('express');
 let router = express.Router();
 var request = require('request');
 
-//connection from mongo db database
-let mongoose = require('mongoose')
-mongoose.connect('mongodb://localhost:27017/centralAccess');
-let db = mongoose.connection;
+let sql = require("mssql");
+
+let con = require('../config/config');
+
+//configuartion file for connection
+sql.connect(con.config, function(err) {
+    if (err) console.log(err);
+    // create sqlRequest object
+    var sqlRequest = new sql.Request();
 
 //validate token
-router.get('/:token',function(req,res,next) {
-   request.get('https://iniitiandev2.niit-tech.com/mobile/Cmn/CmnService/Authenticate?Token='+req.params.token,
+router.get('/',function(req,res,next) {
+   request.get('https://iniitiandev2.niit-tech.com/mobile/Cmn/CmnService/Authenticate?Token='+req.headers['authorization'],
    	function(error, response, body){
-  let data = response;
-if(data.isvalid == 'true')
-   res.json(body);
-   else
-   	res.send(null);
+  let data = JSON.parse(body);
+  // console.log('response');
+  // console.log(response); 
+  console.log(data);
+   // console.log(response.body['isvalid']);
+  let role ='';
+  let roleFound= true;
+
+if(data.isvalid){
+
+	sqlRequest.query( `SELECT in_rolecode FROM ecc_authorization WHERE  bit_active = 1 AND ch_empcode ='`+ req.headers['authorization'] +`'` , function (err, recordset) {
+   // try{
+       if (err) {
+        res.status().send({success:false,message:'',data:err.toString()});
+        console.log(err);
+      }
+        let hrroles = recordset.recordset.filter((role) =>{
+          return role.in_rolecode === 3;
+        })
+        let csoroles = recordset.recordset.filter((role) =>{
+          return role.in_rolecode === 9;
+        })
+        let suproles = recordset.recordset.filter((role) =>{
+          return role.in_rolecode === 15;
+        })
+        if(hrroles.length >0){
+          role = 'HR';
+        } else if(csoroles.length >0) {
+          role = 'CSO';
+        } else if(suproles.length >0) {
+          role = 'SUPERVISOR';
+        } else {
+          role = 'EMPLOYEE';
+        }
+        data.role= role;
+        res.status(200).json({success:true,message:'token validated',data:data});
+     
+   	});
+
+}
+   else{
+   	res.status().send({success:false,message:'invalid token'});
+   }
  });
  })
+})
 
 module.exports = router;

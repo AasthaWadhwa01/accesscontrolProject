@@ -1,4 +1,4 @@
-let express = require('express');
+/*let express = require('express');
 let router = express.Router();
 
 let sql = require("mssql");
@@ -41,7 +41,7 @@ AND EXISTS
        else{
 
        // send records as a response
-       /*console.log(recordset);*/
+       console.log(recordset);
 }
 res.json(recordset.recordsets[0][0].EmpCode)
    });
@@ -68,7 +68,7 @@ AND EXISTS
        else{
 
        // send records as a response
-       /*console.log(recordset);*/
+       console.log(recordset);
 }
 res.json(recordset.recordsets[0][0].EmpCode)
    });
@@ -118,4 +118,4 @@ res.json(recordset.recordsets[0][0].EmpCode)
 });
 })
 
-module.exports = router;
+module.exports = router;*/

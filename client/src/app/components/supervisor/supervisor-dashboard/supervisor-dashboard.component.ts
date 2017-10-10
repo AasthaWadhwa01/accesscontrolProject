@@ -76,7 +76,6 @@ export class SupervisorDashboardComponent implements OnInit {
       }
     });
 
-          console.log(this.lostrequest)
 
     this.third.getThird()
     .subscribe(res=>{
