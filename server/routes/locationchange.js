@@ -1,16 +1,13 @@
 let express = require('express');
 let router = express.Router();
+
+let location = require('../models/locationChange'); //requiring the model classes
 let logger = require('../services/app.logger');
 let con = require('../config/config');
 let httpstatus = require('../config/httpmsg');
 let mongoose = require('mongoose')
 
-//connection from mongo db database
-mongoose.connect('mongodb://localhost:27017/centralAccess');
-let db = mongoose.connection;
-
-let location = require('../models/locationChange');
-//get location change data
+//get method for new locationChange access card record
 router.get('/findlocation', function(req, res, next) {
     try {
         location.find({}, function(err, data) {
@@ -32,7 +29,7 @@ router.get('/findlocation', function(req, res, next) {
     }
 });
 
-//api for Location change
+//gpost method for new locationChange access card record
 router.post('/locationInsert', function(req, res, next) {
     try {
 

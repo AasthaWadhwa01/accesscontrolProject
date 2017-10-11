@@ -69,19 +69,4 @@ describe('AccessformsComponent', () => {
    expect(initialvalue).not.toEqual(newvalue);
  });
 
- // it('should change the radio button value of aceesstype', () => {
-
- //   let initialvalue = component.accesstype;
- //     let de2: DebugElement;
- //  let el2: HTMLElement;
- //    de2 = fixture.debugElement.query(By.css('.damage'));
- //    el2 = de2.nativeElement;
- //  el2.click();
- //   //component.onCaseChange();
- //   fixture.detectChanges();
- //   let newvalue = component.accesstype;
- //   expect(initialvalue).not.toEqual(newvalue);
- // });
-
-
 });

@@ -1,8 +1,8 @@
-//damage card model class
+//damageCard model class
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
-//damage card form schema
+//damageCard form schema
 var damageSchema = new Schema({
     empId: Number,
     empType: String,
@@ -17,5 +17,6 @@ var damageSchema = new Schema({
     current: String
 });
 
+//exporting the damageCard file
 var data = mongoose.model('damage', damageSchema)
 module.exports = data;

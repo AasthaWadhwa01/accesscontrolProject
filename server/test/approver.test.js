@@ -2,7 +2,7 @@ let supertest = require('supertest');
 let chai = require('chai');
 let sinon = require('sinon');
 
-let url = 'http://localhost:4024';
+let url = 'http://localhost:4009'; //application running port
 let app = require('../app');
 let approver = require('../models/approverData');
 let approverSqlStub = sinon.stub(approver, 'query');
@@ -15,6 +15,7 @@ describe('test fetch data of approver of access card', () => {
         approverGetStub.yields(null, [{ serial: '1', project: 'training', phase: 'phase 3', access: 'sita', proCat: 'internal', appAuth: 'Sheetal', appEmp: 'Hr' }]);
     });
 
+    //positive test case for fetch approver record
     it('validation for positive case of approver of access type', (done) => {
         supertest(url)
             .get('/approver/find')
@@ -22,11 +23,13 @@ describe('test fetch data of approver of access card', () => {
             .expect('Content-Type', /json/)
             .end((err, res) => {
                 if (err) return done(err);
-                chai.expect(res.body[0].project).to.equal('training');
+                chai.expect(res.body.data[0].project).to.equal('training');
                 done();
             });
     });
 
+
+    //negative test case for fetch approver record
     it('validation for negative case of approver of access type', (done) => {
         supertest(url)
             .get('/approver/find')
@@ -34,7 +37,7 @@ describe('test fetch data of approver of access card', () => {
             .expect('Content-Type', /json/)
             .end((err, res) => {
                 if (err) return done(err);
-                chai.expect(res.body[0].project).not.to.equal('train');
+                chai.expect(res.body.data[0].project).not.to.equal('train');
                 done();
             });
     });
@@ -45,6 +48,7 @@ describe('test status of approver of access card', () => {
         approverGetStub.yields(null, [{ serial: '1', project: 'training', phase: 'phase 3', access: 'sita', proCat: 'internal', appAuth: 'Sheetal', appEmp: 'Hr' }]);
     });
 
+    //test case for status success to fetch approver record
     it('validation for status success', (done) => {
         supertest(url)
             .get('/approver/find')
@@ -56,6 +60,7 @@ describe('test status of approver of access card', () => {
             });
     });
 
+    //test case for status not found to fetch approver record
     it('validation for status not found', (done) => {
         supertest(url)
             .get('/approver/find')
@@ -71,6 +76,7 @@ describe('test status of approver of access card', () => {
 describe('test new record of approver of access card ', () => {
     let approverInfo = { serial: '1', project: 'training', phase: 'phase 3', access: 'sita', proCat: 'internal', appAuth: 'Sheetal', appEmp: 'Hr' };
 
+    //positive test case for insert new approver record
     it('positive case for new approver record', (done) => {
         approverPostStub.yields(null, [approverInfo])
         supertest(url)
@@ -80,11 +86,12 @@ describe('test new record of approver of access card ', () => {
             .expect('Content-Type', /json/)
             .end((err, res) => {
                 if (err) return done(err);
-                chai.expect(res.body.project).to.be.equal("training")
+                chai.expect(res.body.data.project).to.be.equal('training')
                 done();
             });
     });
 
+    //negative test case for insert new approver record
     it('negative case for new approver record', (done) => {
         approverPostStub.yields(null, [approverInfo])
         supertest(url)
@@ -94,7 +101,7 @@ describe('test new record of approver of access card ', () => {
             .expect('Content-Type', /json/)
             .end((err, res) => {
                 if (err) return done(err);
-                chai.expect(res.body.project).not.to.be.equal("train")
+                chai.expect(res.body.data.project).not.to.be.equal('train')
                 done();
             });
     });

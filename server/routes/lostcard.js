@@ -1,16 +1,13 @@
 let express = require('express');
 let router = express.Router();
-let logger = require('../services/app.logger');
 let mongoose = require('mongoose')
-let lost = require('../models/lostCard');
+
+let logger = require('../services/app.logger');
+let lost = require('../models/lostCard'); //requiring the model classes
 let con = require('../config/config');
 let httpstatus = require('../config/httpmsg');
 
-//connection from mongo db database
-mongoose.connect('mongodb://localhost:27017/centralAccess');
-let db = mongoose.connection;
-
-//get lost data
+//get method for new lost card record
 router.get('/findlost', function(req, res, next) {
     try {
         lost.find({}, function(err, data) {
@@ -32,7 +29,7 @@ router.get('/findlost', function(req, res, next) {
     }
 });
 
-//api for lost card
+//post method for new lost card record
 router.post('/lostInsert', function(req, res, next) {
     try {
         lost.create(req.body).then(function(data, err) {

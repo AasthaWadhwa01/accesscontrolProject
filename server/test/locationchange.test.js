@@ -4,7 +4,7 @@ let sinon = require('sinon');
 
 let app = require('../app');
 let locationChange = require('../models/locationChange');
-let url = 'http://localhost:4024';
+let url = 'http://localhost:4009'; //application running port
 let locationChangeSqlStub = sinon.stub(locationChange, 'query');
 let locationChangeGetStub = sinon.stub(locationChange, 'find');
 let locationChangePostStub = sinon.stub(locationChange.prototype, 'save');
@@ -31,6 +31,7 @@ describe('test fetch data of locationchange access card', () => {
         }]);
     });
 
+    //positive test case for fetch location change record
     it('validation for positive case of locationchange access type', (done) => {
         supertest(url)
             .get('/locationchange/findlocation')
@@ -38,11 +39,12 @@ describe('test fetch data of locationchange access card', () => {
             .expect('Content-Type', /json/)
             .end((err, res) => {
                 if (err) return done(err);
-                chai.expect(res.body[0].category).to.equal('Employee');
+                chai.expect(res.body.data[0].category).to.equal('Employee');
                 done();
             });
     });
 
+    //negative test case for fetch location change record
     it('validation for negative case of locationchange access type', (done) => {
         supertest(url)
             .get('/locationchange/findlocation')
@@ -50,7 +52,7 @@ describe('test fetch data of locationchange access card', () => {
             .expect('Content-Type', /json/)
             .end((err, res) => {
                 if (err) return done(err);
-                chai.expect(res.body[0].category).not.to.equal('Emp');
+                chai.expect(res.body.data[0].category).not.to.equal('Emp');
                 done();
             });
     });
@@ -78,6 +80,7 @@ describe('test status of locationchange access card', () => {
         }]);
     });
 
+    //test case status success for fetch location change record
     it('validation for status success', (done) => {
         supertest(url)
             .get('/locationchange/findlocation')
@@ -89,6 +92,7 @@ describe('test status of locationchange access card', () => {
             });
     });
 
+    //test case status not found for fetch location change record
     it('validation for status not found', (done) => {
         supertest(url)
             .get('/locationchange/findlocation')
@@ -121,6 +125,7 @@ describe('test new record of locationchange access card', () => {
         date: '21/11/2017'
     };
 
+    //application running port//positive test case for insert new location change record
     it('positive case for new locationchange access card record', (done) => {
         locationChangePostStub.yields(null, [locationChangeInfo])
         supertest(url)
@@ -130,11 +135,12 @@ describe('test new record of locationchange access card', () => {
             .expect('Content-Type', /json/)
             .end((err, res) => {
                 if (err) return done(err);
-                chai.expect(res.body.category).to.be.equal('Employee');
+                chai.expect(res.body.data.category).to.be.equal('Employee');
                 done();
             });
     });
 
+    //negative test case for insert new location change record
     it('negative case for new locationchange access card record', (done) => {
         locationChangePostStub.yields(null, [locationChangeInfo])
         supertest(url)
@@ -144,7 +150,7 @@ describe('test new record of locationchange access card', () => {
             .expect('Content-Type', /json/)
             .end((err, res) => {
                 if (err) return done(err);
-                chai.expect(res.body.empId).not.to.be.equal("50042")
+                chai.expect(res.body.data.empId).not.to.be.equal("50042")
                 done();
             });
     });

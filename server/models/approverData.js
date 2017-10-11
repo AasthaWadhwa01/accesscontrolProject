@@ -1,4 +1,4 @@
-//approver data model class
+//approverData model class
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
@@ -27,5 +27,6 @@ var approverSchema = new Schema({
     }
 });
 
+//exporting the approverData file
 var data = mongoose.model('approver', approverSchema)
 module.exports = data;

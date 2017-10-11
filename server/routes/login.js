@@ -24,7 +24,7 @@ router.get('/',function(req,res,next) {
 if(data.isvalid){
 
 	sqlRequest.query( `SELECT in_rolecode FROM ecc_authorization WHERE  bit_active = 1 AND ch_empcode ='`+ req.headers['authorization'] +`'` , function (err, recordset) {
-   // try{
+   
        if (err) {
         res.status(httpstatus.internalerror.code).send({success:false,message:'',data:err.toString()});
       }

@@ -1,13 +1,12 @@
 let express = require('express');
 let router = express.Router();
+
 let logger = require('../services/app.logger');
 let con = require('../config/config');
 let httpstatus = require('../config/httpmsg');
+let requester = require('../models/requester'); //requiring the model classes
 
-//requiring the model classes
-let requester = require('../models/requester');
-
-//get new access data
+//get method for new requester access record
 router.get('/findemployee', function(req, res, next) {
     try {
         requester.find({}, function(err, data) {
@@ -29,7 +28,7 @@ router.get('/findemployee', function(req, res, next) {
     }
 });
 
-//get employee by id
+//post method for new requester access record
 router.get('/findemployeebyid/:id', function(req, res, next) {
     try {
         requester.findOne({ employeeID: req.params.id }, function(err, data) {

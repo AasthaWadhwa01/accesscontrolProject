@@ -4,7 +4,6 @@ import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { ModalModule, BsDatepickerModule } from 'ngx-bootstrap';
-
 import { ComponentsComponent } from './components/components.component';
 import { AccessformsComponent } from './components/accessforms/accessforms.component';
 import { EmployeeDashboardComponent } from './components/employee-dashboard/employee-dashboard.component';

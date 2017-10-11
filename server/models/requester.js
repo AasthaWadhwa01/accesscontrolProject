@@ -1,4 +1,4 @@
-//requester information model class
+//requester details model class
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
@@ -78,5 +78,6 @@ var requesterSchema = new Schema({
     }
 });
 
+//exporting the requester file
 var data = mongoose.model('requester', requesterSchema)
 module.exports = data;

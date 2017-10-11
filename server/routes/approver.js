@@ -1,15 +1,13 @@
 let express = require('express');
 let router = express.Router();
+let mongoose = require('mongoose');
+
+let approver = require('../models/approverData'); //requiring the model classes
 let logger = require('../services/app.logger');
-let mongoose = require('mongoose')
-let approver = require('../models/approverData');
 let con = require('../config/config');
 let httpstatus = require('../config/httpmsg');
-//connection from mongo db database
-mongoose.connect('mongodb://localhost:27017/centralAccess');
-let db = mongoose.connection;
 
-//get Approver Data fom Database (Excel Wala)
+//get method for new access card record
 router.get('/find', function(req, res, next) {
     try {
         approver.find({}, function(err, data) {
@@ -31,7 +29,7 @@ router.get('/find', function(req, res, next) {
     }
 });
 
-//post employee details
+//post method for new access card record
 router.post('/employee', function(req, res, next) {
     try {
         approver.create(req.body).then(function(data, err) {

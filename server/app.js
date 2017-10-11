@@ -1,7 +1,10 @@
 var express = require('express');
 var app = express();
 var path = require('path');
+var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
+
+//importing models
 var approver = require('./routes/approver');
 var damage = require('./routes/damage');
 var employee = require('./routes/employee');
@@ -12,21 +15,19 @@ var thirdparty = require('./routes/thirdparty');
 var login = require('./routes/login');
 var employee = require('./routes/employee');
 
-var mongoose = require('mongoose');
 //connection from mongo db database
-// let mongoose = require('mongoose')
 mongoose.connect('mongodb://localhost:27017/centralAccess');
 let db = mongoose.connection;
 let cors = require('cors');
 
 let con = require('./config/config');
 
+//cors connection
 app.use(cors());
-
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// app.use('/employee', employee);
+//all routes
 app.use('/approver', approver);
 app.use('/damage', damage);
 app.use('/locationchange', locationchange);
@@ -46,5 +47,6 @@ app.use(function(err, req, res, next) {
     res.render('Internal server Error');
 });
 
+//port listener
 app.listen(con.port);
 module.exports = app;

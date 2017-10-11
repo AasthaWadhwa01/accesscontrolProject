@@ -1,8 +1,8 @@
-  //third party model class
+  //thirdParty model class
   var mongoose = require('mongoose');
   var Schema = mongoose.Schema;
 
-  //third party form schema
+  //thirdParty form schema
   var thirdPartySchema = new Schema({
       category: {
           type: String
@@ -36,5 +36,6 @@
       }
   });
 
+  //exporting the thirdParty file
   var data = mongoose.model('thirdParty', thirdPartySchema)
   module.exports = data;

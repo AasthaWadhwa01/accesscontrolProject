@@ -1,15 +1,13 @@
 let express = require('express');
 let router = express.Router();
+let mongoose = require('mongoose');
+
+let damage = require('../models/damage'); //requiring the model classes
 let logger = require('../services/app.logger');
-let mongoose = require('mongoose')
-let damage = require('../models/damage');
 let con = require('../config/config');
 let httpstatus = require('../config/httpmsg');
-//connection from mongo db database
-mongoose.connect('mongodb://localhost:27017/centralAccess');
-let db = mongoose.connection;
 
-//get damage data
+//get method for new damage access card record
 router.get('/finddamage', function(req, res, next) {
     try {
         damage.find({}, function(err, data) {
@@ -31,7 +29,7 @@ router.get('/finddamage', function(req, res, next) {
     }
 });
 
-//api for damged card
+//post method for new damage access card record
 router.post('/damageInsert', function(req, res, next) {
     try {
         damage.create(req.body).then(function(data, err) {

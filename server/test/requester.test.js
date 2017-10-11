@@ -2,7 +2,7 @@ let supertest = require('supertest');
 let chai = require('chai');
 let sinon = require('sinon');
 
-let url = 'http://localhost:4024';
+let url = 'http://localhost:4009'; //application running port
 let app = require('../app');
 let employee = require('../models/requester');
 let employeeSqlStub = sinon.stub(employee, 'query');
@@ -35,6 +35,7 @@ describe('test fetch data of employee access card', () => {
         }]);
     });
 
+    //positive test case for fetch requester data 
     it('validation for positive case of employee access card data', (done) => {
         supertest(url)
             .get('/requester/findemployee')
@@ -42,11 +43,12 @@ describe('test fetch data of employee access card', () => {
             .expect('Content-Type', /json/)
             .end((err, res) => {
                 if (err) return done(err);
-                chai.expect(res.body[0].employeeId).to.equal(50042924);
+                chai.expect(res.body.data[0].employeeId).to.equal(50042924);
                 done();
             });
     });
 
+    //negative test case for fetch requester data 
     it('validation for negative case of employee access card data', (done) => {
         supertest(url)
             .get('/requester/findemployee')
@@ -54,7 +56,7 @@ describe('test fetch data of employee access card', () => {
             .expect('Content-Type', /json/)
             .end((err, res) => {
                 if (err) return done(err);
-                chai.expect(res.body[0].employeeId).not.to.equal(50042);
+                chai.expect(res.body.data[0].employeeId).not.to.equal(50042);
                 done();
             });
     });
@@ -84,6 +86,7 @@ describe('test fetch data of employee by employeeId of access card', () => {
         }]);
     });
 
+    //positive test case for fetch requester data by employeeId
     it('validation for positive case of employee access card data fetch by employeeId', (done) => {
         supertest(url)
             .get('/requester/findemployeebyid/50042924')
@@ -91,11 +94,12 @@ describe('test fetch data of employee by employeeId of access card', () => {
             .expect('Content-Type', /json/)
             .end((err, res) => {
                 if (err) return done(err);
-                chai.expect(res.body[0].employeeId).to.equal(50042924);
+                chai.expect(res.body.data[0].employeeId).to.equal(50042924);
                 done();
             });
     });
 
+    //negative test case for fetch requester data by employeeId
     it('validation for negative case of employee access card data fetch by employeeId', (done) => {
         supertest(url)
             .get('/requester/findemployeebyid/5004')
@@ -103,7 +107,7 @@ describe('test fetch data of employee by employeeId of access card', () => {
             .expect('Content-Type', /json/)
             .end((err, res) => {
                 if (err) return done(err);
-                chai.expect(res.body[0].employeeId).not.to.equal(50042);
+                chai.expect(res.body.data[0].employeeId).not.to.equal(50042);
                 done();
             });
     });
@@ -133,6 +137,7 @@ describe('test status of employee access card', () => {
         }]);
     });
 
+    //test case for status success fetch requester data
     it('validation for status success', (done) => {
         supertest(url)
             .get('/requester/findemployee')
@@ -144,6 +149,7 @@ describe('test status of employee access card', () => {
             });
     });
 
+    //test case for status not found fetch requester data
     it('validation for status not found', (done) => {
         supertest(url)
             .get('/requester/findemployee')
@@ -178,6 +184,7 @@ describe('Test new record of employee access card', () => {
         issueDate: '12/07/2017'
     };
 
+    //positive test case for new requester data
     it('positive case for new employee record', () => {
         employeePostStub.yields(null, [employeeInfo])
         supertest(url)
@@ -187,11 +194,12 @@ describe('Test new record of employee access card', () => {
             .expect('Content-Type', /json/)
             .end((err, res) => {
                 if (err) return done(err);
-                chai.expect(res.body.employeeId).to.be.equal(50042924);
+                chai.expect(res.body.data.employeeId).to.be.equal(50042924);
                 done();
             });
     });
 
+    //negative test case for new requester data
     it('negative case for new employee record', () => {
         employeePostStub.yields(null, [employeeInfo])
         supertest(url)
@@ -201,7 +209,7 @@ describe('Test new record of employee access card', () => {
             .expect('Content-Type', /json/)
             .end((err, res) => {
                 if (err) return done(err);
-                chai.expect(res.body.employeeId).not.to.be.equal(50042)
+                chai.expect(res.body.data.employeeId).not.to.be.equal(50042)
                 done();
             });
     });
@@ -219,6 +227,7 @@ describe('test edit employee data using employeeId ', (done) => {
         });
     });
 
+    //positive test case for edit requester data
     it('pasitive case of edit employee data using employeeId', (done) => {
         supertest(url)
             .put('/requester/update/50042924')
@@ -234,6 +243,7 @@ describe('test edit employee data using employeeId ', (done) => {
             });
     });
 
+    //negative test case for edit requester data
     it('negative case of edit employee data using employeeId', (done) => {
         supertest(url)
             .put('/requester/update/50042924')

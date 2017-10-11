@@ -4,8 +4,9 @@ import { FormsModule } from '@angular/forms';
 import { DebugElement } from '@angular/core';
 import { By } from '@angular/platform-browser';
 import { Observable } from 'rxjs/Observable';
+import { BsModalService } from 'ngx-bootstrap/modal';
 import 'rxjs/add/observable/of';
-import { Router } from '@angular/router';
+import { Router ,ActivatedRoute} from '@angular/router';
 import { LostCardComponent } from './lost-card.component';
 import { BsDatepickerConfig } from 'ngx-bootstrap/datepicker';
 import { LostCardService } from '../../../services/lost-card.service';
@@ -45,6 +46,8 @@ describe(' LostCardComponent', () => {
         FormsModule
       ],
       providers: [
+        { provide: BsModalService },
+        { provide: ActivatedRoute },
         { provide: LostCardService },
         { provide: Router, useClass: RouterStub }
       ]
@@ -62,6 +65,8 @@ describe(' LostCardComponent', () => {
   it("testing the save method", () => {
     fixture.detectChanges();
     component.save(test.comments.comments, test.date.date,test.template.template);
+   // console.log(component.data.n,"heloo")
+ 
     expect(component.data.n).toEqual(1);
     expect(component.data.nModified).toEqual(1);
     expect(component.data.ok).toEqual(1);
@@ -93,9 +98,7 @@ describe(' LostCardComponent', () => {
   //negative test case for add category method
 
   it("negative test for save method", () => {
-    //  let data=test.response;
     let negativeData = test.negativeResponse;
-    // component.data=test.categoryData;
     component.save(test.comments.comments, test.date.date,test.template.template);
     fixture.detectChanges();
     expect(component.data.n).not.toEqual(negativeData.nModified);
