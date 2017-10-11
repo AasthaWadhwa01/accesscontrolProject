@@ -21,6 +21,7 @@ describe(' LostCardComponent', () => {
     "response": { "n": 1, "ok": 1, "nModified": 1 },
     "data": { "response": "category already exixts" },
     "comments": { "comments": "broken" },
+    "template":{"template":"modal"},
     "date": { "date": "12/04/17" },
     "negativeResponse": { "ok": "0", "nModified": "0", "n": "0" },
     "categoryResponse": { "Response": "category Name alerady exist" }
@@ -37,7 +38,7 @@ describe(' LostCardComponent', () => {
     }
     data = test.response;
     TestBed.configureTestingModule({
-      declarations: [LostCardComponent, LostCardComponent],
+      declarations: [LostCardComponent],
       imports: [
         BrowserModule,
         HttpModule,
@@ -54,15 +55,13 @@ describe(' LostCardComponent', () => {
       fixture.detectChanges();
       service = fixture.debugElement.injector.get(LostCardService);
       spy = spyOn(service, 'save').and.returnValue(Observable.of(data));
-
-
-    });
+   });
   }));
 
   //test case for add category method
   it("testing the save method", () => {
     fixture.detectChanges();
-    component.save(test.comments.comments, test.date.date);
+    component.save(test.comments.comments, test.date.date,test.template.template);
     expect(component.data.n).toEqual(1);
     expect(component.data.nModified).toEqual(1);
     expect(component.data.ok).toEqual(1);
@@ -85,8 +84,6 @@ describe(' LostCardComponent', () => {
       de = fixture.debugElement.query(By.css('.back'));
       el = de.nativeElement;
       el.click();
-
-      //component.login();
       fixture.detectChanges();
       const navArgs = spy1.calls.first().args[0];
       console.log(navArgs);
@@ -99,9 +96,8 @@ describe(' LostCardComponent', () => {
     //  let data=test.response;
     let negativeData = test.negativeResponse;
     // component.data=test.categoryData;
-    component.save(test.comments.comments, test.date.date);
+    component.save(test.comments.comments, test.date.date,test.template.template);
     fixture.detectChanges();
-    console.log("this is spy response", component.data.n);
     expect(component.data.n).not.toEqual(negativeData.nModified);
     expect(component.data.nModified).not.toEqual(negativeData.n);
     expect(component.data.ok).not.toEqual(negativeData.ok);

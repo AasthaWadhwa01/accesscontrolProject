@@ -71,6 +71,7 @@ export class DamagedCardComponent implements OnInit {
           this.doj = this.employee[0][0].DOJ;
           this.project = this.employee[0][0].PRACTICE;
           this.department = this.employee[0][0].OUTXT;
+          this.data=res;
         },
         error => {
           this.errors = error;
@@ -88,6 +89,7 @@ export class DamagedCardComponent implements OnInit {
     this.data= { comments:damageReason, date:damageDate }  
     this.damagecardService.damage(this.data)
     .subscribe((data)=> {
+      this.data=data;
       this.router.navigate(['/empdash']);
       })
     }

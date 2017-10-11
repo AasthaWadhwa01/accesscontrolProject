@@ -13,7 +13,7 @@ import { config } from '../../../config';
   selector: 'app-lost-card',
   templateUrl: './lost-card.component.html',
   styleUrls: ['./lost-card.component.css'],
-  providers: [LostCardService]
+  providers: [LostCardService,EmployeeService]
 })
 
 export class LostCardComponent implements OnInit {
@@ -109,7 +109,7 @@ export class LostCardComponent implements OnInit {
     this.lostCardService.save(employee).subscribe(data => {
       this.data=data;
     })
-    this.openModalWithClass(template)
+   // this.openModalWithClass(template)
     this.router.navigate(['/empdash']);
     };
 
