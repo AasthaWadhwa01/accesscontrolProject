@@ -11,13 +11,8 @@ var damageSchema = new Schema({
     designation: String,
     project: String,
     ou: String,
-    date: {
-        type: String,
-
-    },
-    comments: {
-        type: String
-    },
+    date: String,
+    comments: String
     prev: String,
     current: String
 });

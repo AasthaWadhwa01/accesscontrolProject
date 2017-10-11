@@ -1,8 +1,8 @@
 let express = require('express');
 let router = express.Router();
+let mongoose = require('mongoose')
 
 //connection from mongo db database
-let mongoose = require('mongoose')
 mongoose.connect('mongodb://localhost:27017/centralAccess');
 let db = mongoose.connection;
 
