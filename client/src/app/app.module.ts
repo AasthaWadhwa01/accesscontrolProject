@@ -11,7 +11,6 @@ import { EmployeeDashboardComponent } from './components/employee-dashboard/empl
 import { SupervisorComponent } from './components/supervisor/supervisor.component';
 import { HrComponent } from './components/hr/hr.component';
 import { CsoComponent } from './components/cso/cso.component';
-import { CisoComponent } from './components/ciso/ciso.component';
 import { LoginComponent } from './components/login/login.component';
 import { NewAccessComponent } from './components/accessforms/new-access/new-access.component';
 import { LostCardComponent } from './components/accessforms/lost-card/lost-card.component';
@@ -24,17 +23,12 @@ import { HrDashboardComponent } from './components/hr/hr-dashboard/hr-dashboard.
 import { HrFormComponent } from './components/hr/hr-form/hr-form.component';
 import { CsoFormComponent } from './components/cso/cso-form/cso-form.component';
 import { CsoDashboardComponent } from './components/cso/cso-dashboard/cso-dashboard.component';
-import { CisoFormComponent } from './components/ciso/ciso-form/ciso-form.component';
-import { CisoDashboardComponent } from './components/ciso/ciso-dashboard/ciso-dashboard.component';
 import { EmployeeService } from './services/employee.service';
 import { DamagedCardService } from './services/damaged-card.service';
 import { LocationChangeService } from './services/location-change.service';
 import { LoginService } from './services/login.service'
 import { LostCardService } from './services/lost-card.service';
 import { ThirdPartyService } from './services/third-party.service';
-import { SupervisorLocationchangeComponent } from './components/supervisor/supervisor-locationchange/supervisor-locationchange.component';
-import { HrlocationchangeFormComponent } from './components/hr/hrlocationchange-form/hrlocationchange-form.component';
-import { CsolocationFormComponent } from './components/cso/csolocation-form/csolocation-form.component';
 import { ErrorpageComponent } from './components/errorpage/errorpage.component';
 
 const routes: any = [
@@ -106,10 +100,6 @@ const routes: any = [
     path: 'hrform/:value',
     component: HrFormComponent
   },
-   {
-    path: 'hrlocationform/:value',
-    component: HrlocationchangeFormComponent
-  },
   {
     path: 'hrdash',
     component: HrDashboardComponent
@@ -122,18 +112,7 @@ const routes: any = [
     path: 'superform/:value',
     component: SupervisorFormComponent
   },
-   {
-    path: 'supervisorlocationchange/:value',
-    component: SupervisorLocationchangeComponent
-  },
-  {
-    path: 'supervisorlostchange/:value',
-    component: SupervisorLocationchangeComponent
-  },
-  {
-    path: 'supervisordamagechange/:value',
-    component: SupervisorLocationchangeComponent
-  },
+
   {
     path: 'superdash',
     component: SupervisorDashboardComponent
@@ -146,26 +125,12 @@ const routes: any = [
     path: 'csoform/:value',
     component: CsoFormComponent
   },
-    {
-    path: 'csolocationform/:value',
-    component: CsolocationFormComponent
-  },
+ 
   {
     path: 'csodash',
     component: CsoDashboardComponent
   },
-  {
-    path: 'ciso',
-    component: CisoComponent
-  },
-  {
-    path: 'cisoform/:value',
-    component: CisoFormComponent
-  },
-  {
-    path: 'cisodash',
-    component: CisoDashboardComponent
-  },
+
 ]
 
 @NgModule({
@@ -176,7 +141,6 @@ const routes: any = [
     SupervisorComponent,
     HrComponent,
     CsoComponent,
-    CisoComponent,
     LoginComponent,
     NewAccessComponent,
     LostCardComponent,
@@ -189,11 +153,6 @@ const routes: any = [
     HrFormComponent,
     CsoFormComponent,
     CsoDashboardComponent,
-    CisoFormComponent,
-    CisoDashboardComponent,
-    SupervisorLocationchangeComponent,
-    HrlocationchangeFormComponent,
-    CsolocationFormComponent,
     ErrorpageComponent
   ],
   imports: [
