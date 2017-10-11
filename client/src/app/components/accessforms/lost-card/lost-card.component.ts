@@ -102,7 +102,7 @@ export class LostCardComponent implements OnInit {
       newProject: this.newPro,
       requestDate: this.dateCurr,
       prev: "Employee",
-      current: "Supervisor",
+      current: "Cso",
       comment: comment,
       date: date
     }

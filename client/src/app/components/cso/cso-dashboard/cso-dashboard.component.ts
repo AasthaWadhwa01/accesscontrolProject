@@ -86,7 +86,7 @@ export class CsoDashboardComponent implements OnInit {
     this.newrequest.getEmployee()
       .subscribe(res => {
 
-        this.emp = res;
+        this.emp = res.data;
 
         /*for loop to set the pending status*/
         for (let a = 0; a < this.emp.length; a++) {

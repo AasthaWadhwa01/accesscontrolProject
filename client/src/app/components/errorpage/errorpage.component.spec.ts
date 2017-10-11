@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CsolocationFormComponent } from './csolocation-form.component';
+import { ErrorpageComponent } from './errorpage.component';
 
-describe('CsolocationFormComponent', () => {
-  let component: CsolocationFormComponent;
-  let fixture: ComponentFixture<CsolocationFormComponent>;
+describe('ErrorpageComponent', () => {
+  let component: ErrorpageComponent;
+  let fixture: ComponentFixture<ErrorpageComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CsolocationFormComponent ]
+      declarations: [ ErrorpageComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CsolocationFormComponent);
+    fixture = TestBed.createComponent(ErrorpageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

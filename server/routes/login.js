@@ -4,7 +4,9 @@ var request = require('request');
 
 let sql = require("mssql");
 
+let logger = require('../services/app.logger');
 let con = require('../config/config');
+let httpstatus = require('../config/httpmsg');
 
 //configuartion file for connection
 sql.connect(con.config, function(err) {
@@ -24,8 +26,7 @@ if(data.isvalid){
 	sqlRequest.query( `SELECT in_rolecode FROM ecc_authorization WHERE  bit_active = 1 AND ch_empcode ='`+ req.headers['authorization'] +`'` , function (err, recordset) {
    // try{
        if (err) {
-        res.status(500).send({success:false,message:'',data:err.toString()});
-        console.log(err);
+        res.status(httpstatus.internalerror.code).send({success:false,message:'',data:err.toString()});
       }
         let hrroles = recordset.recordset.filter((role) =>{
           return role.in_rolecode === 3;
@@ -46,7 +47,7 @@ if(data.isvalid){
           role = 'EMPLOYEE';
         }
         data.role= role;
-        res.status(200).json({success:true,message:'token validated',data:data});
+        res.status(httpstatus.success.code).json({success:true,message:'token validated',data:data});
      
    	});
 
@@ -58,10 +59,18 @@ if(data.isvalid){
  })
 
 router.get('/getData/:empId', (req, res) => {
+  try{
         sqlRequest.query(con.query + req.params.empId + `'`, function(err, recordset) {
-          
-            res.json(recordset.recordsets)
+          // res.status(httpstatus.success.code).json({ success: true, message:'get data', data: recordset.recordsets });
+          logger.info(con.messages.employeedata);
+           res.json(recordset.recordsets)
         });
+      }
+      catch(error)
+      {
+        logger.error(con.messages.servererror)
+        return res.status(httpstatus.internalerror.code).json({ success: false, message: httpstatus.internalerror.msg, data: error.toString() });
+      }
 });
 
 })

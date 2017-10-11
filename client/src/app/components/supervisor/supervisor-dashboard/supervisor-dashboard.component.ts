@@ -95,13 +95,15 @@ export class SupervisorDashboardComponent implements OnInit {
 
     this.newrequest.getEmployee()
     .subscribe(res=>{
-      this.emp=res;
+      this.emp=res.data;
       for(let a=0;a<this.emp.length;a++)
       {
+        console.log(this.emp[a])
         if(this.emp[a].current=="Supervisor")
         {
           this.newaccess.push(this.emp[a])
         }
+        console.log(this.newaccess,"sfggskadkhj")
       }
     });
     this.show = !this.show;

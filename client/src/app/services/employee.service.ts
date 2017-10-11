@@ -2,6 +2,9 @@ import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
 import { config } from '../config';
+import 'rxjs/add/operator/catch';
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/observable/throw';
 
 @Injectable()
 
@@ -12,6 +15,18 @@ config = config;
 
  //constructor of employee service
   constructor(private http: Http) {}
+
+    private handle(error : Response){
+   if(error.status == 500)
+   {
+     return Observable.throw(error.json());
+     
+   }
+   else if (error.status==404)
+   {
+      return Observable.throw(error.json());
+   }
+ }
 
  //save method to insert data of employee
   save(employee) {
@@ -25,7 +40,7 @@ config = config;
   getEmpSql(employeeID) {
     return this.http
     .get(this.config.connect.url+this.config.connect.port+'/login/'+'getData/' + employeeID)
-    .map(res => res.json());
+    .map(res => res.json(),error=>error.json());
   }
 
  //Angular Service of get method of employee

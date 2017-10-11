@@ -108,9 +108,10 @@ this.value= localStorage.getItem("userDetails")
           this.project = this.employee[0][0].PRACTICE;
           this.department = this.employee[0][0].OUTXT;
         },
-        error => {
-          this.errors = error;
-        })
+      error => {
+          error;
+           this.router.navigate(['/errorpage'])
+       })
 
     this.date = new Date();
     let day = this.date.getDate();

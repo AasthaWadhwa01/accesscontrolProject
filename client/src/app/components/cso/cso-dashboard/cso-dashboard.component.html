@@ -179,9 +179,9 @@
           <div class="container" *ngIf="show==true">
             <nav class="nav nav-tabs nav-success" id="myTab" role="tablist">
               <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-expanded="true">{{config.csodash.NEW_ACCESS}}</a>
-              <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile">{{config.csodash.LOCATION_CHANGE}}</a>
-              <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile">{{config.csodash.LOST_CARD}}</a>
-              <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile">{{config.csodash.DAMAGE_CARD}}</a>
+              <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile1" role="tab" aria-controls="nav-profile">{{config.csodash.LOCATION_CHANGE}}</a>
+              <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile2" role="tab" aria-controls="nav-profile">{{config.csodash.LOST_CARD}}</a>
+              <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile3" role="tab" aria-controls="nav-profile">{{config.csodash.DAMAGE_CARD}}</a>
             </nav>
             <div class="tab-content" id="nav-tabContent">
               <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
@@ -202,7 +202,7 @@
                   </tbody>
                 </table>
               </div>
-              <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+              <div class="tab-pane fade" id="nav-profile1" role="tabpanel" aria-labelledby="nav-profile-tab">
                 <table class="table table-striped">
                   <thead>
                     <tr>
@@ -220,7 +220,7 @@
                   </tbody>
                 </table>
               </div>
-              <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+              <div class="tab-pane fade" id="nav-profile2" role="tabpanel" aria-labelledby="nav-profile-tab">
                 <table class="table table-striped">
                   <thead>
                     <tr>
@@ -230,15 +230,11 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <!--  <tr *ngFor="let data of super">
-    <th scope="row">super.indexOf(data)+1</th>
-    <td><a type="button" (click)="getID(data.employeeID)">{{data.employeeID}}</a></td>
-    <td>{{data.employeeName}}</td>
-  </tr> -->
+    
                   </tbody>
                 </table>
               </div>
-              <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+              <div class="tab-pane fade" id="nav-profile3" role="tabpanel" aria-labelledby="nav-profile-tab">
                 <table class="table table-striped">
                   <thead>
                     <tr>

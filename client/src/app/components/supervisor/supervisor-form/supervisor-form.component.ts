@@ -42,7 +42,7 @@ export class SupervisorFormComponent implements OnInit {
 	this.router.paramMap
 		.switchMap((params: ParamMap) => this.newrequest.getEmployeeByID(this.router.snapshot.params['value']))
 		.subscribe(res => {
-			this.empp = res;
+			this.empp = res.data;
 		})
 
 		error => {
