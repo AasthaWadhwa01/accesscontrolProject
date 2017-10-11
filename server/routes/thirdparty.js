@@ -1,12 +1,16 @@
 let express = require('express');
 let router = express.Router();
+<<<<<<< HEAD
 let logger = require('../services/app.logger');
+=======
+let mongoose = require('mongoose')
+
+>>>>>>> 9f61436371e8a418d0047251932635606e40195b
 let thirdParty = require('../models/thirdParty');
 let con = require('../config/config');
 let httpstatus = require('../config/httpmsg');
 
 //connection from mongo db database
-let mongoose = require('mongoose')
 mongoose.connect('mongodb://localhost:27017/centralAccess');
 let db = mongoose.connection;
 
