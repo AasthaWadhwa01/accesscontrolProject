@@ -35,6 +35,7 @@ import { ThirdPartyService } from './services/third-party.service';
 import { SupervisorLocationchangeComponent } from './components/supervisor/supervisor-locationchange/supervisor-locationchange.component';
 import { HrlocationchangeFormComponent } from './components/hr/hrlocationchange-form/hrlocationchange-form.component';
 import { CsolocationFormComponent } from './components/cso/csolocation-form/csolocation-form.component';
+import { ErrorpageComponent } from './components/errorpage/errorpage.component';
 
 const routes: any = [
 	{
@@ -73,6 +74,10 @@ const routes: any = [
     path: 'newaccess',
     component: NewAccessComponent
   },
+  {
+   path: 'errorpage',
+   component: ErrorpageComponent
+ },
   {
     path: 'damage',
     component: DamagedCardComponent
@@ -188,7 +193,8 @@ const routes: any = [
     CisoDashboardComponent,
     SupervisorLocationchangeComponent,
     HrlocationchangeFormComponent,
-    CsolocationFormComponent
+    CsolocationFormComponent,
+    ErrorpageComponent
   ],
   imports: [
     BrowserModule,
