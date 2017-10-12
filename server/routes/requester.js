@@ -74,6 +74,20 @@ router.put('/update/:employeeID', (req, res) => {
         })
 })
 
+//generate report of employees with closed status(approved or rejcted)
+router.get('/employeereportclosed', function(req, res, next) {
+   requester.find({current: "Closed"}, function(err, data) {
+       res.json(data);
+   });
+});
+
+//generate report of employees with status at cso
+router.get('/employeereportpending', function(req, res, next) {
+   requester.find({current: "Cso"}, function(err, data) {
+       res.json(data);
+   });
+});
+
 //post employee details in the form
 router.post('/insert', function(req, res, next) {
     try {

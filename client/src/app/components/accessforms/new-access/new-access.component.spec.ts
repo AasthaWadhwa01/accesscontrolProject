@@ -108,17 +108,6 @@ inject([Router], (router: Router) => {
  expect(component.selectedcategory).toBe("Permanent");  
 }));
 
-/*it('Navigate when click on save',  
-inject([Router], (router: Router) => {
- const spy = spyOn(router, 'navigate');
- de = fixture.debugElement.query(By.css('.backit'));
- el = de.nativeElement;
- el.click();
- fixture.detectChanges();
- const navArgs = spy.calls.first().args[0];
-expect(navArgs).toContain("/empdash");  
-}));*/
-
 
   it('should show list of location after calling locationservice from ngonit method', fakeAsync(() => {
     spy1 = spyOn(service,'getEmpSql').and.returnValues(Observable.of(emp));
@@ -127,10 +116,6 @@ expect(navArgs).toContain("/empdash");
     tick();                  // wait for async getEmpSql
 
     fixture.detectChanges(); // update view with data
-
-    // de = fixture.debugElement.query(By.css('.form'));
-
-    // el = de.nativeElement;
 
     //expect(spy1.calls.any()).toBe(true);//check whether call is made or not
     console.log(component.employee,emp,"emploee")

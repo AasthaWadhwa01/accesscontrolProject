@@ -2,7 +2,7 @@ export const config: any = {
 
     connect: {
         "url": "http://localhost:",
-        "port": "4009"
+        "port": "4006"
     },
 
   accessform: {
@@ -332,6 +332,8 @@ export const config: any = {
     "DASHBOARD_LABEL": "Dashboard",
     "NEW_REQ": "New Request",
     "ACCESS_REQ": "Access Requests",
+    "CLOSED_REPORT": "Closed Status Report",
+    "PENDING_REPORT": "Pending Status Report",
     "MESSAGES": "Messages",
     "MESSAGE_NUMBER": "12",
     "NEW_MESSAGE_LABEL": "New Messages:",

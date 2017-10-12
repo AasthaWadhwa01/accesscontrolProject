@@ -28,6 +28,8 @@ import { LocationChangeService } from './services/location-change.service';
 import { LoginService } from './services/login.service'
 import { LostCardService } from './services/lost-card.service';
 import { ThirdPartyService } from './services/third-party.service';
+import { ReportService } from './services/report.service';
+import { ExcelService } from './services/excel.service';
 import { ErrorpageComponent } from './components/errorpage/errorpage.component';
 
 const routes: any = [
@@ -162,7 +164,7 @@ const routes: any = [
     ModalModule.forRoot(),
     RouterModule.forRoot(routes)
   ],
-  providers: [LoginService, EmployeeService, DamagedCardService, LocationChangeService, LostCardService, ThirdPartyService],
+  providers: [LoginService, EmployeeService, DamagedCardService, LocationChangeService, LostCardService, ThirdPartyService,ReportService,ExcelService],
   bootstrap: [ComponentsComponent]
 })
 export class AppModule { }

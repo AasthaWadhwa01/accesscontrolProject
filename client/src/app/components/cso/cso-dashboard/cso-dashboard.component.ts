@@ -7,6 +7,8 @@ import { LostCardService } from '../../../services/lost-card.service';
 import { LocationChangeService } from '../../../services/location-change.service';
 import { ThirdPartyService } from '../../../services/third-party.service';
 import { EmployeeService } from '../../../services/employee.service';
+import { ReportService } from '../../../services/report.service';
+import { ExcelService } from '../../../services/excel.service';
 import { config } from '../../../config';
 
 @Component({
@@ -17,16 +19,62 @@ import { config } from '../../../config';
 
 /*class starts here*/
 export class CsoDashboardComponent implements OnInit {
- emp: any = [];
+  emp: any = [];
   super: any = [];
   show: any = false;
   errors: any;
   config = config;
+  dataClosed: any=[];
+  dataPending: any=[];
+  data: any=[];
 
   /*constructor of hr dashboard Component*/
   constructor(private damage: DamagedCardService, private lost: LostCardService,
     private location: LocationChangeService, private third: ThirdPartyService,
-    private newrequest: EmployeeService, private router: Router) {}
+    private newrequest: EmployeeService, private report: ReportService, private excel: ExcelService, private router: Router) {}
+
+  //get report for employees having closed status
+   getEmployeeClosed(){
+    this.report.getEmployeeClosed()
+    .subscribe(res => {
+      this.data=res;  
+
+      for(let i=0; i<this.data.length; i++){
+
+        let obj1 = {
+        EmployeeID : this.data[i].employeeID,
+        EmployeeName : this.data[i].employeeName,
+        DateOfJoining   : this.data[i].dateOfJoining,
+        Project : this.data[i].project,
+        Department : this.data[i].department,
+        Status : this.data[i].current
+        }
+        this.dataClosed.push(obj1)
+      }
+      this.excel.exportAsExcelFile(this.dataClosed,'report');
+  })
+  }
+
+  //get report for employees having status pending with cso
+  getEmployeePending(){
+    this.report.getEmployeePending()
+    .subscribe(res => {
+      this.data=res;  
+
+      for(let i=0; i<this.data.length; i++){
+        let obj1 = {
+        EmployeeID : this.data[i].employeeID,
+        EmployeeName : this.data[i].employeeName,
+        DateOfJoining   : this.data[i].dateOfJoining,
+        Project : this.data[i].project,
+        Department : this.data[i].department,
+        Status : this.data[i].current
+        }
+        this.dataPending.push(obj1)
+      }
+      this.excel.exportAsExcelFile(this.dataPending,'report');
+  })
+  }
 
   /*method to send employee id to hr component through navigate*/
   getID(value) {

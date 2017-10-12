@@ -40,7 +40,7 @@ export class LostCardComponent implements OnInit {
   config = config;
   value: any;
 
-  //Constructor initialize LostcardService & Router 
+  //Constructor initialize LostcardService,EmployeeService & Router 
   constructor(private employeeService: EmployeeService, private lostCardService: LostCardService, private router: Router, private route: ActivatedRoute, private modalService: BsModalService) {}
 
 
@@ -106,13 +106,16 @@ export class LostCardComponent implements OnInit {
       comment: comment,
       date: date
     }
+    //lostCard service will call the save method
     this.lostCardService.save(employee).subscribe(data => {
       this.data=data;
     })
+    
    // this.openModalWithClass(template)
     this.router.navigate(['/empdash']);
     };
 
+  //this method will used to navigate component into employee dashboard
   backit(): any {
     this.router.navigate(['/empdash']);
     this.modalRef.hide();

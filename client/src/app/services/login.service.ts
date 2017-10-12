@@ -36,7 +36,7 @@ role = null;
      return this.role;
   }
 
-  //Get data from mssql database using employee id
+ //Get data from mssql database using employee id
   getCsoRole(employeeID) :any {
      return this.http
     .get(this.config.connect.url+this.config.connect.port+'/employee/verifyCso/' + employeeID)
@@ -44,7 +44,7 @@ role = null;
 
   }
 
-  //Get data from mssql database using employee id
+ //Get data from mssql database using employee id
   getSupervisorRole(employeeID) :any {
      return this.http
     .get(this.config.connect.url+this.config.connect.port+'/employee/verifySupervisor/' + employeeID)
@@ -60,6 +60,7 @@ role = null;
 
   }
 
+//get token for login
   getToken(token)
 {
   console.log("toto"+token)

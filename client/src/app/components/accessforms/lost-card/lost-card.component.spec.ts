@@ -7,6 +7,7 @@ import { Observable } from 'rxjs/Observable';
 import { BsModalService } from 'ngx-bootstrap/modal';
 import 'rxjs/add/observable/of';
 import { Router ,ActivatedRoute} from '@angular/router';
+
 import { LostCardComponent } from './lost-card.component';
 import { BsDatepickerConfig } from 'ngx-bootstrap/datepicker';
 import { LostCardService } from '../../../services/lost-card.service';
@@ -18,6 +19,7 @@ describe(' LostCardComponent', () => {
   let fixture: ComponentFixture < LostCardComponent > ;
   let service;
   let spy;
+  //mock data
   let test = {
     "response": { "n": 1, "ok": 1, "nModified": 1 },
     "data": { "response": "category already exixts" },
@@ -65,13 +67,12 @@ describe(' LostCardComponent', () => {
   it("testing the save method", () => {
     fixture.detectChanges();
     component.save(test.comments.comments, test.date.date,test.template.template);
-   // console.log(component.data.n,"heloo")
- 
     expect(component.data.n).toEqual(1);
     expect(component.data.nModified).toEqual(1);
     expect(component.data.ok).toEqual(1);
   });
 
+//test case for navigate when user click on save
   it('Navigate when user click on save',
     inject([Router], (router: Router) => {
       const spy1 = spyOn(router, 'navigate');
@@ -83,6 +84,7 @@ describe(' LostCardComponent', () => {
       expect(navArgs).toContain("/empdash");
     }));
 
+//test case for navigate when master user log in
   it('Navigate when master user log in',
     inject([Router], (router: Router) => {
       const spy1 = spyOn(router, 'navigate');
@@ -96,7 +98,6 @@ describe(' LostCardComponent', () => {
     }));
 
   //negative test case for add category method
-
   it("negative test for save method", () => {
     let negativeData = test.negativeResponse;
     component.save(test.comments.comments, test.date.date,test.template.template);
