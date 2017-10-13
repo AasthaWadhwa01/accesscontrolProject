@@ -7,7 +7,7 @@ module.exports = {
         options: { encrypt: false }
     },
     query: `SELECT EMPNO,NAME,DOJ,DESIGNATION,PRACTICE,OUTXT,PSATXT,SUPERVCODE FROM ZEMP_MAST_WEB_AL WHERE BASEEMP='`,
-    port: '4006',
+    port: '4009',
     messages: {
         approver_get: 'fetching approver of the access card details',
         approver_post: 'inserting approver of the access card details',

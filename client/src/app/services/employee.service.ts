@@ -14,8 +14,11 @@ export class EmployeeService {
 config = config;
 
  //constructor of employee service
-  constructor(private http: Http) {}
+  constructor(private http: Http) {
 
+  }
+
+//method to handle error 
     private handle(error : Response){
    if(error.status == 500)
    {

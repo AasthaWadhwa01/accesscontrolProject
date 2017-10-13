@@ -1,3 +1,4 @@
+//importing all required dependencies
 import { Component, OnInit, TemplateRef } from '@angular/core';
 import { BsDatepickerConfig } from 'ngx-bootstrap/datepicker';
 import { Router, ParamMap, Params, ActivatedRoute } from '@angular/router';
@@ -8,6 +9,7 @@ import { LocationChangeService } from '../../../services/location-change.service
 import { EmployeeService } from '../../../services/employee.service';
 import { config } from '../../../config';
 
+//provide metadata to the component
 @Component({
   selector: 'app-location-change',
   templateUrl: './location-change.component.html',
@@ -16,23 +18,25 @@ import { config } from '../../../config';
 
 //location change component class starts here
 export class LocationChangeComponent implements OnInit {
-	public location:any;
+	
+  //declaring variables for employee details
+  public location:any;
 	errors:any;
-	//declaring all required variables
   employeeDetail: any = [];
   empId: String;
   date: any;
   status: string = "";
   change: string = "";
-  a: any;
   empType: any;
   selectedcategory: any;
   empName: any;
-  doj: any;
   designation: any;
   project: any;
   department: any;
+
+  //declaring variables for config file and showing date
   doe: any;
+  doj: any;
   existPro: any;
   newPro: any;
   appSign: any;
@@ -40,10 +44,10 @@ export class LocationChangeComponent implements OnInit {
   employee:any;
 	config = config;
   value: any;
-
 	public modalRef: BsModalRef;
 
-	 public configModal = {
+  //config for modal
+	public configModal = {
     animated: true,
     keyboard: true,
     backdrop: true,
@@ -72,12 +76,12 @@ export class LocationChangeComponent implements OnInit {
 		this.router.navigate(['/empdash']);
 	}
 
-		ngOnInit() {
-      this.value= localStorage.getItem("userDetails")
-         let userRole=JSON.parse(this.value).data.role;
-         let empid=JSON.parse(this.value).data.UserID;
-         
-		 this.route.paramMap
+	//show details of employee from sql on the form
+  ngOnInit() {
+    this.value= localStorage.getItem("userDetails")
+      let userRole=JSON.parse(this.value).data.role;
+      let empid=JSON.parse(this.value).data.UserID;
+		this.route.paramMap
       .switchMap((params: ParamMap) => this.employeeService.getEmpSql(empid))
       .subscribe(
         res => {
@@ -91,17 +95,11 @@ export class LocationChangeComponent implements OnInit {
         error => {
           this.errors = error;
         })
-
     this.date = new Date();
     let day = this.date.getDate();
     let month = this.date.getMonth() + 1;
     let year = this.date.getFullYear();
     this.date = day + '/' + month + '/' + year;
-
-  //method to open modal window
- // public openModalWithClass(template: TemplateRef < any > ): any {
-  //  this.modalRef = this.modalService.show(template, Object.assign({}, this.configModal, { class: 'gray modal-lg' }));
-
  	}
 }
 

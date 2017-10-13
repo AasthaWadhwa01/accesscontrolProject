@@ -8,6 +8,7 @@ import { BsModalRef } from 'ngx-bootstrap/modal/modal-options.class';
 import { EmployeeService } from '../../../services/employee.service';
 import { config } from '../../../config';
 
+//provide metadata to the component
 @Component({
   selector: 'app-new-access',
   templateUrl: './new-access.component.html',
@@ -16,16 +17,10 @@ import { config } from '../../../config';
 })
 
 export class NewAccessComponent implements OnInit {
-  //declaring all required variables
-  errors: any;
+
+  //declaring variables for employee details
   employeeDetail: any = [];
   empId: string;
-  date: any;
-  status: string = "";
-  change: string = "";
-  a: any;
-  empType: any;
-  selectedcategory: any;
   empName: any;
   doj: any;
   designation: any;
@@ -36,16 +31,25 @@ export class NewAccessComponent implements OnInit {
   newPro: any;
   appSign: any;
   dateCurr: any;
+  empType: any;
+  selectedcategory: any;
+
+  //declaring variables for config file and showing date
+  errors: any;
+  date: any;
+  status: string = "";
+  change: string = "";
+  accessTypeCase: string = "";
   config = config;
   value: any;
+  employee: any;
+  data:any;
+  datepickerModel: Date;
+  public modalRef: BsModalRef;
 
   constructor(private employeeAccess: EmployeeService, private router: Router, private route: ActivatedRoute, private modalService: BsModalService) {}
 
-  datepickerModel: Date;
-  public modalRef: BsModalRef;
-  employee: any;
-  data:any;
-
+  //config for modal 
   public configModal = {
     animated: true,
     keyboard: true,
@@ -77,6 +81,7 @@ export class NewAccessComponent implements OnInit {
     this.router.navigate(['/empdash']);
   }
 
+  //method to navigate to employee dash from modal 
   backit(): any {
     this.router.navigate(['/empdash']);
     this.modalRef.hide();
@@ -87,13 +92,15 @@ export class NewAccessComponent implements OnInit {
     this.openModalWithClass(temp)
   }
 
+  //radio button
   OnRadioButtonSelection() {
     this.selectedcategory = this.empType;
-    this.a = "";
+    this.accessTypeCase = "";
   }
 
+  //show details of employee from sql on the form 
   ngOnInit() {
-this.value= localStorage.getItem("userDetails")
+    this.value= localStorage.getItem("userDetails")
          let userRole=JSON.parse(this.value).data.role;
          let empid=JSON.parse(this.value).data.UserID;
 
@@ -112,7 +119,6 @@ this.value= localStorage.getItem("userDetails")
           error;
            this.router.navigate(['/errorpage'])
        })
-
     this.date = new Date();
     let day = this.date.getDate();
     let month = this.date.getMonth() + 1;

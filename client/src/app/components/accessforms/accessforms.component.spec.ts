@@ -60,6 +60,7 @@ describe('AccessformsComponent', () => {
    expect(el.textContent).toContain("prashant");
  });
 
+ //negative scenario
  it('should change the radio button value of category', () => {
    let initialvalue = component.category;
    el1.click();

@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-
 import { EmployeeService } from '../../services/employee.service';
 import { LocationChangeService } from '../../services/location-change.service';
 
 import { config } from '../../config';
+
 //component
 @Component({
   selector: 'app-employee-dashboard',
@@ -28,8 +28,8 @@ export class EmployeeDashboardComponent implements OnInit {
   	//method to get employee data
     this.emp.getEmployee()
     .subscribe(res=>{
-      this.empl = res;
-if(this.empl.length>0){
+      this.empl = res.data;
+  if(this.empl.length>0){
       //condition to check the status on the basis of particular approver
       if(this.empl[this.empl.length-1].current=="Closed")
       {
@@ -69,48 +69,7 @@ if(this.empl.length>0){
     })
     
 
-    /*//method to get employee data
-    this.emplye.getEmployee()
-    .subscribe(res=>{
-      this.emply = res;
 
-      //condition to check the status on the basis of particular approver
-      if(this.empl[this.empl.length-1].current=="Closed")
-      {
-        this.reqstatus = "lost card request has been approved by CSO";
-      }
-      else if(this.empl[this.empl.length-1].current=="Employee" && this.empl[this.empl.length-1].prev=="Supervisor")
-      {
-        this.reqstatus = "lost card request has been rejected by Supervisor";
-      }
-      else if(this.empl[this.empl.length-1].current=="Supervisor" && this.empl[this.empl.length-1].prev=="Hr")
-      {
-        this.reqstatus = "lost card request has been rejected by Hr";
-      }
-      else if(this.empl[this.empl.length-1].current=="Hr" && this.empl[this.empl.length-1].prev=="Cso")
-      {
-        this.reqstatus = " lost card request has been rejected by CSO";
-      }
-      else if(this.empl[this.empl.length-1].current=="Supervisor" && this.empl[this.empl.length-1].prev=="Employee")
-      {
-        this.reqstatus = "lost card request is pending with Supervisor";
-      }
-      else if(this.empl[this.empl.length-1].current=="Hr" && this.empl[this.empl.length-1].prev=="Supervisor")
-      {
-        this.reqstatus = "lost card request is pending with Hr";
-      }
-      else if(this.empl[this.empl.length-1].current=="Cso" && this.empl[this.empl.length-1].prev=="Hr")
-      {
-        this.reqstatus = "lost card request is pending with CSO";
-      }
-      else {
-        this.reqstatus = "lost card haven't made any request yet";
-      }
-    },
-    error=>{
-      this.errors=error;
-    }
-    )*/
 
 
   }

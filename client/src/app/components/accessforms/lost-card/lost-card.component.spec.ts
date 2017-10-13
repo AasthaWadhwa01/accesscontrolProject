@@ -1,3 +1,4 @@
+//importing all required dependencies
 import { async, ComponentFixture, TestBed, inject } from '@angular/core/testing';
 import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
@@ -13,13 +14,15 @@ import { BsDatepickerConfig } from 'ngx-bootstrap/datepicker';
 import { LostCardService } from '../../../services/lost-card.service';
 import { BrowserModule } from '@angular/platform-browser';
 
+//Test suite for LostCardComponent
 describe(' LostCardComponent', () => {
   let data: any;
   let component: LostCardComponent;
   let fixture: ComponentFixture < LostCardComponent > ;
   let service;
   let spy;
-  //mock data
+
+  //mock the response
   let test = {
     "response": { "n": 1, "ok": 1, "nModified": 1 },
     "data": { "response": "category already exixts" },
@@ -28,17 +31,18 @@ describe(' LostCardComponent', () => {
     "date": { "date": "12/04/17" },
     "negativeResponse": { "ok": "0", "nModified": "0", "n": "0" },
     "categoryResponse": { "Response": "category Name alerady exist" }
-
   };
   let de: DebugElement;
   let el: HTMLInputElement;
 
-
   //initializing the test suite
   beforeEach(async(() => {
+
+    //router stub for stubbing the data
     class RouterStub {
       navigate(url: string) { return url; }
     }
+
     data = test.response;
     TestBed.configureTestingModule({
       declarations: [LostCardComponent],
@@ -53,7 +57,8 @@ describe(' LostCardComponent', () => {
         { provide: LostCardService },
         { provide: Router, useClass: RouterStub }
       ]
-    }).compileComponents().then(() => {
+    })
+    .compileComponents().then(() => {
       fixture = TestBed.createComponent(LostCardComponent);
       component = fixture.componentInstance;
       //console.log(component.messageTest);
@@ -72,7 +77,7 @@ describe(' LostCardComponent', () => {
     expect(component.data.ok).toEqual(1);
   });
 
-//test case for navigate when user click on save
+  //test case for navigate when user click on save
   it('Navigate when user click on save',
     inject([Router], (router: Router) => {
       const spy1 = spyOn(router, 'navigate');
@@ -84,7 +89,7 @@ describe(' LostCardComponent', () => {
       expect(navArgs).toContain("/empdash");
     }));
 
-//test case for navigate when master user log in
+  //test case for navigate when master user log in
   it('Navigate when master user log in',
     inject([Router], (router: Router) => {
       const spy1 = spyOn(router, 'navigate');
@@ -105,8 +110,5 @@ describe(' LostCardComponent', () => {
     expect(component.data.n).not.toEqual(negativeData.nModified);
     expect(component.data.nModified).not.toEqual(negativeData.n);
     expect(component.data.ok).not.toEqual(negativeData.ok);
-
   })
-
-
 });

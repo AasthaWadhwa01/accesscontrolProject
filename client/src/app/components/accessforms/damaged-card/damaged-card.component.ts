@@ -10,7 +10,7 @@ import { EmployeeService } from '../../../services/employee.service';
 import { config } from '../../../config';
 import { DamagedCardService } from './../../../services/damaged-card.service';
 
-
+//provide metadata to the component
 @Component({
   selector: 'app-damaged-card',
   templateUrl: './damaged-card.component.html',
@@ -19,37 +19,40 @@ import { DamagedCardService } from './../../../services/damaged-card.service';
 })
 export class DamagedCardComponent implements OnInit {
 
-  //declaring all required variables
-  errors: any;
+  //declaring variables for employee detailss
   employeeDetail: any = [];
   empId: string;
   date: any;
   status: string = "";
   change: string = "";
-  a: any;
   empType: any;
   selectedcategory: any;
   empName: any;
-  doj: any;
   designation: any;
   project: any;
   department: any;
+
+  //declaring variables for config file and showing date
   doe: any;
+  doj: any;
   existPro: any;
   newPro: any;
   appSign: any;
   dateCurr: any;
   config = config;
   value: any;
-  
+  errors: any;
+
   //constructor initialises DamagedCardService and Router 
   constructor(private damagecardService: DamagedCardService,private employeeService: EmployeeService, private lostCardService: LostCardService, private router: Router, private route: ActivatedRoute, private modalService: BsModalService) {}
 
+  //date picker for date
   datepickerModel: Date;
   public modalRef: BsModalRef;
   employee: any;
   data:any;
 
+  //config for modal
   public configModal = {
     animated: true,
     keyboard: true,
@@ -57,8 +60,9 @@ export class DamagedCardComponent implements OnInit {
     ignoreBackdropClick: false
   };
 
-     ngOnInit() {
-   this.value= localStorage.getItem("userDetails")
+  //show details of employee from sql on the form
+  ngOnInit() {
+  this.value= localStorage.getItem("userDetails")
          let userRole=JSON.parse(this.value).data.role;
          let empid=JSON.parse(this.value).data.UserID;
     this.route.paramMap
@@ -76,7 +80,6 @@ export class DamagedCardComponent implements OnInit {
         error => {
           this.errors = error;
         })
-
     this.date = new Date();
     let day = this.date.getDate();
     let month = this.date.getMonth() + 1;

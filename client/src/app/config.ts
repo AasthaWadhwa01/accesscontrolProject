@@ -2,7 +2,7 @@ export const config: any = {
 
     connect: {
         "url": "http://localhost:",
-        "port": "4006"
+        "port": "4005"
     },
 
   accessform: {

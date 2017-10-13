@@ -95,7 +95,6 @@ export class SupervisorFormComponent implements OnInit {
 			this.errors = error;
 		}
 
-		alert("Form Rejected Successfully")
 		this.route.navigate(['/superdash']);
 		this.modalRef.hide();
 	}

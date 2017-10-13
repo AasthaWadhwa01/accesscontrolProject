@@ -388,3 +388,485 @@
 [2017-10-11 20:02:29.367] [INFO] default - fetching new access card requester details
 [2017-10-11 20:03:10.295] [INFO] default - getting employee data
 [2017-10-12 08:19:23.801] [INFO] default - fetching new access card requester details
+[2017-10-12 08:24:13.350] [INFO] default - fetching new access card requester details
+[2017-10-12 08:24:46.030] [INFO] default - fetching new access card requester details
+[2017-10-12 08:24:53.255] [INFO] default - getting employee data
+[2017-10-12 08:24:57.569] [INFO] default - fetching new access card requester details
+[2017-10-12 08:37:37.116] [INFO] default - fetching new access card requester details
+[2017-10-12 08:43:35.059] [INFO] default - fetching new access card requester details
+[2017-10-12 08:44:12.065] [INFO] default - fetching new access card requester details
+[2017-10-12 08:44:16.443] [INFO] default - getting employee data
+[2017-10-12 08:44:18.830] [INFO] default - fetching new access card requester details
+[2017-10-12 08:44:40.745] [INFO] default - fetching approver of the access card details
+[2017-10-12 08:44:40.760] [INFO] default - fetching third party details
+[2017-10-12 08:44:40.761] [INFO] default - fetching lost card details
+[2017-10-12 08:44:40.772] [INFO] default - fetching new access card requester details
+[2017-10-12 08:44:40.775] [INFO] default - fetching location change details
+[2017-10-12 08:45:52.734] [INFO] default - fetching new access card requester details
+[2017-10-12 08:45:57.472] [INFO] default - getting employee data
+[2017-10-12 08:45:59.393] [INFO] default - fetching new access card requester details
+[2017-10-12 08:45:59.801] [INFO] default - inserting new access card requester details
+[2017-10-12 08:46:09.251] [INFO] default - fetching approver of the access card details
+[2017-10-12 08:46:09.266] [INFO] default - fetching lost card details
+[2017-10-12 08:46:09.267] [INFO] default - fetching third party details
+[2017-10-12 08:46:09.276] [INFO] default - fetching new access card requester details
+[2017-10-12 08:46:09.277] [INFO] default - fetching location change details
+[2017-10-12 08:46:25.007] [INFO] default - fetching new access card employeeID details
+[2017-10-12 08:46:32.209] [INFO] default - fetching approver of the access card details
+[2017-10-12 08:46:32.221] [INFO] default - fetching lost card details
+[2017-10-12 08:46:32.232] [INFO] default - fetching new access card requester details
+[2017-10-12 08:46:32.233] [INFO] default - fetching third party details
+[2017-10-12 08:46:32.236] [INFO] default - fetching location change details
+[2017-10-12 08:46:46.584] [INFO] default - fetching new access card requester details
+[2017-10-12 08:46:54.794] [INFO] default - fetching new access card requester details
+[2017-10-12 08:47:55.645] [INFO] default - fetching new access card requester details
+[2017-10-12 08:48:18.914] [INFO] default - fetching new access card requester details
+[2017-10-12 08:50:20.558] [INFO] default - fetching new access card requester details
+[2017-10-12 08:50:50.672] [INFO] default - fetching new access card requester details
+[2017-10-12 08:50:51.069] [INFO] default - fetching new access card requester details
+[2017-10-12 08:52:09.915] [INFO] default - fetching new access card requester details
+[2017-10-12 08:52:09.939] [INFO] default - fetching new access card requester details
+[2017-10-12 09:08:31.623] [INFO] default - fetching new access card requester details
+[2017-10-12 09:08:31.872] [INFO] default - fetching new access card requester details
+[2017-10-12 09:09:31.975] [INFO] default - fetching new access card requester details
+[2017-10-12 09:09:32.081] [INFO] default - fetching new access card requester details
+[2017-10-12 09:13:01.186] [INFO] default - fetching new access card requester details
+[2017-10-12 09:13:01.425] [INFO] default - fetching new access card requester details
+[2017-10-12 09:13:05.140] [INFO] default - fetching new access card requester details
+[2017-10-12 09:13:05.456] [INFO] default - fetching new access card requester details
+[2017-10-12 09:15:26.181] [INFO] default - fetching new access card requester details
+[2017-10-12 09:15:26.380] [INFO] default - fetching new access card requester details
+[2017-10-12 09:17:37.635] [INFO] default - fetching new access card requester details
+[2017-10-12 09:17:37.906] [INFO] default - fetching new access card requester details
+[2017-10-12 09:18:30.005] [INFO] default - fetching new access card requester details
+[2017-10-12 09:18:30.223] [INFO] default - fetching new access card requester details
+[2017-10-12 09:19:04.045] [INFO] default - fetching new access card requester details
+[2017-10-12 09:19:04.402] [INFO] default - fetching new access card requester details
+[2017-10-12 09:20:20.208] [INFO] default - fetching new access card requester details
+[2017-10-12 09:20:20.450] [INFO] default - fetching new access card requester details
+[2017-10-12 09:20:47.115] [INFO] default - fetching new access card requester details
+[2017-10-12 09:20:47.428] [INFO] default - fetching new access card requester details
+[2017-10-12 09:20:53.009] [INFO] default - fetching new access card requester details
+[2017-10-12 09:20:53.549] [INFO] default - fetching new access card requester details
+[2017-10-12 09:21:14.883] [INFO] default - fetching new access card requester details
+[2017-10-12 09:21:16.385] [INFO] default - fetching new access card requester details
+[2017-10-12 09:21:32.301] [INFO] default - fetching new access card requester details
+[2017-10-12 09:21:33.913] [INFO] default - fetching new access card requester details
+[2017-10-12 09:21:48.210] [INFO] default - fetching new access card requester details
+[2017-10-12 09:21:49.914] [INFO] default - fetching new access card requester details
+[2017-10-12 09:22:12.166] [INFO] default - fetching new access card requester details
+[2017-10-12 09:22:12.824] [INFO] default - fetching new access card requester details
+[2017-10-12 09:22:22.015] [INFO] default - fetching new access card requester details
+[2017-10-12 09:22:22.049] [INFO] default - fetching new access card requester details
+[2017-10-12 09:29:06.646] [INFO] default - fetching new access card requester details
+[2017-10-12 09:29:06.854] [INFO] default - fetching new access card requester details
+[2017-10-12 09:29:37.139] [INFO] default - fetching new access card requester details
+[2017-10-12 09:29:37.213] [INFO] default - fetching new access card requester details
+[2017-10-12 09:29:39.049] [INFO] default - fetching new access card requester details
+[2017-10-12 09:29:43.726] [INFO] default - getting employee data
+[2017-10-12 09:29:46.902] [INFO] default - inserting approver of the access card details
+[2017-10-12 09:29:46.924] [INFO] default - fetching new access card requester details
+[2017-10-12 09:29:56.281] [INFO] default - fetching approver of the access card details
+[2017-10-12 09:29:56.287] [INFO] default - fetching lost card details
+[2017-10-12 09:29:56.300] [INFO] default - fetching third party details
+[2017-10-12 09:29:56.302] [INFO] default - fetching location change details
+[2017-10-12 09:29:56.304] [INFO] default - fetching new access card requester details
+[2017-10-12 09:30:39.781] [INFO] default - fetching new access card requester details
+[2017-10-12 09:30:40.013] [INFO] default - fetching new access card requester details
+[2017-10-12 09:30:49.071] [INFO] default - fetching new access card requester details
+[2017-10-12 09:30:49.492] [INFO] default - fetching new access card requester details
+[2017-10-12 09:31:15.274] [INFO] default - fetching new access card requester details
+[2017-10-12 09:31:15.663] [INFO] default - fetching new access card requester details
+[2017-10-12 09:31:55.862] [INFO] default - fetching new access card requester details
+[2017-10-12 09:31:56.094] [INFO] default - fetching new access card requester details
+[2017-10-12 09:32:43.173] [INFO] default - fetching new access card requester details
+[2017-10-12 09:32:43.371] [INFO] default - fetching new access card requester details
+[2017-10-12 09:32:52.770] [INFO] default - fetching new access card requester details
+[2017-10-12 09:32:53.054] [INFO] default - fetching new access card requester details
+[2017-10-12 09:33:47.259] [INFO] default - fetching new access card requester details
+[2017-10-12 09:33:47.568] [INFO] default - fetching new access card requester details
+[2017-10-12 09:33:56.428] [INFO] default - fetching new access card requester details
+[2017-10-12 09:33:56.683] [INFO] default - fetching new access card requester details
+[2017-10-12 09:34:32.995] [INFO] default - fetching new access card requester details
+[2017-10-12 09:34:33.372] [INFO] default - fetching new access card requester details
+[2017-10-12 09:34:44.296] [INFO] default - fetching new access card requester details
+[2017-10-12 09:34:45.862] [INFO] default - fetching new access card requester details
+[2017-10-12 09:34:52.582] [INFO] default - fetching new access card requester details
+[2017-10-12 09:34:54.369] [INFO] default - fetching new access card requester details
+[2017-10-12 09:35:08.887] [INFO] default - fetching new access card requester details
+[2017-10-12 09:35:10.396] [INFO] default - fetching new access card requester details
+[2017-10-12 09:42:11.235] [INFO] default - fetching new access card requester details
+[2017-10-12 09:42:11.321] [INFO] default - fetching new access card requester details
+[2017-10-12 09:42:11.593] [INFO] default - fetching new access card requester details
+[2017-10-12 09:42:20.544] [INFO] default - getting employee data
+[2017-10-12 09:42:27.429] [INFO] default - inserting location change details
+[2017-10-12 09:42:27.468] [INFO] default - fetching new access card requester details
+[2017-10-12 09:43:11.980] [INFO] default - fetching new access card requester details
+[2017-10-12 09:43:23.097] [INFO] default - fetching new access card requester details
+[2017-10-12 09:45:13.323] [INFO] default - fetching new access card requester details
+[2017-10-12 09:45:13.587] [INFO] default - fetching new access card requester details
+[2017-10-12 09:45:13.782] [INFO] default - fetching new access card requester details
+[2017-10-12 09:45:24.629] [INFO] default - fetching new access card requester details
+[2017-10-12 09:45:24.877] [INFO] default - fetching new access card requester details
+[2017-10-12 09:45:25.068] [INFO] default - fetching new access card requester details
+[2017-10-12 09:45:33.904] [INFO] default - fetching new access card requester details
+[2017-10-12 09:45:34.199] [INFO] default - fetching new access card requester details
+[2017-10-12 09:45:34.267] [INFO] default - fetching new access card requester details
+[2017-10-12 09:45:43.786] [INFO] default - fetching new access card requester details
+[2017-10-12 09:45:43.943] [INFO] default - fetching new access card requester details
+[2017-10-12 09:45:45.764] [INFO] default - fetching new access card requester details
+[2017-10-12 09:46:04.088] [INFO] default - fetching new access card requester details
+[2017-10-12 09:46:04.114] [INFO] default - fetching new access card requester details
+[2017-10-12 09:46:05.942] [INFO] default - fetching new access card requester details
+[2017-10-12 09:46:08.636] [INFO] default - fetching new access card requester details
+[2017-10-12 09:46:08.792] [INFO] default - fetching new access card requester details
+[2017-10-12 09:46:33.246] [INFO] default - fetching new access card requester details
+[2017-10-12 09:46:33.254] [INFO] default - fetching new access card requester details
+[2017-10-12 09:46:34.302] [INFO] default - fetching new access card requester details
+[2017-10-12 09:46:42.316] [INFO] default - fetching new access card requester details
+[2017-10-12 09:46:42.388] [INFO] default - fetching new access card requester details
+[2017-10-12 09:46:42.542] [INFO] default - fetching new access card requester details
+[2017-10-12 09:51:30.045] [INFO] default - fetching new access card requester details
+[2017-10-12 09:51:30.167] [INFO] default - fetching new access card requester details
+[2017-10-12 09:51:30.238] [INFO] default - fetching new access card requester details
+[2017-10-12 09:51:31.537] [INFO] default - fetching new access card requester details
+[2017-10-12 09:51:41.507] [INFO] default - getting employee data
+[2017-10-12 09:51:42.414] [INFO] default - getting employee data
+[2017-10-12 09:51:43.563] [INFO] default - getting employee data
+[2017-10-12 09:52:47.464] [INFO] default - fetching new access card requester details
+[2017-10-12 09:52:47.551] [INFO] default - fetching new access card requester details
+[2017-10-12 09:52:47.915] [INFO] default - fetching new access card requester details
+[2017-10-12 09:57:27.269] [INFO] default - fetching new access card requester details
+[2017-10-12 09:57:27.553] [INFO] default - fetching new access card requester details
+[2017-10-12 09:57:27.681] [INFO] default - fetching new access card requester details
+[2017-10-12 09:58:06.269] [INFO] default - fetching new access card requester details
+[2017-10-12 09:58:06.384] [INFO] default - fetching new access card requester details
+[2017-10-12 09:58:06.443] [INFO] default - fetching new access card requester details
+[2017-10-12 09:58:22.489] [INFO] default - fetching new access card requester details
+[2017-10-12 09:58:22.512] [INFO] default - fetching new access card requester details
+[2017-10-12 09:58:22.657] [INFO] default - fetching new access card requester details
+[2017-10-12 09:58:28.893] [INFO] default - fetching new access card requester details
+[2017-10-12 09:58:29.139] [INFO] default - fetching new access card requester details
+[2017-10-12 09:58:29.513] [INFO] default - fetching new access card requester details
+[2017-10-12 09:58:47.261] [INFO] default - fetching new access card requester details
+[2017-10-12 09:58:47.432] [INFO] default - fetching new access card requester details
+[2017-10-12 09:58:47.656] [INFO] default - fetching new access card requester details
+[2017-10-12 09:58:54.979] [INFO] default - fetching new access card requester details
+[2017-10-12 09:58:55.031] [INFO] default - fetching new access card requester details
+[2017-10-12 09:58:55.103] [INFO] default - fetching new access card requester details
+[2017-10-12 09:59:36.464] [INFO] default - fetching new access card requester details
+[2017-10-12 09:59:36.662] [INFO] default - fetching new access card requester details
+[2017-10-12 09:59:36.897] [INFO] default - fetching new access card requester details
+[2017-10-12 10:00:06.129] [INFO] default - fetching new access card requester details
+[2017-10-12 10:00:06.134] [INFO] default - fetching new access card requester details
+[2017-10-12 10:00:06.190] [INFO] default - fetching new access card requester details
+[2017-10-12 10:00:20.547] [INFO] default - fetching new access card requester details
+[2017-10-12 10:00:20.768] [INFO] default - fetching new access card requester details
+[2017-10-12 10:00:20.786] [INFO] default - fetching new access card requester details
+[2017-10-12 10:00:47.525] [INFO] default - fetching new access card requester details
+[2017-10-12 10:00:47.562] [INFO] default - fetching new access card requester details
+[2017-10-12 10:00:47.913] [INFO] default - fetching new access card requester details
+[2017-10-12 10:00:50.200] [INFO] default - getting employee data
+[2017-10-12 10:00:59.092] [INFO] default - getting employee data
+[2017-10-12 10:01:00.423] [INFO] default - inserting approver of the access card details
+[2017-10-12 10:01:00.458] [INFO] default - fetching new access card requester details
+[2017-10-12 10:01:03.908] [INFO] default - getting employee data
+[2017-10-12 10:01:07.164] [INFO] default - fetching new access card requester details
+[2017-10-12 10:01:07.171] [INFO] default - inserting new access card requester details
+[2017-10-12 10:04:14.409] [INFO] default - fetching new access card requester details
+[2017-10-12 10:04:27.263] [INFO] default - fetching new access card requester details
+[2017-10-12 10:20:59.727] [INFO] default - fetching new access card requester details
+[2017-10-12 10:21:21.388] [INFO] default - fetching new access card requester details
+[2017-10-12 10:21:46.346] [INFO] default - getting employee data
+[2017-10-12 10:21:55.620] [INFO] default - fetching new access card requester details
+[2017-10-12 10:21:55.643] [INFO] default - inserting new access card requester details
+[2017-10-12 10:22:22.771] [INFO] default - fetching approver of the access card details
+[2017-10-12 10:22:22.781] [INFO] default - fetching lost card details
+[2017-10-12 10:22:22.790] [INFO] default - fetching third party details
+[2017-10-12 10:22:22.798] [INFO] default - fetching new access card requester details
+[2017-10-12 10:22:22.799] [INFO] default - fetching location change details
+[2017-10-12 10:22:30.521] [INFO] default - fetching new access card employeeID details
+[2017-10-12 10:22:57.396] [INFO] default - fetching approver of the access card details
+[2017-10-12 10:22:57.400] [INFO] default - fetching lost card details
+[2017-10-12 10:22:57.410] [INFO] default - fetching location change details
+[2017-10-12 10:22:57.411] [INFO] default - fetching third party details
+[2017-10-12 10:22:57.416] [INFO] default - fetching new access card requester details
+[2017-10-12 10:23:00.264] [INFO] default - fetching new access card employeeID details
+[2017-10-12 10:23:18.111] [INFO] default - fetching approver of the access card details
+[2017-10-12 10:23:18.114] [INFO] default - fetching lost card details
+[2017-10-12 10:23:18.124] [INFO] default - fetching location change details
+[2017-10-12 10:23:18.125] [INFO] default - fetching third party details
+[2017-10-12 10:23:18.129] [INFO] default - fetching new access card requester details
+[2017-10-12 10:23:36.119] [INFO] default - fetching new access card employeeID details
+[2017-10-12 11:01:04.131] [INFO] default - fetching new access card requester details
+[2017-10-12 11:22:18.739] [INFO] default - fetching new access card requester details
+[2017-10-12 11:22:25.237] [INFO] default - getting employee data
+[2017-10-12 11:23:59.469] [INFO] default - fetching new access card requester details
+[2017-10-12 11:23:59.478] [INFO] default - inserting new access card requester details
+[2017-10-12 11:24:09.438] [INFO] default - fetching approver of the access card details
+[2017-10-12 11:24:09.450] [INFO] default - fetching lost card details
+[2017-10-12 11:24:09.463] [INFO] default - fetching third party details
+[2017-10-12 11:24:09.465] [INFO] default - fetching location change details
+[2017-10-12 11:24:09.466] [INFO] default - fetching new access card requester details
+[2017-10-12 11:24:14.841] [INFO] default - fetching new access card employeeID details
+[2017-10-12 11:24:28.308] [INFO] default - fetching approver of the access card details
+[2017-10-12 11:24:28.318] [INFO] default - fetching lost card details
+[2017-10-12 11:24:28.319] [INFO] default - fetching third party details
+[2017-10-12 11:24:28.321] [INFO] default - fetching location change details
+[2017-10-12 11:24:28.326] [INFO] default - fetching new access card requester details
+[2017-10-12 11:24:33.697] [INFO] default - fetching approver of the access card details
+[2017-10-12 11:24:33.703] [INFO] default - fetching lost card details
+[2017-10-12 11:24:33.714] [INFO] default - fetching third party details
+[2017-10-12 11:24:33.717] [INFO] default - fetching location change details
+[2017-10-12 11:24:33.718] [INFO] default - fetching new access card requester details
+[2017-10-12 11:24:58.889] [INFO] default - fetching approver of the access card details
+[2017-10-12 11:24:58.902] [INFO] default - fetching lost card details
+[2017-10-12 11:24:58.903] [INFO] default - fetching third party details
+[2017-10-12 11:24:58.906] [INFO] default - fetching location change details
+[2017-10-12 11:24:58.907] [INFO] default - fetching new access card requester details
+[2017-10-12 11:25:08.158] [INFO] default - fetching new access card requester details
+[2017-10-12 11:40:58.647] [ERROR] default - fetching approver of the access card details
+[2017-10-12 11:40:58.672] [ERROR] default - fetching approver of the access card details
+[2017-10-12 11:40:58.684] [ERROR] default - fetching approver of the access card details
+[2017-10-12 11:40:58.686] [ERROR] default - fetching approver of the access card details
+[2017-10-12 11:40:58.739] [INFO] default - inserting approver of the access card details
+[2017-10-12 11:40:58.749] [INFO] default - inserting approver of the access card details
+[2017-10-12 11:40:58.754] [INFO] default - fetching approver of the access card details
+[2017-10-12 11:40:58.757] [INFO] default - fetching approver of the access card details
+[2017-10-12 11:40:58.760] [INFO] default - fetching approver of the access card details
+[2017-10-12 11:40:58.764] [INFO] default - fetching approver of the access card details
+[2017-10-12 11:40:58.769] [INFO] default - inserting approver of the access card details
+[2017-10-12 11:40:58.774] [INFO] default - inserting approver of the access card details
+[2017-10-12 11:40:58.778] [INFO] default - fetching location change details
+[2017-10-12 11:40:58.781] [INFO] default - fetching location change details
+[2017-10-12 11:40:58.785] [INFO] default - fetching location change details
+[2017-10-12 11:40:58.791] [INFO] default - fetching location change details
+[2017-10-12 11:40:58.798] [INFO] default - inserting location change details
+[2017-10-12 11:40:58.803] [INFO] default - inserting location change details
+[2017-10-12 11:40:58.808] [INFO] default - fetching lost card details
+[2017-10-12 11:40:58.811] [INFO] default - fetching lost card details
+[2017-10-12 11:40:58.814] [INFO] default - fetching lost card details
+[2017-10-12 11:40:58.818] [INFO] default - fetching lost card details
+[2017-10-12 11:41:02.828] [INFO] default - fetching new access card requester details
+[2017-10-12 11:41:02.833] [INFO] default - fetching new access card requester details
+[2017-10-12 11:41:02.839] [INFO] default - fetching new access card employeeID details
+[2017-10-12 11:41:02.842] [INFO] default - fetching new access card employeeID details
+[2017-10-12 11:41:02.845] [INFO] default - fetching new access card requester details
+[2017-10-12 11:41:02.847] [INFO] default - fetching new access card requester details
+[2017-10-12 11:41:02.854] [INFO] default - inserting new access card requester details
+[2017-10-12 11:41:02.866] [INFO] default - fetching third party details
+[2017-10-12 11:41:02.867] [INFO] default - fetching third party details
+[2017-10-12 11:41:04.873] [INFO] default - fetching third party details
+[2017-10-12 11:41:04.878] [INFO] default - fetching third party details
+[2017-10-12 11:41:04.937] [INFO] default - inserting third party details
+[2017-10-12 11:41:04.943] [INFO] default - inserting third party details
+[2017-10-12 11:41:39.132] [ERROR] default - fetching approver of the access card details
+[2017-10-12 11:41:39.148] [ERROR] default - fetching approver of the access card details
+[2017-10-12 11:41:39.153] [ERROR] default - fetching approver of the access card details
+[2017-10-12 11:41:39.155] [ERROR] default - fetching approver of the access card details
+[2017-10-12 11:41:39.193] [INFO] default - inserting approver of the access card details
+[2017-10-12 11:41:39.200] [INFO] default - inserting approver of the access card details
+[2017-10-12 11:41:39.205] [INFO] default - fetching approver of the access card details
+[2017-10-12 11:41:39.207] [INFO] default - fetching approver of the access card details
+[2017-10-12 11:41:39.210] [INFO] default - fetching approver of the access card details
+[2017-10-12 11:41:39.214] [INFO] default - fetching approver of the access card details
+[2017-10-12 11:41:39.220] [INFO] default - inserting approver of the access card details
+[2017-10-12 11:41:39.225] [INFO] default - inserting approver of the access card details
+[2017-10-12 11:41:39.228] [INFO] default - fetching location change details
+[2017-10-12 11:41:39.231] [INFO] default - fetching location change details
+[2017-10-12 11:41:39.234] [INFO] default - fetching location change details
+[2017-10-12 11:41:39.236] [INFO] default - fetching location change details
+[2017-10-12 11:41:39.242] [INFO] default - inserting location change details
+[2017-10-12 11:41:39.248] [INFO] default - inserting location change details
+[2017-10-12 11:41:39.253] [INFO] default - fetching lost card details
+[2017-10-12 11:41:39.256] [INFO] default - fetching lost card details
+[2017-10-12 11:41:39.258] [INFO] default - fetching lost card details
+[2017-10-12 11:41:39.264] [INFO] default - fetching lost card details
+[2017-10-12 11:41:43.272] [INFO] default - fetching new access card requester details
+[2017-10-12 11:41:43.276] [INFO] default - fetching new access card requester details
+[2017-10-12 11:41:43.282] [INFO] default - fetching new access card employeeID details
+[2017-10-12 11:41:43.285] [INFO] default - fetching new access card employeeID details
+[2017-10-12 11:41:43.288] [INFO] default - fetching new access card requester details
+[2017-10-12 11:41:43.290] [INFO] default - fetching new access card requester details
+[2017-10-12 11:41:43.311] [INFO] default - fetching third party details
+[2017-10-12 11:41:43.313] [INFO] default - fetching third party details
+[2017-10-12 11:41:43.315] [INFO] default - fetching third party details
+[2017-10-12 11:41:43.318] [INFO] default - fetching third party details
+[2017-10-12 11:41:43.324] [INFO] default - inserting third party details
+[2017-10-12 11:41:43.330] [INFO] default - inserting third party details
+[2017-10-12 11:43:38.749] [ERROR] default - fetching approver of the access card details
+[2017-10-12 11:43:38.764] [ERROR] default - fetching approver of the access card details
+[2017-10-12 11:43:38.770] [ERROR] default - fetching approver of the access card details
+[2017-10-12 11:43:38.772] [ERROR] default - fetching approver of the access card details
+[2017-10-12 11:43:38.812] [INFO] default - inserting approver of the access card details
+[2017-10-12 11:43:38.820] [INFO] default - inserting approver of the access card details
+[2017-10-12 11:43:38.824] [INFO] default - fetching approver of the access card details
+[2017-10-12 11:43:38.827] [INFO] default - fetching approver of the access card details
+[2017-10-12 11:43:38.830] [INFO] default - fetching approver of the access card details
+[2017-10-12 11:43:38.833] [INFO] default - fetching approver of the access card details
+[2017-10-12 11:43:38.839] [INFO] default - inserting approver of the access card details
+[2017-10-12 11:43:38.843] [INFO] default - inserting approver of the access card details
+[2017-10-12 11:43:38.848] [INFO] default - fetching location change details
+[2017-10-12 11:43:38.851] [INFO] default - fetching location change details
+[2017-10-12 11:43:38.853] [INFO] default - fetching location change details
+[2017-10-12 11:43:38.856] [INFO] default - fetching location change details
+[2017-10-12 11:43:38.864] [INFO] default - inserting location change details
+[2017-10-12 11:43:38.870] [INFO] default - inserting location change details
+[2017-10-12 11:43:38.874] [INFO] default - fetching lost card details
+[2017-10-12 11:43:38.878] [INFO] default - fetching lost card details
+[2017-10-12 11:43:38.881] [INFO] default - fetching lost card details
+[2017-10-12 11:43:38.885] [INFO] default - fetching lost card details
+[2017-10-12 11:43:42.898] [INFO] default - fetching new access card requester details
+[2017-10-12 11:43:42.906] [INFO] default - fetching new access card requester details
+[2017-10-12 11:43:42.912] [INFO] default - fetching new access card employeeID details
+[2017-10-12 11:43:42.916] [INFO] default - fetching new access card employeeID details
+[2017-10-12 11:43:42.918] [INFO] default - fetching new access card requester details
+[2017-10-12 11:43:42.921] [INFO] default - fetching new access card requester details
+[2017-10-12 11:43:42.942] [INFO] default - fetching third party details
+[2017-10-12 11:43:42.945] [INFO] default - fetching third party details
+[2017-10-12 11:43:42.947] [INFO] default - fetching third party details
+[2017-10-12 11:43:42.948] [INFO] default - fetching third party details
+[2017-10-12 11:43:42.956] [INFO] default - inserting third party details
+[2017-10-12 11:43:42.961] [INFO] default - inserting third party details
+[2017-10-12 12:32:50.380] [INFO] default - fetching new access card requester details
+[2017-10-12 12:33:06.438] [INFO] default - getting employee data
+[2017-10-12 12:33:09.333] [INFO] default - fetching new access card requester details
+[2017-10-12 12:33:10.046] [INFO] default - inserting new access card requester details
+[2017-10-12 12:33:38.490] [INFO] default - fetching new access card requester details
+[2017-10-12 12:34:02.040] [INFO] default - fetching approver of the access card details
+[2017-10-12 12:34:02.047] [INFO] default - fetching lost card details
+[2017-10-12 12:34:02.048] [INFO] default - fetching third party details
+[2017-10-12 12:34:02.057] [INFO] default - fetching location change details
+[2017-10-12 12:34:02.058] [INFO] default - fetching new access card requester details
+[2017-10-12 12:34:04.676] [INFO] default - fetching new access card employeeID details
+[2017-10-12 12:34:36.723] [INFO] default - fetching new access card requester details
+[2017-10-12 12:35:27.031] [INFO] default - fetching new access card requester details
+[2017-10-12 12:35:33.845] [INFO] default - fetching new access card requester details
+[2017-10-12 12:36:35.171] [INFO] default - fetching new access card requester details
+[2017-10-12 13:20:59.591] [INFO] default - getting employee data
+[2017-10-12 13:21:05.786] [INFO] default - fetching new access card requester details
+[2017-10-12 13:21:05.797] [INFO] default - inserting new access card requester details
+[2017-10-12 13:21:15.395] [INFO] default - fetching approver of the access card details
+[2017-10-12 13:21:15.398] [INFO] default - fetching lost card details
+[2017-10-12 13:21:15.418] [INFO] default - fetching third party details
+[2017-10-12 13:21:15.419] [INFO] default - fetching location change details
+[2017-10-12 13:21:15.424] [INFO] default - fetching new access card requester details
+[2017-10-12 13:21:17.081] [INFO] default - fetching new access card employeeID details
+[2017-10-12 13:21:29.116] [INFO] default - fetching approver of the access card details
+[2017-10-12 13:21:29.118] [INFO] default - fetching lost card details
+[2017-10-12 13:21:29.119] [INFO] default - fetching third party details
+[2017-10-12 13:21:29.121] [INFO] default - fetching location change details
+[2017-10-12 13:21:29.127] [INFO] default - fetching new access card requester details
+[2017-10-12 13:21:32.002] [INFO] default - fetching new access card employeeID details
+[2017-10-12 13:21:52.424] [INFO] default - fetching approver of the access card details
+[2017-10-12 13:21:52.429] [INFO] default - fetching lost card details
+[2017-10-12 13:21:52.429] [INFO] default - fetching third party details
+[2017-10-12 13:21:52.432] [INFO] default - fetching location change details
+[2017-10-12 13:21:52.433] [INFO] default - fetching new access card requester details
+[2017-10-12 13:22:07.197] [INFO] default - fetching new access card employeeID details
+[2017-10-12 13:22:30.753] [INFO] default - fetching approver of the access card details
+[2017-10-12 13:22:30.761] [INFO] default - fetching lost card details
+[2017-10-12 13:22:30.774] [INFO] default - fetching third party details
+[2017-10-12 13:22:30.777] [INFO] default - fetching location change details
+[2017-10-12 13:22:30.779] [INFO] default - fetching new access card requester details
+[2017-10-12 13:22:34.257] [INFO] default - fetching new access card employeeID details
+[2017-10-12 13:23:16.213] [INFO] default - fetching new access card requester details
+[2017-10-12 13:41:28.675] [INFO] default - fetching new access card requester details
+[2017-10-12 13:52:29.694] [INFO] default - fetching new access card requester details
+[2017-10-12 13:58:36.536] [INFO] default - fetching new access card requester details
+[2017-10-12 14:05:22.411] [INFO] default - fetching new access card requester details
+[2017-10-12 14:05:43.429] [INFO] default - fetching new access card requester details
+[2017-10-12 14:05:49.141] [INFO] default - fetching new access card requester details
+[2017-10-12 14:07:11.419] [INFO] default - getting employee data
+[2017-10-12 14:07:37.604] [INFO] default - fetching new access card requester details
+[2017-10-12 14:07:37.977] [INFO] default - inserting new access card requester details
+[2017-10-12 14:07:43.693] [INFO] default - fetching new access card requester details
+[2017-10-12 14:07:47.016] [INFO] default - fetching approver of the access card details
+[2017-10-12 14:07:47.025] [INFO] default - fetching lost card details
+[2017-10-12 14:07:47.035] [INFO] default - fetching third party details
+[2017-10-12 14:07:47.036] [INFO] default - fetching location change details
+[2017-10-12 14:07:47.038] [INFO] default - fetching new access card requester details
+[2017-10-12 14:07:48.506] [INFO] default - fetching new access card employeeID details
+[2017-10-12 14:09:20.006] [INFO] default - fetching approver of the access card details
+[2017-10-12 14:09:20.008] [INFO] default - fetching lost card details
+[2017-10-12 14:09:20.014] [INFO] default - fetching third party details
+[2017-10-12 14:09:20.024] [INFO] default - fetching location change details
+[2017-10-12 14:09:20.025] [INFO] default - fetching new access card requester details
+[2017-10-12 14:09:20.706] [INFO] default - fetching new access card requester details
+[2017-10-12 14:29:53.490] [INFO] default - fetching new access card requester details
+[2017-10-12 14:47:47.056] [INFO] default - fetching new access card requester details
+[2017-10-12 14:48:06.569] [INFO] default - getting employee data
+[2017-10-12 14:48:15.599] [INFO] default - fetching new access card requester details
+[2017-10-12 14:48:15.960] [INFO] default - inserting new access card requester details
+[2017-10-12 14:48:20.996] [INFO] default - fetching new access card requester details
+[2017-10-12 14:49:04.046] [INFO] default - fetching approver of the access card details
+[2017-10-12 14:49:04.048] [INFO] default - fetching lost card details
+[2017-10-12 14:49:04.062] [INFO] default - fetching third party details
+[2017-10-12 14:49:04.065] [INFO] default - fetching location change details
+[2017-10-12 14:49:04.067] [INFO] default - fetching new access card requester details
+[2017-10-12 14:49:07.660] [INFO] default - fetching new access card employeeID details
+[2017-10-12 14:49:25.616] [INFO] default - fetching approver of the access card details
+[2017-10-12 14:49:25.626] [INFO] default - fetching third party details
+[2017-10-12 14:49:25.629] [INFO] default - fetching lost card details
+[2017-10-12 14:49:25.645] [INFO] default - fetching location change details
+[2017-10-12 14:49:25.646] [INFO] default - fetching new access card requester details
+[2017-10-12 14:49:30.680] [INFO] default - fetching new access card employeeID details
+[2017-10-12 14:49:46.056] [INFO] default - fetching new access card requester details
+[2017-10-12 14:50:03.063] [INFO] default - fetching approver of the access card details
+[2017-10-12 14:50:03.073] [INFO] default - fetching lost card details
+[2017-10-12 14:50:03.074] [INFO] default - fetching third party details
+[2017-10-12 14:50:03.083] [INFO] default - fetching location change details
+[2017-10-12 14:50:03.087] [INFO] default - fetching new access card requester details
+[2017-10-12 14:50:08.259] [INFO] default - fetching new access card employeeID details
+[2017-10-12 14:50:18.532] [INFO] default - fetching approver of the access card details
+[2017-10-12 14:50:18.534] [INFO] default - fetching lost card details
+[2017-10-12 14:50:18.540] [INFO] default - fetching third party details
+[2017-10-12 14:50:18.548] [INFO] default - fetching location change details
+[2017-10-12 14:50:18.549] [INFO] default - fetching new access card requester details
+[2017-10-12 14:50:22.420] [INFO] default - fetching new access card employeeID details
+[2017-10-12 14:50:42.558] [INFO] default - fetching approver of the access card details
+[2017-10-12 14:50:42.565] [INFO] default - fetching lost card details
+[2017-10-12 14:50:42.577] [INFO] default - fetching third party details
+[2017-10-12 14:50:42.580] [INFO] default - fetching location change details
+[2017-10-12 14:50:42.582] [INFO] default - fetching new access card requester details
+[2017-10-12 14:50:50.937] [INFO] default - fetching new access card employeeID details
+[2017-10-12 14:51:14.705] [INFO] default - fetching new access card requester details
+[2017-10-12 15:00:17.271] [INFO] default - fetching new access card requester details
+[2017-10-12 15:01:22.161] [INFO] default - fetching new access card requester details
+[2017-10-12 15:02:10.971] [INFO] default - getting employee data
+[2017-10-12 15:02:24.675] [INFO] default - fetching new access card requester details
+[2017-10-12 15:02:25.089] [INFO] default - inserting new access card requester details
+[2017-10-12 15:02:35.838] [INFO] default - fetching new access card requester details
+[2017-10-12 15:02:41.595] [INFO] default - fetching approver of the access card details
+[2017-10-12 15:02:41.599] [INFO] default - fetching lost card details
+[2017-10-12 15:02:41.608] [INFO] default - fetching third party details
+[2017-10-12 15:02:41.615] [INFO] default - fetching location change details
+[2017-10-12 15:02:41.617] [INFO] default - fetching new access card requester details
+[2017-10-12 15:02:46.596] [INFO] default - fetching new access card employeeID details
+[2017-10-12 15:03:08.376] [INFO] default - fetching new access card requester details
+[2017-10-12 15:03:13.935] [INFO] default - fetching approver of the access card details
+[2017-10-12 15:03:13.944] [INFO] default - fetching lost card details
+[2017-10-12 15:03:13.945] [INFO] default - fetching third party details
+[2017-10-12 15:03:13.953] [INFO] default - fetching location change details
+[2017-10-12 15:03:13.955] [INFO] default - fetching new access card requester details
+[2017-10-12 15:03:17.867] [INFO] default - fetching new access card employeeID details
+[2017-10-12 15:03:30.355] [INFO] default - fetching new access card requester details
+[2017-10-12 15:03:38.761] [INFO] default - fetching approver of the access card details
+[2017-10-12 15:03:38.767] [INFO] default - fetching third party details
+[2017-10-12 15:03:38.769] [INFO] default - fetching lost card details
+[2017-10-12 15:03:38.775] [INFO] default - fetching location change details
+[2017-10-12 15:03:38.777] [INFO] default - fetching new access card requester details
+[2017-10-12 15:03:41.432] [INFO] default - fetching new access card employeeID details
+[2017-10-12 15:03:51.896] [INFO] default - fetching approver of the access card details
+[2017-10-12 15:03:51.899] [INFO] default - fetching lost card details
+[2017-10-12 15:03:51.912] [INFO] default - fetching third party details
+[2017-10-12 15:03:51.913] [INFO] default - fetching location change details
+[2017-10-12 15:03:51.915] [INFO] default - fetching new access card requester details
+[2017-10-12 15:03:53.559] [INFO] default - fetching new access card employeeID details
+[2017-10-12 15:04:15.207] [INFO] default - fetching approver of the access card details
+[2017-10-12 15:04:15.208] [INFO] default - fetching lost card details
+[2017-10-12 15:04:15.209] [INFO] default - fetching third party details
+[2017-10-12 15:04:15.217] [INFO] default - fetching location change details
+[2017-10-12 15:04:15.219] [INFO] default - fetching new access card requester details
+[2017-10-12 15:04:17.417] [INFO] default - fetching new access card employeeID details
+[2017-10-12 15:04:53.838] [INFO] default - fetching new access card requester details

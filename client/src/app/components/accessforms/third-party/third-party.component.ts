@@ -9,6 +9,7 @@ import { ThirdPartyService } from '../../../services/third-party.service';
 import { EmployeeService } from '../../../services/employee.service';
 import { config } from '../../../config';
 
+//provide metadata to the component
 @Component({
   selector: 'app-third-party',
   templateUrl: './third-party.component.html',
@@ -17,50 +18,47 @@ import { config } from '../../../config';
 
 export class ThirdPartyComponent implements OnInit {
 
-  //declaring all required variables
+  //declaring variables for employee details
   errors: any;
   employeeDetail: any = [];
   empId: string;
   date: any;
   status: string = "";
   change: string = "";
-  a: any;
   empType: any;
   selectedcategory: any;
   empName: any;
-  doj: any;
   designation: any;
   project: any;
   department: any;
+
+  //declaring variables for config file and showing date
   doe: any;
+  doj: any;
   existPro: any;
   newPro: any;
   appSign: any;
   dateCurr: any;
   config = config;
   value: any;
-
-  
   datepickerModel: Date;
   public modalRef: BsModalRef;
   employee: any;
   data:any;
 
+  //config for modal
   public configModal = {
     animated: true,
     keyboard: true,
     backdrop: true,
     ignoreBackdropClick: false
   };
- 
 
   //Constructor initialize LostcardService & Router 
   constructor(private employeeService: EmployeeService, private router: Router, private route: ActivatedRoute, private modalService: BsModalService) {}
 
-
   //method call on submit button for saving the details of third party
-  thirdpartySubmit(term) {
-    
+  thirdpartySubmit(term) {  
   }
 
   //method called on Go back button and navigate to dashboard of employee
@@ -68,7 +66,8 @@ export class ThirdPartyComponent implements OnInit {
     this.router.navigate(['/empdash']);
   }
 
- ngOnInit() {
+  //show details of employee from sql on the form
+  ngOnInit() {
    this.value= localStorage.getItem("userDetails")
          let userRole=JSON.parse(this.value).data.role;
          let empid=JSON.parse(this.value).data.UserID;
@@ -78,13 +77,11 @@ export class ThirdPartyComponent implements OnInit {
         res => {
           this.employee = res;
           this.empId = this.employee[0][0].EMPNO;
-          this.empName = this.employee[0][0].NAME;
-         
+          this.empName = this.employee[0][0].NAME; 
         },
         error => {
           this.errors = error;
         })
-
     this.date = new Date();
     let day = this.date.getDate();
     let month = this.date.getMonth() + 1;

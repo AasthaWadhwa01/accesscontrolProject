@@ -1,8 +1,12 @@
+//import external library
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
+
+//import config file
 import { config } from '../config';
 
+//injecting service 
 @Injectable()
 export class LostCardService {
 
@@ -15,7 +19,6 @@ export class LostCardService {
 
 //Lost Card Service to hit API of db to save comment & date
 save(comment) {	
-	console.log(comment)
  return this.http
              .post(this.config.connect.url+this.config.connect.port+'/lostcard/'+'lostInsert',comment)
 	}

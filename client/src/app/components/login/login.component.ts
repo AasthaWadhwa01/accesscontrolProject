@@ -23,10 +23,7 @@ value: any={};
  		this.route.paramMap
       .switchMap((params: ParamMap) => this.loginService.getToken(this.route.snapshot.params['value']))
       .subscribe((res):any => {
-        console.log("res");
-        console.log(res,"laksdjkadh");
-        localStorage.setItem("userDetails", JSON.stringify(res));
-         
+        localStorage.setItem("userDetails", JSON.stringify(res));      
          this.value= localStorage.getItem("userDetails")
          let userRole=JSON.parse(this.value).data.role;
          let empid=JSON.parse(this.value).data.UserID;

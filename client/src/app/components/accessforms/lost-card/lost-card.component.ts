@@ -9,6 +9,7 @@ import { LostCardService } from '../../../services/lost-card.service';
 import { EmployeeService } from '../../../services/employee.service';
 import { config } from '../../../config';
 
+//provide metadata to the component
 @Component({
   selector: 'app-lost-card',
   templateUrl: './lost-card.component.html',
@@ -17,14 +18,10 @@ import { config } from '../../../config';
 })
 
 export class LostCardComponent implements OnInit {
-  //declaring all required variables
-  errors: any;
+
+//declaring variables for employee details
   employeeDetail: any = [];
   empId: string;
-  date: any;
-  status: string = "";
-  change: string = "";
-  a: any;
   empType: any;
   selectedcategory: any;
   empName: any;
@@ -36,19 +33,24 @@ export class LostCardComponent implements OnInit {
   existPro: any;
   newPro: any;
   appSign: any;
+  employee: any;
+
+//declaring variables for config file and showing date
+  errors: any;
+  date: any;
+  status: string = "";
+  change: string = "";
   dateCurr: any;
   config = config;
   value: any;
-
-  //Constructor initialize LostcardService,EmployeeService & Router 
-  constructor(private employeeService: EmployeeService, private lostCardService: LostCardService, private router: Router, private route: ActivatedRoute, private modalService: BsModalService) {}
-
-
+  data:any;
   datepickerModel: Date;
   public modalRef: BsModalRef;
-  employee: any;
-  data:any;
 
+//constructor initialize LostcardService,EmployeeService & Router 
+  constructor(private employeeService: EmployeeService, private lostCardService: LostCardService, private router: Router, private route: ActivatedRoute, private modalService: BsModalService) {}
+
+//config for modal 
   public configModal = {
     animated: true,
     keyboard: true,
@@ -56,8 +58,9 @@ export class LostCardComponent implements OnInit {
     ignoreBackdropClick: false
   };
 
- ngOnInit() {
-   this.value= localStorage.getItem("userDetails")
+//show details of employee from sql on the form 
+  ngOnInit() {
+    this.value= localStorage.getItem("userDetails")
          let userRole=JSON.parse(this.value).data.role;
          let empid=JSON.parse(this.value).data.UserID;
     this.route.paramMap
@@ -74,7 +77,6 @@ export class LostCardComponent implements OnInit {
         error => {
           this.errors = error;
         })
-
     this.date = new Date();
     let day = this.date.getDate();
     let month = this.date.getMonth() + 1;
@@ -106,6 +108,7 @@ export class LostCardComponent implements OnInit {
       comment: comment,
       date: date
     }
+    
     //lostCard service will call the save method
     this.lostCardService.save(employee).subscribe(data => {
       this.data=data;
@@ -125,5 +128,4 @@ export class LostCardComponent implements OnInit {
   back(temp: any): any {
     this.openModalWithClass(temp)
   }
-
 }
